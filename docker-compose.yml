@@ -98,7 +98,7 @@ services:
       dockerfile: Dockerfile.service
       args:
         SERVICE: text-analyzer
-    command: python -u services/text-analyzer/app/main.py
+    command: python -u services/text-analyzer/main.py
     restart: on-failure
     environment:
       KAFKA_BOOTSTRAP: kafka:29092
