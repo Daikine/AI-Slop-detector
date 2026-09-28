@@ -69,16 +69,17 @@ def main() -> None:
         report_to=["mlflow"],
         seed=cfg.seed,
     )
-
     trainer = Trainer(
         model=model,
         args=args,
         train_dataset=train_ds,
         eval_dataset=val_ds,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,          # <- было tokenizer=tokenizer (deprecated)
         data_collator=DataCollatorWithPadding(tokenizer),
         compute_metrics=compute_metrics,
     )
+
+   
 
     mlflow.set_experiment("ai-slop-text-detector")
     with mlflow.start_run():

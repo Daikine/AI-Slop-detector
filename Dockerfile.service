@@ -13,4 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # копируем сервис и shared (контракты)
 COPY services/${SERVICE}/ ./services/${SERVICE}/
 COPY shared/ ./shared/
+COPY ML/preprocess.py ./ML/preprocess.py
 COPY tools/ ./tools/

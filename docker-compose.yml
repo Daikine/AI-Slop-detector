@@ -91,3 +91,19 @@ services:
       KAFKA_BOOTSTRAP: kafka:29092
     depends_on:
       - kafka
+  text-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile.service
+      args:
+        SERVICE: text-analyzer
+    command: python -u services/text-analyzer/app/main.py
+    restart: on-failure
+    environment:
+      KAFKA_BOOTSTRAP: kafka:29092
+      MODEL_DIR: /models/text_detector
+      MODEL_VERSION: distilbert-slop-v1
+    volumes:
+      - ./ML/models/text_detector:/models/text_detector:ro
+    depends_on:
+      - kafka
