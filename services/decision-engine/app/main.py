@@ -21,7 +21,16 @@ THRESHOLDS = [
     (0.8, "PROBABLY_AI"),
     (1.1, "DEFINITELY_AI"),
 ]
-
+def make_reasons(results: list) -> list:
+    reasons = []
+    for r in results:
+        score = r.get("score", 0)
+        atype = r.get("analyzer_type", "?")
+        if score > 0.5:
+            reasons.append(f"{atype}: обнаружены AI-подобные признаки (score={score})")
+        else:
+            reasons.append(f"{atype}: признаков AI-генерации нет (score={score})")
+    return reasons
 
 def make_verdict(task_id: str, results: list) -> dict:
     scores = [r.get("score", 0.0) for r in results]
@@ -35,6 +44,7 @@ def make_verdict(task_id: str, results: list) -> dict:
         "score": round(avg, 3),
         "analyzer_count": len(results),
         "individual_scores": scores,
+        "reasons": make_reasons(results),
         "decided_at": datetime.now(timezone.utc).isoformat(),
     }
 
