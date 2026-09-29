@@ -1,34 +1,30 @@
-"""Baseline AI-slop classifier. Reads .eml (raw/) + synthetic CSV."""
-
+"""Train and persist a reproducible TF-IDF + logistic regression baseline."""
 from __future__ import annotations
 
 import json
 import pickle
+import random
 import sys
 from pathlib import Path
 
-import mlflow
+import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, roc_auc_score, accuracy_score
+from sklearn.metrics import accuracy_score, classification_report, f1_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from services.parser.parser import EmailParser
 from ML.preprocess import TextPreprocessor
 
-RAW = Path(__file__).resolve().parents[1] / "data" / "raw"
-SYNTH = Path(__file__).resolve().parents[1] / "data" / "processed" / "synthetic_full.csv"
-PROCESSED = Path(__file__).resolve().parents[1] / "data" / "processed"
-MODELS = Path(__file__).resolve().parents[1] / "models"
-for d in (PROCESSED, MODELS):
-    d.mkdir(exist_ok=True)
-
-# --- target column: 1 = AI-generated, 0 = human ---
+ROOT = Path(__file__).resolve().parents[2]
+DATA = ROOT / "ML" / "data"
+RAW = DATA / "raw"
+SYNTH = DATA / "processed" / "synthetic_full.csv"
+EXTERNAL = DATA / "processed" / "external_hc3.csv"
+PROCESSED = DATA / "processed"
+MODELS = ROOT / "ML" / "models"
 TARGET = "ai_assisted"
-
-# --- hyperparameters ---
 SEED = 42
 TEST_SIZE = 0.2
 MAX_FEATURES = 20000
@@ -39,124 +35,86 @@ MAX_ITER = 1000
 
 
 def load_eml() -> pd.DataFrame:
-    """Walk raw/, parse every .eml, infer label from folder name."""
+    """Load optional .eml files, using parent folder spam/ham as spam label."""
+    from ML.email_parser import EmailParser
+
     parser = EmailParser()
     rows = []
     for path in RAW.rglob("*"):
         if not path.is_file():
             continue
         parent = path.parent.name.lower()
-        if "spam" in parent:
-            label, ai = 1, 0
-        elif "ham" in parent:
-            label, ai = 0, 0
-        else:
+        label = 1 if "spam" in parent else 0 if "ham" in parent else None
+        if label is None:
             continue
         try:
-            raw = path.read_text(encoding="utf-8", errors="ignore")
-            parsed = parser.parse(raw)
+            parsed = parser.parse(path.read_text(encoding="utf-8", errors="ignore"))
+            text = parsed.text_body or parser.strip_html(parsed.html_body)
         except Exception:
             continue
-        text = parsed.text_body or parser.strip_html(parsed.html_body)
         if text.strip():
-            rows.append({"text": text, "label": label, "source": "human", "ai_assisted": ai})
+            rows.append({"text": text, "label": label, "source": "email", TARGET: 0})
     return pd.DataFrame(rows)
 
 
-def load_synth() -> pd.DataFrame:
-    """Load the generated synthetic dataset."""
-    if not SYNTH.exists():
-        print(f"[warn] {SYNTH} not found — run generate_synthetic.py first")
-        return pd.DataFrame()
-    return pd.read_csv(SYNTH)
+def load_csv(path: Path) -> pd.DataFrame:
+    return pd.read_csv(path) if path.exists() else pd.DataFrame()
 
 
 def train(df: pd.DataFrame):
     pre = TextPreprocessor(language="english")
-    df["clean"] = df["text"].astype(str).apply(pre.clean_text)
-    df = df[df["clean"].str.len() > 0].reset_index(drop=True)
-
-    df.to_parquet(PROCESSED / "combined_clean.parquet", index=False)
-
-    if TARGET not in df.columns:
-        sys.exit(f"Target column '{TARGET}' not found in data.")
+    df = df.copy()
+    df["text"] = df["text"].fillna("").astype(str)
+    df[TARGET] = pd.to_numeric(df[TARGET], errors="coerce").fillna(0).astype(int)
+    df["clean"] = df["text"].map(pre.clean_text)
+    df = df[df["clean"].str.len() > 0].drop_duplicates("clean").reset_index(drop=True)
     if df[TARGET].nunique() < 2:
-        sys.exit(f"Target '{TARGET}' has only one class — need both AI and human samples.")
+        raise ValueError(f"Target '{TARGET}' must contain both classes")
 
     X_tr, X_te, y_tr, y_te = train_test_split(
-        df["clean"], df[TARGET],
-        test_size=TEST_SIZE, random_state=SEED, stratify=df[TARGET],
+        df["clean"], df[TARGET], test_size=TEST_SIZE, random_state=SEED, stratify=df[TARGET]
     )
-
-    vec = TfidfVectorizer(
-        max_features=MAX_FEATURES,
-        ngram_range=NGRAM_RANGE,
-        min_df=MIN_DF,
-    )
+    vec = TfidfVectorizer(max_features=MAX_FEATURES, ngram_range=NGRAM_RANGE, min_df=MIN_DF)
+    model = LogisticRegression(C=C, max_iter=MAX_ITER, class_weight="balanced", random_state=SEED)
     X_tr_v = vec.fit_transform(X_tr)
     X_te_v = vec.transform(X_te)
+    model.fit(X_tr_v, y_tr)
+    y_pred = model.predict(X_te_v)
+    y_proba = model.predict_proba(X_te_v)[:, 1]
+    model.fit(vec.transform(df["clean"]), df[TARGET])
+    metrics = {
+        "accuracy": float(accuracy_score(y_te, y_pred)),
+        "f1": float(f1_score(y_te, y_pred, zero_division=0)),
+        "roc_auc": float(roc_auc_score(y_te, y_proba)),
+        "rows": int(len(df)),
+        "test_rows": int(len(y_te)),
+    }
 
-    model = LogisticRegression(
-        C=C, max_iter=MAX_ITER, class_weight="balanced",
-    )
-
-    mlflow.set_experiment("ai-slop-baseline")
-    with mlflow.start_run():
-        mlflow.log_params({
-            "target": TARGET,
-            "max_features": MAX_FEATURES,
-            "ngram_range": str(NGRAM_RANGE),
-            "min_df": MIN_DF,
-            "C": C,
-            "seed": SEED,
-            "test_size": TEST_SIZE,
-        })
-
-        model.fit(X_tr_v, y_tr)
-
-        y_pred = model.predict(X_te_v)
-        y_proba = model.predict_proba(X_te_v)[:, 1]
-
-        metrics = {
-            "accuracy": float(accuracy_score(y_te, y_pred)),
-            "roc_auc": float(roc_auc_score(y_te, y_proba)),
-        }
-        mlflow.log_metrics(metrics)
-
-        report = classification_report(y_te, y_pred, zero_division=0)
-        print("\n=== Baseline report ===")
-        print(report)
-        mlflow.log_text(report, "classification_report.txt")
-
-    # save metrics json
-    with open(MODELS / "baseline_metrics.json", "w", encoding="utf-8") as f:
-        json.dump(metrics, f, indent=2)
-
-    # save test split for later re-evaluation
-    pd.DataFrame({"text": X_te, "label": y_te}).to_parquet(
-        PROCESSED / "baseline_test.parquet", index=False
-    )
-
+    PROCESSED.mkdir(parents=True, exist_ok=True)
+    MODELS.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(PROCESSED / "combined_clean.parquet", index=False)
+    pd.DataFrame({"text": X_te, "label": y_te}).to_parquet(PROCESSED / "baseline_test.parquet", index=False)
+    (MODELS / "baseline_metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+    print(classification_report(y_te, y_pred, zero_division=0))
+    print(json.dumps(metrics, indent=2))
     return model, vec
 
 
 def save(model, vec) -> None:
-    with open(MODELS / "baseline_model.pkl", "wb") as f:
+    MODELS.mkdir(parents=True, exist_ok=True)
+    with (MODELS / "baseline_model.pkl").open("wb") as f:
         pickle.dump(model, f)
-    with open(MODELS / "baseline_vectorizer.pkl", "wb") as f:
+    with (MODELS / "baseline_vectorizer.pkl").open("wb") as f:
         pickle.dump(vec, f)
-    print(f"\nSaved → {MODELS}")
+    print(f"Saved -> {MODELS}")
 
 
 if __name__ == "__main__":
-    parts = [load_eml(), load_synth()]
-    df = pd.concat([p for p in parts if not p.empty], ignore_index=True)
-
+    random.seed(SEED)
+    np.random.seed(SEED)
+    parts = [load_eml(), load_csv(SYNTH), load_csv(EXTERNAL)]
+    df = pd.concat([part for part in parts if not part.empty], ignore_index=True)
     if df.empty:
-        sys.exit("No data. Check ML/data/raw/ and ML/data/processed/.")
-
-    print(f"Total: {len(df)} emails | spam={df['label'].sum()} | ham={(df['label'] == 0).sum()}")
-    print(f"         ai_assisted={df['ai_assisted'].sum()} | human={(df['ai_assisted'] == 0).sum()}")
-
-    model, vec = train(df)
-    save(model, vec)
+        raise SystemExit("No data. Run ML/data/generate_synthetic.py first.")
+    print(f"Total rows: {len(df)} | AI-assisted: {int(df[TARGET].sum())}")
+    save(*train(df))

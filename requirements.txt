@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+scikit-learn==1.8.0
+# Optional: uncomment for DistilBERT inference (otherwise baseline TF-IDF model is used)
+# --extra-index-url https://download.pytorch.org/whl/cpu
+# torch==2.4.1+cpu
+# transformers==4.44.2

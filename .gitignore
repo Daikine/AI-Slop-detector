@@ -44,6 +44,12 @@ test-results.xml
 # Machine Learning
 
 # Models
+ML/data/processed/*.csv
+ML/data/processed/*.parquet
+ML/data/processed/*.pkl
+!ML/data/processed/README.md
+ML/models/*.pkl
+ML/models/baseline_metrics.json
 *.pkl
 *.joblib
 *.onnx
@@ -65,6 +71,10 @@ logs/tensorboard/
 # Datasets — ignore at any level (ml/, services/, etc.)
 **/data/raw/
 **/data/processed/
+!ML/data/processed/
+ML/data/processed/*
+!ML/data/processed/.gitkeep
+!ML/data/processed/README.md
 **/data/interim/
 **/data/external/
 **/datasets/

@@ -1,197 +1,47 @@
 # Architecture Overview
 
-В этом документе описана общая архитектура системы обнаружения
-AI-assisted spam campaigns.
-
-Система состоит из нескольких сервисов, каждый из которых отвечает за
-отдельный этап анализа входных данных. Анализ включает работу с текстом,
-HTML, изображениями и ссылками.
-
-Для обмена данными между сервисами используется Kafka. После получения
-результатов отдельных анализаторов они собираются в единый результат,
-который затем передаётся в Decision Engine для принятия итогового решения.
-
-Основной поток обработки выглядит следующим образом:
-
-API Gateway → Kafka → Analyzers → Aggregator → Decision Engine
-
-
-## 1. Components
-
-### API Gateway
-
-API Gateway является точкой входа в систему. Он принимает запросы на
-анализ и передаёт задачи на дальнейшую обработку.
-
-Gateway использует Redis для хранения или работы с состоянием задач.
-
-
-### Kafka
-
-Kafka используется как брокер сообщений для обмена данными между
-сервисами.
-
-Сервисы не должны напрямую зависеть друг от друга для передачи
-результатов анализа. Вместо этого они отправляют и получают сообщения
-через Kafka topics.
-
-Внутри Docker Compose Kafka доступна сервисам по адресу:
-
-kafka:29092
-
-
-### Analyzers
-
-Analyzers выполняют отдельные виды анализа входных данных.
-
-В системе предусмотрены следующие направления анализа:
-
-- Text Analyzer — анализ текста и связанных с ним признаков;
-- HTML Analyzer — анализ HTML-структуры;
-- Image Analyzer — анализ изображений;
-- Link Analyzer — анализ ссылок и связанных с ними метаданных.
-
-Результаты анализаторов передаются в Kafka и затем используeтся Aggregator.
-
-
-### Aggregator
-
-Aggregator собирает результаты отдельных анализаторов для одной задачи.
-
-Результаты группируются по `task_id`. После получения всех необходимых
-результатов Aggregator формирует единый набор данных и передаёт его
-дальше в `analysis.aggregated`.
-
-Если необходимые результаты не были получены за установленное время,
-задача отправляется в Dead Letter Queue.
-
-
-### Decision Engine
-
-Decision Engine получает агрегированный результат анализа и принимает
-итоговое решение на основе полученных данных.
-
-Для работы с постоянными данными используется PostgreSQL.
-
-
-### PostgreSQL
-
-PostgreSQL используется как база данных для Decision Engine.
-
-В Docker Compose база данных доступна другим контейнерам по адресу:
-postgres:5432
-
-
-### Redis
-
-Redis используется API Gateway для работы с состоянием задач.
-
-В Docker Compose Redis доступен другим контейнерам по адресу:
-
-redis:6379
-
-
-## 2. Data Flow
-
-Обработка задачи проходит через несколько этапов.
-
-1. Клиент отправляет запрос в API Gateway.
-2. API Gateway принимает задачу и передаёт её в систему обработки.
-3. Анализаторы выполняют свои части анализа.
-4. Результаты анализаторов передаются через Kafka.
-5. Aggregator собирает результаты по `task_id`.
-6. Aggregator отправляет объединённый результат в `analysis.aggregated`.
-7. Decision Engine обрабатывает агрегированный результат.
-8. Результат может быть сохранён в PostgreSQL.
-
-
-## 3. Message Flow
-
-Основное взаимодействие сервисов происходит через Kafka topics.
-
-Используемые направления анализа:
-
-- `analysis.text`
-- `analysis.html`
-- `analysis.images`
-- `analysis.links-meta`
-
-Aggregator получает сообщения из topics и определяет тип
-анализатора по полю `analyzer_type` или по имени topic.
-
-Для завершения агрегации Aggregator ожидает результаты от четырёх
-различных типов анализаторов.
-
-
-## 4. Infrastructure
-
-Все основные компоненты системы запускаются с помощью Docker Compose.
-
-В локальном окружении используются:
-
-- Kafka — обмен сообщениями;
-- PostgreSQL — хранение данных;
-- Redis — хранение состояния;
-- API Gateway;
-- Aggregator;
-- Decision Engine;
-- HTML Analyzer;
-- Image Analyzer.
-
-Для сервисов используется общий `Dockerfile.service`. При сборке через
-Docker Compose конкретный сервис передаётся в качестве build argument,
-что позволяет использовать один Dockerfile для разных сервисов.
-
-
-## 5. Network
-
-Docker Compose создаёт общую сеть, в которой сервисы могут обращаться
-друг к другу по именам контейнеров.
-
-Основные внутренние адреса:
-
-| Service | Address |
-|---|---|
-| Kafka | `kafka:29092` |
-| PostgreSQL | `postgres:5432` |
-| Redis | `redis:6379` |
-| API Gateway | `api-gateway:8000` |
-
-Для доступа с хоста используются следующие порты:
-
-| Service | Host port |
-|---|---:|
-| Kafka | `9092` |
-| PostgreSQL | `5435` |
-| Redis | `6379` |
-| API Gateway | `8000` |
-
-
-## 6. Error Handling
-
-Сервисы используют Kafka для передачи результатов и обработки ошибок.
-
-Aggregator имеет таймаут ожидания результатов анализаторов. Если задача
-не была полностью собрана за установленное время, она отправляется в
-`dead-letter-queue`.
-
-Это позволяет не оставлять задачи зависшими внутри системы.
-
-
-## 7. Current Deployment
-
-На текущем этапе проект запускается в локальном окружении с помощью
-Docker Compose.
-
-Docker Compose используется для запуска инфраструктуры и сервисов,
-а Makefile предоставляет удобные команды для запуска, остановки,
-просмотра состояния и логов системы.
-
-Основные команды:
+Упрощённая архитектура без Kafka, gRPC и отдельных микросервисов.
+
+Система состоит из **двух приложений**:
+
+1. **Основное приложение** (`main.py`) — парсинг HTML, анализ текста,
+   принятие решения, HTTP-вызов image-analyzer.
+2. **Image analyzer** — отдельный HTTP-сервис; по API-ключу обращается
+   к внешней нейросети (или использует локальные эвристики, если ключа нет).
+
+```text
+Клиент
+  │
+  ▼
+main.py  (FastAPI :8000)
+  ├── parser
+  ├── text analyzer
+  ├── decision engine
+  └── HTTP → image-analyzer (:8001)
+                    │
+                    ▼
+             Нейросеть по AI_API_KEY
+```
+
+## Data flow
+
+`POST /analyze` → parse HTML → analyze text locally → HTTP images →
+decision → JSON response (синхронно).
+
+## Environment
+
+| Variable | Where | Purpose |
+|---|---|---|
+| `IMAGE_ANALYZER_URL` | app | URL of image-analyzer (`http://image-analyzer:8001/analyze` in Docker) |
+| `AI_API_KEY` | image-analyzer | Key for external vision API |
+| `AI_API_URL` | image-analyzer | OpenAI-compatible chat completions endpoint |
+| `AI_MODEL` | image-analyzer | Model name (default `gpt-4o-mini`) |
+| `MODEL_DIR` | app | Optional DistilBERT weights for text analysis |
+
+## Docker
 
 ```bash
-make up
-make up-all
-make status
-make logs
-make down
+docker compose up -d --build
+```
+
+Два контейнера: `slop-app` (:8000) и `slop-image-analyzer` (:8001).

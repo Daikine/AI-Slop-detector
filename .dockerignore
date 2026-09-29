@@ -2,4 +2,9 @@ venv
 .git
 __pycache__
 *.pyc
-ML
+*.py[cod]
+.pytest_cache
+.env
+ML/models
+ML/data/raw
+ML/data/processed
