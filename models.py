@@ -7,7 +7,8 @@ from pydantic import BaseModel, Field
 class AnalyzeRequest(BaseModel):
     """Input: raw HTML (or email HTML body) to analyze."""
 
-    html: str = Field(..., min_length=1, max_length=500_000)
+    html: str | None = None
+    raw_email: str | None = None
 
 
 class ParsedData(BaseModel):
@@ -34,3 +35,4 @@ class AnalyzeResponse(BaseModel):
     text_analysis: AnalyzerResult
     image_analysis: dict
     decision: DecisionResult
+    raw_email: str | None = None 
