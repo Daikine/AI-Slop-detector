@@ -7,6 +7,7 @@ services:
     ports:
       - "8000:8000"
     environment:
+      PARSER_URL: http://parser:8002/parse
       IMAGE_ANALYZER_URL: http://image-analyzer:8001/analyze
       BASELINE_MODEL: /models/baseline_model.pkl
       BASELINE_VEC: /models/baseline_vectorizer.pkl
@@ -29,3 +30,12 @@ services:
       AI_API_URL: ${AI_API_URL:-https://api.openai.com/v1/chat/completions}
       AI_MODEL: ${AI_MODEL:-gpt-4o-mini}
     restart: on-failure
+
+  parser:
+    build: ./services/parser
+    container_name: slop-parser
+    ports:
+      - "8002:8002"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
