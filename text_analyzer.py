@@ -123,7 +123,74 @@ _SUBJECT_STOPWORDS = {
 def _tokens(text: str) -> list[str]:
     return [match.group(0).casefold() for match in _WORD_RE.finditer(text)]
 
+def _add_semantic_signals(
+    self,
+    base_result: AnalyzerResult,
+    raw_text: str,
+    subject: str | None,
+) -> AnalyzerResult:
+    """Fuse semantic cues into the existing score. Supports Neural API or local rules."""
+    
+    
+    use_neural_api = os.getenv("USE_NEURAL_API", "false").lower() == "true"
+    
+    if use_neural_api:
+        semantic = get_neural_semantic_score(raw_text, subject or "")
+    else:
+        semantic = _build_semantic_profile(raw_text, subject)
 
+    base_score = float(base_result.score)
+    backend = str(base_result.features.get("backend", "unknown"))
+
+    
+    if "api_error" in str(semantic.get("signals", [])) or "api_key_missing" in str(semantic.get("signals", [])):
+        semantic_weight = 0.0
+    else:
+        semantic_weight = 0.25 if backend in {"transformer", "baseline"} else 1.0
+        
+    semantic_score = float(semantic.get("score", 0.0))
+    
+    if backend in {"transformer", "baseline"} and semantic_weight > 0:
+        
+        final_score = base_score + semantic_weight * semantic_score * (1.0 - base_score)
+        fusion_strategy = "model_plus_semantic_evidence"
+    else:
+        
+        final_score = max(base_score, semantic_score)
+        fusion_strategy = "maximum_of_legacy_fallback_and_semantic_profile"
+        
+    final_score = round(min(max(final_score, 0.0), 1.0), 4)
+
+    features = dict(base_result.features)
+    features.update({
+        "model_score": round(base_score, 4),
+        "semantic_analysis": {
+            **semantic,
+            "fusion_weight": semantic_weight,
+            "fusion_strategy": fusion_strategy,
+        },
+    })
+
+    reason = (
+        "heuristic fallback: no trained model mounted"
+        if backend == "heuristic"
+        else self._reason(final_score)
+    )
+    
+    signals = semantic.get("signals", [])
+    if signals:
+        signal_categories = list(dict.fromkeys(
+            signal.split(":", 1)[0].replace("_", " ")
+            for signal in signals
+        ))
+        reason += f"; semantic signals: {', '.join(signal_categories[:3])}"
+    elif not semantic.get("context_sufficient", True):
+        reason += "; semantic analysis has insufficient text context"
+    else:
+        reason += "; no strong semantic style signals"
+
+    return AnalyzerResult(score=final_score, reason=reason, features=features)
+  
 def _word_count(text: str) -> int:
     return len(_WORD_RE.findall(text))
 
