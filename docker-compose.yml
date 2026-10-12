@@ -15,6 +15,7 @@ services:
     volumes:
       - ./ML/models:/models:ro
     depends_on:
+      - parser
       - image-analyzer
     restart: on-failure
 

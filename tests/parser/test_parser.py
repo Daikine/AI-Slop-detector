@@ -8,8 +8,8 @@ from email.mime.text import MIMEText
 import pytest
 from fastapi.testclient import TestClient
 
-from mime_walker import parse_email
-from main import app
+from services.parser.mime_walker import parse_email
+from services.parser.main import app
 
 
 def simple_email() -> bytes:

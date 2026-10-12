@@ -4,7 +4,10 @@ from urllib.parse import urljoin, urlparse, unquote
 
 from bs4 import BeautifulSoup
 
-from models import LinkInfo, ImageInfo
+try:
+    from ..models import LinkInfo, ImageInfo
+except ImportError:
+    from models import LinkInfo, ImageInfo
 
 try:
     import lxml  # noqa: F401

@@ -2,8 +2,14 @@ import base64
 import hashlib
 from email.message import EmailMessage
 
-from models import ImageInfo
-from extractors.attachment_extractor import get_bytes   # общий декодер байтов
+try:
+    from ..models import ImageInfo
+except ImportError:
+    from models import ImageInfo
+try:
+    from .attachment_extractor import get_bytes   # общий декодер байтов
+except ImportError:
+    from extractors.attachment_extractor import get_bytes
 
 
 def collect_mime_image(msg: EmailMessage, warnings: list,

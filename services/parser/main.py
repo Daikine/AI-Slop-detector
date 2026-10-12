@@ -6,8 +6,12 @@ import time
 
 from fastapi import FastAPI, HTTPException
 
-from mime_walker import parse_email, EmailTooLarge
-from models import ParseRequest, ParsedEmail
+try:  # package imports are used by tests and tooling
+    from .mime_walker import parse_email, EmailTooLarge
+    from .models import ParseRequest, ParsedEmail
+except ImportError:  # the Docker image runs this service as top-level modules
+    from mime_walker import parse_email, EmailTooLarge
+    from models import ParseRequest, ParsedEmail
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("parser")

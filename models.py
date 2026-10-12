@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class AnalyzeRequest(BaseModel):
-    """Input: raw HTML (or email HTML body) to analyze."""
+    """Input: HTML content or a base64-encoded raw MIME email to analyze."""
 
     html: str | None = None
     raw_email: str | None = None

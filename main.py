@@ -20,7 +20,7 @@ PARSER_URL = os.getenv("PARSER_URL")
 app = FastAPI(
     title="AI-Slop-detector",
     version="0.2.0",
-    description="Simplified two-app architecture: local text analysis + remote image analysis.",
+    description="Email analysis with MIME parsing, integrated semantic text signals, and image analysis.",
 )
 
 
@@ -43,6 +43,7 @@ def _collect_image_refs(parsed: dict) -> list[str]:
 @app.post("/analyze", response_model=AnalyzeResponse)
 async def analyze(request: AnalyzeRequest):
     parsed = None
+    subject = None
     if request.raw_email and PARSER_URL:
         try:
             async with httpx.AsyncClient(timeout=15) as client:
@@ -59,6 +60,8 @@ async def analyze(request: AnalyzeRequest):
 
     if parsed:
         text = parsed.get("text") or ""
+        headers = parsed.get("headers") or {}
+        subject = headers.get("subject")
         image_refs = _collect_image_refs(parsed)
     else:
         # legacy-путь: старый локальный парсер, как работало раньше
@@ -70,7 +73,7 @@ async def analyze(request: AnalyzeRequest):
         ]
 
     # 1. Analyze text locally
-    text_result = analyze_text(text)
+    text_result = analyze_text(text, subject=subject)
 
     # 2. Send images to image-analyzer over HTTP
     try:

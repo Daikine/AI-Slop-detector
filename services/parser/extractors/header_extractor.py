@@ -4,7 +4,10 @@ from email.header import decode_header, make_header
 from email.message import EmailMessage
 from email.utils import parseaddr
 
-from models import HeaderInfo, AuthResults
+try:
+    from ..models import HeaderInfo, AuthResults
+except ImportError:
+    from models import HeaderInfo, AuthResults
 
 # spf=pass smtp.mailfrom=x.com; dkim=fail header.d=y.com; dmarc=none
 AUTH_METHOD_RE = re.compile(r"\b(spf|dkim|dmarc)\s*=\s*([a-z0-9\-]+)", re.IGNORECASE)

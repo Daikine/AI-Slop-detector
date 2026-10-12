@@ -3,7 +3,10 @@ import hashlib
 import re
 from email.message import EmailMessage
 
-from models import AttachmentInfo
+try:
+    from ..models import AttachmentInfo
+except ImportError:
+    from models import AttachmentInfo
 
 
 def collect_attachment(msg: EmailMessage, mime_type: str, warnings: list) -> AttachmentInfo:

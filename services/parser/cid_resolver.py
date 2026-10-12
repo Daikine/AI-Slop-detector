@@ -1,4 +1,7 @@
-from models import ImageInfo
+try:
+    from .models import ImageInfo
+except ImportError:
+    from models import ImageInfo
 
 def resolve_images(html_images: list[ImageInfo],
                    mime_images: list[ImageInfo]) -> tuple[list[ImageInfo], list[str]]:

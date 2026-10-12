@@ -3,14 +3,24 @@ import logging
 from email import policy
 from email.message import EmailMessage
 
-from decoding import decode_bytes
-from extractors.attachment_extractor import collect_attachment
-from extractors.image_extractor import collect_mime_image
-from extractors.header_extractor import extract_headers
-from extractors.html_extractor import extract_html_artifacts
-from extractors.text_extractor import html_to_text
-from cid_resolver import resolve_images
-from models import ParsedEmail, ParseMetadata
+try:  # package imports are used by tests and tooling
+    from .decoding import decode_bytes
+    from .extractors.attachment_extractor import collect_attachment
+    from .extractors.image_extractor import collect_mime_image
+    from .extractors.header_extractor import extract_headers
+    from .extractors.html_extractor import extract_html_artifacts
+    from .extractors.text_extractor import html_to_text
+    from .cid_resolver import resolve_images
+    from .models import ParsedEmail, ParseMetadata
+except ImportError:  # the Docker image runs this service as top-level modules
+    from decoding import decode_bytes
+    from extractors.attachment_extractor import collect_attachment
+    from extractors.image_extractor import collect_mime_image
+    from extractors.header_extractor import extract_headers
+    from extractors.html_extractor import extract_html_artifacts
+    from extractors.text_extractor import html_to_text
+    from cid_resolver import resolve_images
+    from models import ParsedEmail, ParseMetadata
 
 logger = logging.getLogger(__name__)
 
