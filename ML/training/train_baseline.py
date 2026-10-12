@@ -61,27 +61,68 @@ def load_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path) if path.exists() else pd.DataFrame()
 
 
-def train(df: pd.DataFrame):
+import os
+import pickle
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+
+# Убедись, что эти константы определены в начале твоего файла (или используй свои значения):
+# TARGET = "is_ai"  # Название колонки с целевой переменной (0 или 1)
+# TEST_SIZE = 0.2
+# SEED = 42
+# MAX_FEATURES = 20000
+# MIN_DF = 2
+# C = 1.0
+# MAX_ITER = 1000
+
+def train(df: pd.DataFrame, model_dir: str = "ML/models"):
+  
     pre = TextPreprocessor(language="english")
     df = df.copy()
     df["text"] = df["text"].fillna("").astype(str)
     df[TARGET] = pd.to_numeric(df[TARGET], errors="coerce").fillna(0).astype(int)
     df["clean"] = df["text"].map(pre.clean_text)
+    
+  
     df = df[df["clean"].str.len() > 0].drop_duplicates("clean").reset_index(drop=True)
+    
     if df[TARGET].nunique() < 2:
-        raise ValueError(f"Target '{TARGET}' must contain both classes")
+        raise ValueError(f"Target '{TARGET}' must contain both classes (0 and 1)")
 
+   
     X_tr, X_te, y_tr, y_te = train_test_split(
-        df["clean"], df[TARGET], test_size=TEST_SIZE, random_state=SEED, stratify=df[TARGET]
+        df["clean"], 
+        df[TARGET], 
+        test_size=TEST_SIZE, 
+        random_state=SEED, 
+        stratify=df[TARGET]
     )
-    vec = TfidfVectorizer(max_features=MAX_FEATURES, ngram_range=NGRAM_RANGE, min_df=MIN_DF)
-    model = LogisticRegression(C=C, max_iter=MAX_ITER, class_weight="balanced", random_state=SEED)
+
+   
+    vec = TfidfVectorizer(
+        max_features=20000,
+        ngram_range=(1, 3),     
+        min_df=2,
+        stop_words="english"     
+    )
+    
+    model = LogisticRegression(
+        C=C, 
+        max_iter=MAX_ITER, 
+        class_weight="balanced", 
+        random_state=SEED
+    )
+    
     X_tr_v = vec.fit_transform(X_tr)
     X_te_v = vec.transform(X_te)
     model.fit(X_tr_v, y_tr)
+    
     y_pred = model.predict(X_te_v)
     y_proba = model.predict_proba(X_te_v)[:, 1]
-    model.fit(vec.transform(df["clean"]), df[TARGET])
+    
     metrics = {
         "accuracy": float(accuracy_score(y_te, y_pred)),
         "f1": float(f1_score(y_te, y_pred, zero_division=0)),
@@ -89,16 +130,22 @@ def train(df: pd.DataFrame):
         "rows": int(len(df)),
         "test_rows": int(len(y_te)),
     }
+    print(" Training metrics:", metrics)
 
-    PROCESSED.mkdir(parents=True, exist_ok=True)
-    MODELS.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(PROCESSED / "combined_clean.parquet", index=False)
-    pd.DataFrame({"text": X_te, "label": y_te}).to_parquet(PROCESSED / "baseline_test.parquet", index=False)
-    (MODELS / "baseline_metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
-    print(classification_report(y_te, y_pred, zero_division=0))
-    print(json.dumps(metrics, indent=2))
-    return model, vec
-
+    model.fit(vec.transform(df["clean"]), df[TARGET])
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, "baseline_model.pkl")
+    vec_path = os.path.join(model_dir, "baseline_vectorizer.pkl")
+    
+    with open(model_path, "wb") as f:
+        pickle.dump(model, f)
+    with open(vec_path, "wb") as f:
+        pickle.dump(vec, f)
+        
+    print(f"💾 Model saved to: {model_path}")
+    print(f"💾 Vectorizer saved to: {vec_path}")
+    
+    return metrics
 
 def save(model, vec) -> None:
     MODELS.mkdir(parents=True, exist_ok=True)
