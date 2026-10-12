@@ -143,3 +143,9 @@ $RECYCLE.BIN/
 *.temp
 .cache/
 *.swp
+.env
+.venv/
+ML/data/raw/
+ML/models/*.pkl
+ML/models/*.joblib
+ML/models/training_report.json

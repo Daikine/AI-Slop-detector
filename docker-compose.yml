@@ -122,7 +122,7 @@ services:
     depends_on:
       - kafka
 
-  image-analyzer:
+    image-analyzer:
     build:
       context: .
       dockerfile: Dockerfile.service
@@ -132,5 +132,8 @@ services:
     restart: on-failure
     environment:
       KAFKA_BOOTSTRAP: kafka:29092
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_API_URL: ${AI_API_URL:-https://api.openai.com/v1/chat/completions}
+      AI_MODEL: ${AI_MODEL:-gpt-4o-mini}
     depends_on:
       - kafka
