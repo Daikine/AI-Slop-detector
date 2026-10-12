@@ -1,1 +1,1 @@
-touch ML/training/__init__.py
+"""Training utilities for the AI-slop text detector."""

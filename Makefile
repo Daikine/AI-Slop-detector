@@ -1,21 +1,19 @@
 up:
-	docker compose up -d
-	docker exec -i slop-postgres psql -U dev -d slop < init.sql
-	@echo "Infrastructure is UP. Kafka :9092, Postgres :5435, Redis :6379"
-
-up-all:
 	docker compose up -d --build
-	docker exec -i slop-postgres psql -U dev -d slop < init.sql
-	@echo "FULL STACK is UP: infra + api-gateway :8000 + aggregator + decision-engine"
+	@echo "Waiting for app..."
+	@for i in 1 2 3 4 5 6 7 8 9 10; do \
+		curl -sf http://localhost:8000/health >/dev/null && break; \
+		sleep 1; \
+	done
+	@curl -sf http://localhost:8000/health >/dev/null \
+		&& echo "Stack is UP: app :8000, image-analyzer :8001" \
+		|| (echo "App did not become healthy in time"; exit 1)
 
 status:
 	docker compose ps
 
 logs:
-	docker compose logs -f api-gateway aggregator decision-engine
-
-psql:
-	docker exec -it slop-postgres psql -U dev -d slop
+	docker compose logs -f app image-analyzer
 
 down:
-	docker compose down
+	docker compose down --remove-orphans

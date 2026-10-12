@@ -1,0 +1,51 @@
+text,label,source,ai_assisted
+"Уважаемый клиент, настоящим сообщаем, что ваш аккаунт будет заблокирован в течение 24 часов. Пожалуйста, подтвердите данные по ссылке.",1,ai,1
+"Обращаем ваше внимание, что мы заметили подозрительную активность. Авторизуйтесь для подтверждения личности.",1,ai,1
+"Информируем вас о том, что ваш платёж был отклонён. Обновите платёжные данные, чтобы продолжить использование сервиса.",1,ai,1
+"Доводим до вашего сведения, что для получения выигрыша необходимо подтвердить личность, перейдя по указанной ссылке.",1,ai,1
+"Здравствуйте! Ваш запрос зарегистрирован под номером 48291. С уважением, служба поддержки.",0,ai,1
+"Уважаемый пользователь, ваша подписка истекает через 7 дней. Пожалуйста, продлите её для сохранения доступа.",0,ai,1
+"Настоящим сообщаем, что ваш заказ успешно оформлен и передан в доставку. Ожидайте уведомление.",0,ai,1
+"Уважаемый абонент, запись на приём подтверждена. Дата визита: 14 числа текущего месяца.",0,ai,1
+"С уважением сообщаем, что доступ к личному кабинету восстановлен. Рекомендуем сменить пароль.",0,ai,1
+"Благодарим за обращение. Направляем вам отчёт за прошедший период во вложении к данному письму.",0,ai,1
+"СРОЧНО!!! Вы выиграли 1 000 000 долларов! Нажмите http://lucky-winner.xyz чтобы получить приз немедленно!!!",1,human,0
+"Купите Виагру со скидкой 90% без рецепта. Доставка за 24 часа. Заходите на сайт.",1,human,0
+"Хочешь заработать 5000$ в день работая из дома? Пиши в личку прямо сейчас!!!",1,human,0
+"Срочно!!! Ваша посылка задержана на таможне. Оплати сбор по ссылке!!!",1,human,0
+"Кредит без справок и поручителей за 5 минут, заходи на сайт прямо сейчас",1,human,0
+"Привет! Давай встретимся завтра в 15:00 в кафе на Ленина.",0,human,0
+"Не забудь взять ноутбук с презентацией на созвон в понедельник.",0,human,0
+"Отправляю акт по договору №1842, проверь и подпиши пожалуйста.",0,human,0
+"Скинь отчёт за прошлый месяц, не могу найти его в почте :)",0,human,0
+"Мама, позвони как сможешь, я буду дома после шести.",0,human,0
+"Заказ №9021 отправлен, ждите доставку 2-3 дня.",0,human,0
+"Эй, ты видел новое сообщение в чате? Там правка по ТЗ.",0,human,0
+"Добрый день! Пересылаю скан чека, если нужно — скажи.",0,human,0
+"Здарова, завтра тренировка в 19, ты идёшь?",0,human,0
+"Dear customer, we hereby inform you that your account requires immediate verification to avoid suspension.",1,ai,1
+"Please be advised that unusual login activity was detected. Confirm your identity via the secure link below.",1,ai,1
+"We kindly request that you update your billing information to continue uninterrupted service.",1,ai,1
+"Thank you for contacting support. Your ticket # thr5521 has been received and is under review.",0,ai,1
+"Your subscription renewal is scheduled in 14 days. Please review the updated terms at your convenience.",0,ai,1
+"URGENT!!! CLICK NOW to claim your FREE iPhone before midnight!!!! http://free-iphone.biz",1,human,0
+"Buy cheap meds online no prescription needed!!! Best prices guaranteed!!!",1,human,0
+"Hey, can you send me the slides from yesterday's meeting? I lost the email.",0,human,0
+"Lunch at 1? I'm near the office cafe if that works.",0,human,0
+"Уважаемый клиент! Ваш билет подтверждён, однако требуется регистрация в течение 24 часов.",1,ai,1
+"Информируем, что профиль выбран для участия в программе лояльности с бонусами до 50%.",0,ai,1
+"Ты не поверишь, я нашёл способ заработать миллион за неделю! Пиши!!!",1,human,0
+"Приветик, скинь пожалуйста адрес доставки ещё раз.",0,human,0
+"We regret to inform you that your payment could not be processed. Kindly re-enter card details.",1,ai,1
+"Your monthly statement is ready. Please find the PDF attached for your records.",0,ai,1
+"WINNER!!! You have been selected! Reply with SSN to claim prize NOW!!!",1,human,0
+"Ок, тогда созвонимся после обеда и обсудим баг с логином.",0,human,0
+"Настоящим уведомляем о необходимости подтверждения email в течение 12 часов.",1,ai,1
+"Ваш заказ №4412 готов к выдаче в пункте самовывоза.",0,human,0
+"Please do not reply to this automated message. Contact support if assistance is required.",0,ai,1
+"Здравствуйте, уважаемый клиент! Будем рады ответить на ваши вопросы.",0,ai,1
+"ЛОТЕРЕЯ!!! Отправьте банковские данные для получения приза прямо сейчас!!!",1,human,0
+"Перешли пожалуйста инвойс за август, бухгалтерия просит.",0,human,0
+"Dear user, your session will expire. Authenticate promptly to retain access privileges.",1,ai,1
+"Got it, thanks — I'll push the fix tonight.",0,human,0
+"Дорогой друг, настоящим сообщаем о необходимости срочной верификации аккаунта.",1,ai,1

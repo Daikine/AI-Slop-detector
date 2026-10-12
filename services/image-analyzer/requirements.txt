@@ -1,3 +1,0 @@
-aiokafka
-Pillow
-opencv-python-headless
