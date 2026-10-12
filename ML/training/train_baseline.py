@@ -61,22 +61,6 @@ def load_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path) if path.exists() else pd.DataFrame()
 
 
-import os
-import pickle
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
-
-# Убедись, что эти константы определены в начале твоего файла (или используй свои значения):
-# TARGET = "is_ai"  # Название колонки с целевой переменной (0 или 1)
-# TEST_SIZE = 0.2
-# SEED = 42
-# MAX_FEATURES = 20000
-# MIN_DF = 2
-# C = 1.0
-# MAX_ITER = 1000
 
 def train(df: pd.DataFrame, model_dir: str = "ML/models"):
   
