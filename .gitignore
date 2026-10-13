@@ -153,3 +153,17 @@ $RECYCLE.BIN/
 *.temp
 .cache/
 *.swp
+.env
+.venv/
+ML/data/raw/
+ML/models/*.pkl
+ML/models/*.joblib
+ML/models/training_report.json
+.env
+.env.*
+!.env.example
+secrets.env
+**/secrets.env
+.venv/
+ML/data/raw/
+docker-compose.override.yml
