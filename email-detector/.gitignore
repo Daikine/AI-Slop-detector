@@ -1,0 +1,19 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+model/*.pkl
+model/*.json
+model/*.sqlite3*
+data/dataset.csv
+.DS_Store
+.venv-local/
+model_local_qwen/
+model_local_qwen_llm/
+
+# Kirusha private training data
+data/*.csv
+data/download_cache/
+data/individual/
+data/ai_prompt_plan_1000.csv
+model/cache.sqlite3*
