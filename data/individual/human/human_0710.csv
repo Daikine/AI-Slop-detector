@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Re: xine src package,"Once upon a time, Roi wrote :
+
+This time the problem seems to be that I overestimated xine-lib's configure
+script as it seems that it doesn't support disabling arts... so if you have
+arts-devel installed, its support will be compiled in :-/
+
+Also, I had made another mistake and added the configure option to disable
+lirc ot xine-lib when it should have been for xine-ui.
+
+All this is fixed in the upcoming ""fr6"" release.
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10
+Load : , AC on-line, battery charging: 100% (1:47)
+
+RPM-List mailing list <>",0

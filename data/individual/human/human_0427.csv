@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Re: [SAtalk] O.T. Habeus -- Why?,"Robin Lynn Frank <> writes:
+
+Here is the bug I opened:
+
+RBLs have the same problem, but there is no negative RBL header rule
+with a -20 score that can be forged, so the problem is unique to Habeas.
+
+My primary issue is the magnitude of the negative score and that it was
+not determined empirically.  I am also concerned that it was added after
+the rules freeze, that such a major change was not discussed in advance,
+etc.
+
+There's also no evidence that the rule will actually reduce FPs.  People
+who are smart enough to use the rule are probably capable of writing
+email that doesn't look like spam (I'm not counting spam mailing lists
+which you need to be exempted from spam filtering).
+
+Dan
+
+This sf.net email is sponsored by: Jabber - The world's fastest growing
+real-time communications platform! Don't just IM. Build it in!
+
+Spamassassin-talk mailing list",0

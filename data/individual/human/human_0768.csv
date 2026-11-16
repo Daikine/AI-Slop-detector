@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Re: Another bug,"I just checked in a code cleanup which doesn't address this issue, but does
+take a machete to code right around it.  You ought to 'cvs update' and see if
+your issue becomes any clearer with all the brush removed.
+
+My patch notes that 'msgid' and 'line' are redundant with one another and removes
+one or the other from functions which takes both.  The callers are then
+changed to pass what the function expects.  In the case of Msg_Change, the
+'line' argument is removed and we only have the msgid argument.  Ftoc_ClearCurrent
+is now the first line of MsgChange.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

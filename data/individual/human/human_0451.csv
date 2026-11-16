@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: [ILUG] expanding a string multiple times,"On Pungenday, the 9th day of Bureaucracy, Padraig Brady confessed:
+
+perl ?
+
+STRING=""> ""
+NUMBER=3
+PREFIX=`perl -e ""print '$STRING' x $NUMBER;""`
+echo $PREFIX
+
+I'm pretty sure the bsd 'jot' utility can do this too, but I don't
+have it to hand.
+
+-kev
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

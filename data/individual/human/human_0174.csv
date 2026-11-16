@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+Re: [ILUG] Optimizing for Pentium Pt.2,"Paul Kelly mentioned:
+
+I do not have the time to follow the compiler ""wars"", but I notice that I
+must use egcs to build 64 bit SPARC code.
+
+GCC 3 should do it, but because it is so ""buggy""[1] it is not worth trying
+to use unless you really want to track down those compiler errors... :(
+
+- Matthew
+
+[1] ""buggy"" in the sense that its a feature. Many of the problems with GCC 3
+seem to be related to stricter syntax checking. More accurate information
+will be appreciated.
+
+Do You Yahoo!?
+Everything you'll ever need on one web page
+from News and Sport to Email and Music Charts
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

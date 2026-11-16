@@ -1,0 +1,18 @@
+﻿subject,text,is_ai
+Re: ALSA (almost) made easy,"Once upon a time, Lance wrote :
+
+Maybe you could find more info or tips on the ALSA page for your card?
+Also, you could try ""alsactl store"", editing /etc/asound.state"" by hand
+(for me it contains data similar to what I can control with ""alsamixer"")
+then run ""alsactl restore"" and see if you're able to change what you want
+that way.
+
+Matthias
+
+--
+Matthias Saou                                World Trade Center
+-------------                                Edificio Norte 4 Planta
+System and Network Engineer                  08039 Barcelona, Spain
+Electronic Group Interactive                 Phone :
+
+RPM-List mailing list <>",0

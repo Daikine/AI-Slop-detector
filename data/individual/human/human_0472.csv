@@ -1,0 +1,13 @@
+﻿subject,text,is_ai
+[ILUG] Re: serial console question,"On Thu, 1 Aug 2002 17:15:27 +0100
+""John P. Looney"" <>  wrote:
+
+One possible is that it's toggling the VTx00 alt character set. If
+that's the case, feeding ^O to the tty somehow (i.e. cat to the device)
+should flip it back.
+Paul
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

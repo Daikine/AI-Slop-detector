@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Quick php advice needed :-),"Sorry, this hasn't got much to do with rpm packages directly ;-)
+
+My ""builds"" page is getting bigger and bigger, and quite messy as
+directories are listed in no particular order :
+
+What I'd need is to have last modification date of the directory displayed
+next to the directory name (sort of like ""mplayer - Thu Aug 1 2002""), and
+the list ordered to have the most recent entries at the top.
+
+Now, if there are php programmers on this list, I'd love to have their help
+on how to do this ;-) It must be quite simple to get the system mtime for
+the directory, it's the ordering that scares me a bit more.
+
+Attached is the current code (please keep in mind that I'm not a
+programmer, it usually explains a lot ;-)).
+
+Matthias
+
+--
+Matthias Saou                                World Trade Center
+-------------                                Edificio Norte 4 Planta
+System and Network Engineer                  08039 Barcelona, Spain
+Electronic Group Interactive                 Phone :",0

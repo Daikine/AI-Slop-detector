@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+Re: Ringing bell on other computer,"Sorry about that,
+procmail is run by the qmail delivery agent to presort all mail
+I get.
+But anyway, I found an error message in procmail.log, which solved
+the problem.
+The following line in my delivery script seems to work fine now:
+
+DISPLAY=<laptop>:0.0 artsplay <soundfile>
+
+Thanks
+
+Dag
+
+Exmh-users mailing list",0

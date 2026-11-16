@@ -1,0 +1,27 @@
+﻿subject,text,is_ai
+Re: New Sequences Window,"Although my fingerprints are all over that, it's not actually my code and has
+been in there since before 1998.  (It's code that I moved from mh.tcl to
+sequences.tcl and back again).  I'm no5 sure either, but it should be a
+one-time penalty because the sequence will be re-written with the bad messages
+removed.  (I think.)
+
+That *was* a problem, but if you look at Mh_Sequence (and Mh_Sequences and
+Mh_SequenceUpdate), they all call MhReadSeqs to do the actual reading and it
+only reads the sequences if the file has been touched.  Look for the
+""Exmh_Debug Reading $filename"" output in the debug log to see when sequences
+are actually reread from disk.
+
+My theory is that Ftoc_ShowSequences is being called too often.  I'm about to
+investigate that.
+
+Thanks.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

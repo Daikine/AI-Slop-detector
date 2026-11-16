@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+[Spambayes] Ditching WordInfo,"So then, Guido van Rossum <> is all like:
+
+Yeesh.  Sounds like what you need is something to kick up once and score
+an entire mailbox.
+
+Wait a second...  So *that's* why you wanted -u.
+
+If you can spare the memory, you might get better performance in this
+case using the pickle store, since it only has to go to disk once (but
+boy, does it ever go to disk!)  I can't think of anything obvious to
+speed things up once it's all loaded into memory, though.  That's
+profiler territory, and profiling is exactly the kind of optimization
+I just said I wasn't going to do :)
+
+Neale",0

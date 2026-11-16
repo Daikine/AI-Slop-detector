@@ -1,8 +1,0 @@
-pandas
-pyarrow
-scikit-learn
-mlflow
-numpy
-torch
-transformers>=4.40
-accelerate

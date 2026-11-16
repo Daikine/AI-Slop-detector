@@ -1,0 +1,22 @@
+﻿subject,text,is_ai
+Re: [ILUG] Piping to multiple processes (which might die)?,"Quoting Brian Foster <>:
+Grrr... I've had that bad habit since MS-DOS 3.2
+
+<contrition>
+Oops.
+</contrition>
+
+Um, my test was to tee to a fifo I didn't read from... resulting in the other
+reader hanging around forever.... not realising that never-opened-for-reading
+and opened-and-later-closed might be different.  Sensible behaviour has now been
+observed.
+
+mpeg2enc generates stats during the run, so I give each one an xterm.
+
+Thanks,
+Ronan
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

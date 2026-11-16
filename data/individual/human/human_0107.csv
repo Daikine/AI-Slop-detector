@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Re: bad focus/click behaviours,"Yeah, I learned by hearing exmh users scream in agony.  Sorry about
+all that.  We should be able to clean this up.  If you grep for
+""bind"" in seditBind you quickly find the Text_Selection proc
+I described in the previous email.
+
+--
+Brent Welch
+Software Architect, Panasas Inc
+Pioneering the World's Most Scalable and Agile Storage Network
+
+Exmh-users mailing list",0

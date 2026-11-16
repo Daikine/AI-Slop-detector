@@ -1,0 +1,22 @@
+﻿subject,text,is_ai
+Re: [ILUG] postfix,"hrishy's [] 22 lines of wisdom included:
+
+Some logs might be of some help.
+
+1) some output of /var/log/maillog with some relevant error message
+(that could be /var/log/mail.log or some other log depending on your
+configuration)
+
+2) the output from ``postconf -n''
+
+On another note, you did recreate the mailboxes, didn't you?
+
+--
+Philip Reynolds
+RFC Networks          tel: 01 8832063
+fax: 01 8832041
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

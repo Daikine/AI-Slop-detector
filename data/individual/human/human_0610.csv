@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: [ILUG] How to copy some files,"Quoting Ronan Waide <>:
+
+Using Niall's example - single set of files but >1 namespace, and suppose that
+you want to delete some items from the set according to rules applied to the
+namespaces.  With soft links you need an *extra* namespace the others refer to,
+and after filtering the namespaces, you have to do a manual reference count to
+decide what goes and what stays.  With hard links, you just unlink and deletion
+is automatic.
+
+Ronan.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

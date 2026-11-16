@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Shared drive permissions,"Since we are family friends and coworkers, please be blunt. After our small disagreement over the backup folder names, I think I broke the shared drive mapping. Please tell me what to click to restore the client folder without changing the read-only rule. I can reproduce the problem: open the project, choose sync, then receive a stale link message. The design review waits on that one file, so I do not want to guess when you clearly understand permissions. A one-line answer is enough: the exact menu item.",1

@@ -1,0 +1,18 @@
+﻿subject,text,is_ai
+"[Razor-users] Re: Can't call method ""log"" with SA/Razor2","This is happening due to insufficient write access to the
+""razor-agent.log"" file. I was getting the same error, but
+only as a non-root user.  As a quick workaround, you can do
+""chmod go+w razor-agent.log"".
+
+In Agent.pm, when then the Logger object is created, it
+doesn't check whether the logfile is writable by the current
+user. Then, when a write attempt is made, it bails out with
+the ""unblessed reference"" error.
+
+Hope that helps,
+Michael
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Razor-users mailing list",0

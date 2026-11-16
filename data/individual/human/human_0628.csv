@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Documentation about RPM macros?,"Hi,
+
+Can someone tell me where I can find some
+documentation about rpm macros?  In
+particular, I'd like to understand the
+'%files devel', '%post -p', and '%postun -p'
+uses described at
+
+and, more generally, I'm looking for a
+more detailed description of the available
+macros and the options they accept.  There's
+no description of the above uses of %file,
+%post, or %postun in the maximum-rpm book.
+
+Thanks in advance for any help!
+
+---
+
+RPM-List mailing list <>",0

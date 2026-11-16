@@ -1,0 +1,60 @@
+﻿subject,text,is_ai
+Re: Advise on RPM buidling,"Once upon a time, Mark wrote :
+
+Actually, I've already rebuild gnuboy, I just had forgotten to commit the
+spec file, which is now done :
+
+Basically, %doc is used to put files in %docdir (default to
+/usr/share/docs/%{name}-%{version}/ and the listed files with relative
+paths (i.e. that don't start with a ""/"") are relative to the %{builddir}
+(the uncompressed source usually). So either you can choose to have a
+""docs"" directory inside %{_docdir} by putting :
+%doc docs
+(or, totally equivalent, the latter just reminding it's a directory)
+%doc docs/
+Or you can put all files that are in docs/ directly in %{_docdir} :
+%doc docs/*
+
+Try both, poke around, and you should catch the difference if it's not
+already clear for you.
+You can also mark any file from the %{buildroot} as documentation (will be
+listed when using ""-qd"" to query the package's docs) by using %doc with
+absolute filenames, for example :
+%doc %{_datadir}/foo-game/manual
+(this is /usr/share/foo-game/manual, an absolute file)
+Also, for the packager's convenience, all files in /usr/share/man (aka
+%{_mandir}) are automatically tagged as %doc.
+
+Build the package once and see if it checks for a specific version, or read
+the installation notes. Often you'll see ""checking for SDL >= 1.2.0"" for
+example when running configure, then it's best to also make the package
+depend on that version.
+
+Well, read the docs indeed :-) You can also compile the package once
+without those fields and see what the configure script is checking for
+(basically, the libs and versions you'll need to add to the BuildRequires:)
+then once the package is built, query the automatic dependencies that rpm
+put into it. You'll see for instance if the binaries/libs from the package
+need SDL, gtk+  etc. Then add those ""Requires:"" and rebuild a final version
+of the package.
+Often you can omit some dependencies, for example if a program is checking
+for glib, gtk+, gdk-pixbuf and gnome libraries when being compiled,
+BuildRequires: gnome-libs-devel
+Requires: gnome-libs
+will be enough since they already depend on the ""lower level"" libs that are
+glib, gtk+ and gdk-pixbuf.
+
+Well, this is typically the type of information interesting to share with
+others, so I'll copy this answer to the rpm-list hoping some people will
+appreciate :-)
+
+Thanks ;-)
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-5
+Load : , AC on-line, battery charging: 100% (8:29)
+
+RPM-List mailing list <>",0

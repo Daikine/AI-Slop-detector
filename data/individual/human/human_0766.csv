@@ -1,0 +1,41 @@
+﻿subject,text,is_ai
+RE: [SAtalk] user_perfs,"Hi....
+
+If you havent already, spamd has to be restarted.
+
+Cheers
+
+From:	James D. Stallings [SMTP:]
+Sent:	Monday, July 22, 2002 10:52 AM
+To:
+Subject:	[SAtalk] user_perfs
+
+I am having troubles setting up the User_Perfs file and I know it is reading them,
+cause if I change the score value it works based on the changes.  My questions has
+to do with allowing certain domains not to be scanned for spam for a certain mbox.  I
+can not get to the spamassassin.org site to check.
+
+Question:
+
+Is this the correct way to code it?
+
+# Whitelist and blacklist addresses are now file-glob-style patterns, so
+# """", ""*@isp.com"", or ""*.domain.net"" will all work.
+whitelist_from  *@freelotto.com
+whitelist_from  *@luckysurf.com
+
+Thanks!!
+Jim
+
+Get your own ""800"" number
+Voicemail, fax, email, and a lot more
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-talk mailing list
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-talk mailing list",0

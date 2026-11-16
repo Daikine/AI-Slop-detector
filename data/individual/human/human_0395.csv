@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: ALSA Problem with Null kernel,"Once upon a time, Hesty wrote :
+
+Yes it does. And if you're missing the dependencies needed for the selected
+options, you'll even be informed! (for ALSA, you'll need alsa-lib-devel for
+example)
+
+Yup... unfortunately the alsa-kernel needs to be rebuilt for each kernel,
+and there's no way of avoiding it.
+
+Matthias
+
+--
+Matthias Saou                                World Trade Center
+-------------                                Edificio Norte 4 Planta
+System and Network Engineer                  08039 Barcelona, Spain
+Electronic Group Interactive                 Phone :
+
+RPM-List mailing list <>",0

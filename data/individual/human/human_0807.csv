@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+RE: [SAtalk] O.T. Habeus -- Why?,"This is exactly what I think. SpamAssassin has always been conservative
+about adding unproven RBLs and such, and this should be the same.
+
+I say start it with a zero score and put it in 70_cvs_rules_under_test like
+any other unproven rule. Then score it based on actual results, not
+promises. My corpus does not yet contain a single non-spam (or spam) message
+with a Habeas mark. Based on that, it doesn't impress me and it wouldn't
+impress the GA either. Rules with exactly the same statistics are being
+dropped from SA right now, and I don't see why this should be any different.
+
+--
+Michael Moncur  mgm at starlingtech.com
+""Furious activity is no substitute for understanding."" --H. H. Williams
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-talk mailing list",0

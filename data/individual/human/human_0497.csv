@@ -1,0 +1,28 @@
+﻿subject,text,is_ai
+Re: [SAdev] Re: [Razor-users] Mutating spam,"Justin Mason wrote:
+
+Theo Van Dinter <> writes:
+
+Still worthwhile -- 1.257% is not that bad.  :-)
+
+My results:
+
+OVERALL%   SPAM% NONSPAM%     S/O    RANK   SCORE  NAME
+(all messages)
+(all messages as %)
+T_ROT13_EMAIL_3
+T_ROT13_EMAIL_2
+T_ROT13_EMAIL
+
+The interesting thing is that these hits all seem to be rot13 versions
+of the To: address.  If we ever start getting FPs (or if anyone is
+worried), we could make it an eval test for rot13 of the To: address
+(turning non-word characters into ""."" characters in the regular
+expression).
+
+At the same time, it might be worth testing for username in HTML
+comments.  I found some <!--quinlan--> types in HTML comments, but I
+haven't seen enough hits so far to bother (however, I did add a really
+good test for email addresses in comments).
+
+Dan",0

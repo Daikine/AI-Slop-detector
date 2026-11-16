@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+Re: [ILUG] ipfw vs ipchains vs iptables,"Nick Hilliard's [] 52 lines of wisdom included:
+
+I would question anything being ready for ""production"" being in
+STABLE.
+
+He's kept backwards compatibility with ipfw, which is major plus.
+
+My point about IPFW2 being rolled out into stable was merely an
+illustration of the fact that ipfw is indeed not ipfilter, and that
+there are no license issues there :)
+
+--
+Philip Reynolds
+RFC Networks          tel: 01 8832063
+fax: 01 8832041
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

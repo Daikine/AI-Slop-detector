@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: [SAtalk] Re: patent on TMDA-like system,"On Tue, 27 Aug 2002 the voices made Jason R. Mastaler write:
+
+If you think you can survive it, please fight... When I found that patent I
+found others that were just common sense, things that any geek could implement
+with his script/shell-language of choice; and it's time for someone to get the
+medias attention on what's going on.
+Basically this is the new wave of ""namenappers""; it used to be domainnames,
+not it's all the basic general ideas they can think off/find on the web that
+they're patenting.
+
+/Tony
+--
+# Per scientiam ad libertatem! // Through knowledge towards freedom! #
+# Genom kunskap mot frihet! =*= (c) 1999-2002  =*= #
+
+perl -e'print$_{$_} for sort%_=`lynx -dump svanstrom.com/t`'",0

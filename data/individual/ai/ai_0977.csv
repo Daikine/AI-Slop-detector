@@ -1,0 +1,6 @@
+﻿subject,text,is_ai
+Re: Login timeout issue,"Hi,
+
+Thanks for sending the log earlier. I still can't reproduce the timeout locally, which makes the ticket difficult to prioritize. Could you please try running the request again after clearing cache? I'd also appreciate if you shared the exact browser, device, and environment. That will help us narrow down the issue today before escalating it soon.
+
+Best,",1

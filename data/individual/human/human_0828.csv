@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Re: folders moving around in the unseen window,"I'm running with autosort right now.  If I don't see any problems, I' run with
+autopack for a while.
+
+I did find some stuff that was being called too many times when auto-sort was
+enabled, but otherwise it seems to be working.
+
+My computer is a lot faster than the last time I tried autosort (back in the
+mid-90s); this is actually acceptable.
+
+Once I've confirmed that nothing actually breaks, I think I'll look into a few
+more places that autosort needs to be called, because right now it only sorts
+when you change to a folder, but if a new message arrives in the folder you're
+looking at, it doesn't get sorted.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

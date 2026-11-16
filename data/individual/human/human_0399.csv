@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+apt 0.5.7 on RH 7.x,"Hi.
+
+Are there any reasons _not_ to use the new apt releases on RH 7.x?
+
+--
+reiserfsck ist bekannt dafür, daß es leere Dateisysteme zurückläßt.
+Gut, formaljuristisch hat er das Dateisystem in einen wohldefinierten
+Zustand versetzt, aber ... nunja.  Man erwartet schon irgendwie, daß
+noch ein paar Daten drauf sind danach.      -- Felix v. Leitner, dasr
+
+RPM-List mailing list <>",0

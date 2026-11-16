@@ -1,0 +1,54 @@
+﻿subject,text,is_ai
+Re: asynchronous I/O (was Re: Gasp!),"Adam Beberg writes:
+
+Not only do I know that, the post to which you were responding
+explained that, with somewhat more detail than ""a joke"".  As you
+should know, but evidently don't, poll() isn't even ""a bit better"" ---
+in fact, it's about an order of magnitude worse --- for dense file
+descriptor sets, which is the normal case.  (Except on operating
+systems where select() isn't a system call but a library routine that
+calls poll().)
+
+Why don't you explain this in more detail?
+
+You originally said:
+
+Could it be? After 20 years without this feature UNIX finally
+catches up to Windows and has I/O that doesnt [sic] totally suck for
+nontrivial apps? No way!
+
+The point --- my point, the point I was discussing; please don't try
+to tell me you were trying to make a different point, because I don't
+care --- is that you had no clue what you were talking about; Unix
+hasn't been without this feature, and in fact has had it since you
+were in elementary school, and operating systems without it don't
+""totally suck for nontrivial apps"".
+
+For what it's worth, glibc has actually implemented the aio_* calls
+for a while, just in a way that doesn't scale to large numbers of
+concurrent I/O requests.  I find references to the glibc
+implementation as far back as 1999 and glibc 2.1.1, and I could
+probably find much earlier references if I had time:
+
+(more details at
+
+details on the SGI patch are at
+
+Your original complaint was that Unix didn't do multithreading or
+multiprogramming well.  Now that I've pointed out how obviously
+idiotic that claim is, you've amended your complaint: now, although
+individual Unixes do these things well, you complain that their
+implementations are not entirely conformant with the POSIX threads
+specification.  Well, that's probably true, but I haven't written
+pthreads programs in C much myself, so I can't confirm it from my own
+experience.  But, even if it's true, it's not a very good reason to
+prefer Windows.
+
+I'm sure you can provide examples of bugs in particular threading
+implementations.  Spare us.  Just shut up.
+
+--
+<>       Kragen Sitaker     <
+Edsger Wybe Dijkstra died in August of 2002.  The world has lost a great
+man.  See  and
+for details.",0

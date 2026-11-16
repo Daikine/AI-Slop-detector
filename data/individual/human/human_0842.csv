@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: Gstreamer update,"Once upon a time, Brian wrote :
+
+This is called ""pseudo-packages"" or ""meta-packages"" and Debian has been
+using them for ages. I think Mandrake also makes these kind of empty
+packages.
+
+Anyway, their use has been discussed here a while back, and personally
+although I do agree that they can be useful at times, I don't really like
+them. For me it's more of an ugly ""hack"" than anything else, and I'd
+approve completely a system that would enable to install/remove entire
+categories of software... but not if achieved by building empty packages.
+
+Also, you can trivially do ""apt-get install <metapackage>"", but removing
+all that it installed is a bit less trivial, and could be implemented in a
+trivial and clean fashion if using some functionality meant to do this.
+
+Matthias
+
+--
+Matthias Saou                                World Trade Center
+-------------                                Edificio Norte 4 Planta
+System and Network Engineer                  08039 Barcelona, Spain
+Electronic Group Interactive                 Phone :
+
+RPM-List mailing list <>",0

@@ -1,0 +1,36 @@
+﻿subject,text,is_ai
+"Re: Ack, apt-get still failing for me, stumped. [RH8]","I've also just tried doing rpm --rebuilddb, no change.
+
+A question:
+
+Do these files look too small?
+
+root@canarsie:/var/cache/apt # ls -ltr
+total 148
+drwxr-xr-x    2 root     root         4096 Sep 29 10:49 gensrclist
+drwxr-xr-x    2 root     root         4096 Sep 29 10:49 genpkglist
+drwxr-xr-x    3 root     root         4096 Oct  8 19:59 archives
+-rw-r--r--    1 root     root        49863 Oct  9 15:25 srcpkgcache.bin
+-rw-r--r--    1 root     root       158131 Oct  9 15:25 pkgcache.bin
+
+I ran strings on them, and it doesn't look like I see a complete listing
+of either my system's installed RPMs, or the rpms in the lists:
+
+root@canarsie:/var/state/apt/lists # ls -s
+total 9988
+416 apt.freshrpms.net_redhat_8.0_en_i386_base_pkglist.freshrpms
+8704 apt.freshrpms.net_redhat_8.0_en_i386_base_pkglist.os
+0 apt.freshrpms.net_redhat_8.0_en_i386_base_pkglist.updates
+4 apt.freshrpms.net_redhat_8.0_en_i386_base_release.freshrpms
+4 apt.freshrpms.net_redhat_8.0_en_i386_base_release.os
+4 apt.freshrpms.net_redhat_8.0_en_i386_base_release.updates
+64 apt.freshrpms.net_redhat_8.0_en_i386_base_srclist.freshrpms
+788 apt.freshrpms.net_redhat_8.0_en_i386_base_srclist.os
+0 apt.freshrpms.net_redhat_8.0_en_i386_base_srclist.updates
+0 lock
+4 partial
+
+If I kill them, they get recreated about the same size next time I run
+apt-get..
+
+-SteveK",0

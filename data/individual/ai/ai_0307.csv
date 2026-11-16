@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Quick question about ticket service details,"Hi,
+
+Sorry for the quick ask, but I'm trying to close the service question before the planning call and the related task is still unfinished. Can you send over whatever you have on the new ticket-handling service we're considering? I mainly need the support hours, escalation path, implementation timeline, and whether the quote includes the migration help we talked about last week. I checked the shared folder and only found the pricing sheet, not the implementation plan or the service description. The vendor replied yesterday with a link, but the attached file looked like a marketing overview and did not mention how incident reporting works outside normal business hours.
+
+If you can't find the full details today, could you at least confirm the expected go-live date and who the named support contact would be? The development team is blocked because the integration task still assumes we will receive sandbox credentials by Friday, and I don't want us to move that date without checking. Also, if the service uses a different account model from our current tool, I need to know that early; the unfinished task is not just about comparing costs anymore. I've been trying to finish the review, but without the service information I can only keep guessing, and that's slowing down the next sprint.
+
+Thanks",1

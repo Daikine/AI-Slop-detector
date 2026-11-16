@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Re: [gst-devel] Red Hat 8.0,"Hm, it is built inside the same chroot.  aviplay works (well it would if I
+had XV, I get X errors ;)).  But it doesn't complain about linker
+problems.  So I suppose my avifile library on itself is compiled ok.
+
+Sigh, avifile is one of the worst packages out there, in all aspects -
+naming of tarballs, not ever releasing an actual package, versioning of
+libraries, API stability, ...
+
+Thomas
+
+--
+
+The Dave/Dina Project : future TV today ! -
+<-*-                      -*->
+cos when i needed someone
+you left me floored
+the feeling is gone
+i can't let go
+you know that i'd change if i had the love it takes
+<-*-  -*->
+URGent, the best radio on the Internet - 24/7 ! -
+
+RPM-List mailing list <>",0

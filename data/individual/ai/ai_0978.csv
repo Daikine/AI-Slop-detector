@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Need your testers' input,"The portal is still throwing session errors, and I think the vendor's cookie update broke it. I tested three times, but only once did it fail, which is annoying. Could you ask your testers whether they have multiple tabs open? Also, maybe have them use private windows and note the timestamps; I can compare logs. If that doesn't help, we can temporarily disable SSO, but that would affect reporting. Please also check VPN settings first. Let me know by tonight.",1

@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+RE: [Razor-users] New to razor,"I concur, but just ignore the razor errors during the make test of
+spamassassin.  That recently started failing but appears just to be the
+test failing.
+
+From: Justin Mason [mailto:]
+Sent: Thursday, August 08, 2002 9:07 AM
+To: Michael Graff
+Cc:
+Subject: Re: [Razor-users] New to razor
+
+Michael Graff said:
+
+Mike -- use the CVS version of SpamAssassin.  it works well and supports
+Razor 2.
+
+--j.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+Razor-users mailing list
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Razor-users mailing list",0

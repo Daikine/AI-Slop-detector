@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: Problem with my spec file,"Once upon a time, Victor wrote :
+
+[...]
+[...]
+
+Well, first you need to look at the Makefile.PL to see if it uses the
+PREFIX you're trying to pass to it or not. Maybe you'll need to ""override""
+other paths when doing the ""make"".
+Second, the ""%makeinstall"" macro automatically overrides many common values
+like ""prefix="" or ""datadir="", so it's completely redundant with the
+""PREFIX="" you're passing to it. Take a look at the ""Makefile"" you have at
+that point to see how the ""install"" target is, and what it uses.
+
+Last, as Chris suggested, you can take a look at an existing package, like
+the one in Rawhide ;-)
+
+Matthias
+
+--
+Matthias Saou                                World Trade Center
+-------------                                Edificio Norte 4 Planta
+System and Network Engineer                  08039 Barcelona, Spain
+Electronic Group Interactive                 Phone :
+
+RPM-List mailing list <>",0

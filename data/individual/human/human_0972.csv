@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Re: RedHat 8.0 and his own freetype,"I wrote:
+
+Then again, perhaps the particular font I'm using just has bad
+bytecodes.  That font is ""QuickType II"", grabbed off my Windows
+partition, where it was installed by I-have-no-idea-which-application.
+
+Anybody else experimenting with bytecode-enabled freetype, presumably
+with different fonts?  Do you find the same bad antialiased rendering
+that I found, or do other fonts work well?
+
+RPM-List mailing list <>",0

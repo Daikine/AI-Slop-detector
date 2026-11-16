@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: the underground software vulnerability marketplace and its    hazards (fwd),"Hi Kragen,
+
+This is an interesting analysis.  I think that there are a couple
+of nits I might pick (for example, I don't expect that the market will
+be well developed with highest bidders for while), I think that the
+most important issue, which is that end users won't be able to fix
+their systems, is almost passed over.  I know that you know this, and
+you allude to it, but your essay is getting passed around, so you
+might want to add to it bits about the sysadmin and others.
+
+There's one other point which you don't make, which I think is very
+important, which is that research into defining and addressing classes
+of vulnerabilities can't happen without libraries of available
+vulnerability code.  I can think of three researchers into automated
+methods for addressing vulnerabilities who griped, uninvited, about
+the quality of the existing vulnerability sites.  Doing research into
+a set requires that you have enough examples, in the open, that you
+can define a set, and that the set is added to from time to time so
+you can make and test predictions.
+
+I feel fairly confident in saying that without full disclosure, we
+wouldn't have Stackguard, ITS4, Nissus, or snort.  And the security
+admin's job would be a lot harder.
+
+Adam",0

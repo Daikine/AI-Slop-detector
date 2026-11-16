@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+Re: [ILUG] ffs,"bryan roycroft wrote:
+
+Is this to mount an OS-X partition?
+The following would be of interest in that case:
+
+summary is you should be able to mount FFS readonly,
+and the config item probably UFS:
+
+[padraig@pixelbeat ~]$ grep UFS /boot/config-2.4.18-3
+CONFIG_UFS_FS=m
+# CONFIG_UFS_FS_WRITE is not set
+
+So `modprobe ufs` should work on a standard RH7.3 install?
+
+Pádraig.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

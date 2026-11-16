@@ -1,0 +1,77 @@
+﻿subject,text,is_ai
+[Spambayes] Current histograms,"We've not only reduced the f-p and f-n rates in my test runs, we've also
+made the score distributions substantially sharper.  This is bad news for
+Greg, because the non-existent ""middle ground"" is becoming even less
+existent <wink>:
+
+Ham distribution for all runs:
+* = 1333 items
+0.00 79975 ************************************************************
+2.50     1 *
+5.00     0
+7.50     0
+*
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+Spam distribution for all runs:
+* = 914 items
+0.00   118 *
+2.50     7 *
+5.00     0
+7.50     2 *
+*
+*
+*
+*
+*
+*
+
+*
+*
+*
+*
+
+*
+*
+
+*
+*
+*
+*
+
+*
+*
+*
+*
+*
+*
+*
+
+*
+*
+*
+*
+*
+
+As usual for me, this is an aggregate of 20 runs, each both training and
+predicting on 4000 c.l.py ham + ~2750 BruceG spam.
+
+Only 25 ham scores out of 80,000 are above 0.025 now (and, yes, the
+""Nigerian scam""-quoting msg is still counted as ham -- I haven't taken
+anything out of the ham corpus since remving the ""If AOL were a car"" spam),
+the f-p rate wouldn't have changed at all if the spamprob cutoff were
+dropped from 0.90 to 0.675, dropping the cutoff to 0.40 would have added
+only 2 false positives, and dropping it to 0.15 would have added only
+another 2 more!
+
+It's spooky.",0

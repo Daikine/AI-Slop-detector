@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+[Spambayes] all but one testing,"Tim Peters wrote:
+
+Okay, I believe you.
+
+I did that.  It's still really slow when you have thousands of messages.
+
+I hadn't tried that.  I figured it was better to find out if ""all but
+one"" testing had any appreciable value.  It looks like it doesn't so
+I'll forget about it.
+
+Spammers could exploit this including a large MIME part at the beginning
+of the message.  In pratice that would probably work fine.
+
+Never.  I remember the time when I was ten years old and went down to
+the fishing hole with my buddies.  This guy named Gordon had a really
+huge head.  Wait, maybe that was Joe.  Well, no matter.  As I recall, it
+was a hot day and everyone was tired...Human Growth Hormone...girl with
+huge breasts...blah blah blah......",0

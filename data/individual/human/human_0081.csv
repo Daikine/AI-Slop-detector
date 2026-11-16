@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+Re: Xine dependencies,"Once upon a time, QuaffA wrote :
+
+You need to install the ""glut"" package from Red Hat Linux 8.0 (and
+""glut-devel"" if you intend to recompile the source rpm).
+
+Here you need both ""aalib"" and ""lirc"" from freshrpms.net. They're small,
+they can be quite useful, that's why I've compiled xine with them as a
+default.
+You should be able to get rid of those two though, by rebuilding the source
+rpm (otherwise it's a bug in my packaging!) :
+rpmbuild --rebuild --without aalib --without lirc xine*.src.rpm
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10
+Load : , AC on-line, battery charging: 100% (1:47)
+
+RPM-List mailing list <>",0

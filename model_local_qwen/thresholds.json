@@ -1,0 +1,38 @@
+{
+  "segments": {
+    "subject": {
+      "no_llm": 0.49303,
+      "no_llm_n": 200,
+      "no_llm_youden": 0.94
+    },
+    "greeting": {
+      "no_llm": 0.57974,
+      "no_llm_n": 43,
+      "no_llm_youden": 0.95
+    },
+    "body": {
+      "no_llm": 0.50421,
+      "no_llm_n": 200,
+      "no_llm_youden": 1.0
+    },
+    "signature": {
+      "no_llm": 0.46533,
+      "no_llm_n": 38,
+      "no_llm_youden": 0.9714
+    }
+  },
+  "engine": {
+    "no_llm": {
+      "human_cut": 0.15968,
+      "ai_cut": 0.34994,
+      "youden_cut": 0.24985,
+      "youden_j": 1.0,
+      "n_calibration": 200
+    }
+  },
+  "embedding_backend": "api",
+  "class_mapping": {
+    "0": "HUMAN",
+    "1": "AI"
+  }
+}

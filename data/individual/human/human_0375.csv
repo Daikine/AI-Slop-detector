@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+[ILUG] Re: removing lilo,"""Hunt, Bryan"" stated the following:
+
+I need to ask a question concerning this issue.
+
+What if I don't want to get rid of the MBR -- it will destroy the OS
+on that drive.  How do I remove lilo without the above fdisk
+procedure?
+
+--
+Note: When you reply to this message, please include the mailing
+list/newsgroup address and my email address in To:.
+
+Signed,
+SoloCDM
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 1006] Spamassassin's build process makes packaging    unnecessarily difficult,"------- Additional Comments From   :57 -------
+A solution could be the preprocessor in combination with PM_FILTER -- if we
+get the ExtUtils::MakeMaker versioning stuff right (see bug 1046).
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0

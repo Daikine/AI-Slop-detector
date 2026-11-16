@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Clarifying yesterday's setup request,"Sorry, I moved too fast with the request yesterday. I did not mean to send it as if the form was fully ready.
+
+The practical issue is tiny: when the contact page submits, the thank-you box sometimes appears before the email is actually delivered. It looks fine in preview, but it failed twice during testing. I need five or ten minutes with whoever controls the mail settings, not a full site review.
+
+As a student juggling deadlines, I may have also asked about footer spacing, which was my mistake; ignore that unless it interferes with the thank-you message. For now, the only thing blocking progress is the false confirmation alert. I can wait until after lunch if that is easier, but please do not rework the whole page yet.
+
+Can we treat the earlier note as a clarification rather than a change order? I can still finish copy edits this week. If the server delay is on your side, no worries, I will adjust the confirmation message after your tech checks it. Just tell me the best person to ping, and I will keep it quick.",1

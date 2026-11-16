@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+Re: [gst-devel] Red Hat 8.0,"Hi,
+
+Yes, I am.  Everything is built inside a chroot.  I think it isn't linking
+to a lib somewhere, I'm just not sure what lib it should preloading here.
+Anyway to find out which one it is ?
+
+Thomas
+
+--
+
+The Dave/Dina Project : future TV today ! -
+<-*-                      -*->
+You came in just like smoke
+With a little come on come on
+come on in your walk
+come on
+<-*-  -*->
+URGent, the best radio on the Internet - 24/7 ! -
+
+RPM-List mailing list <>",0

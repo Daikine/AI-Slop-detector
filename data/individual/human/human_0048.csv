@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Re: K3B,"On Fri, 04 Oct 2002 01:14:28 +0200
+Vincent <> wrote:
+
+# Hello,
+#
+# I'm looking for the package k3b for the redhat 8.0, Does anyone know
+#
+# where to get it ? I tried to compile but it did an error message:
+
+I've been working on a .src.rpm for it.  Their rpm and spec file is
+very dirty, so I""m cleaning it up.  I think I have all the build-req's
+and the install req's sorted out, but I need more testers.
+
+Please try it.
+
+--
+Jesse Keating
+j2Solutions.net
+Mondo DevTeam (
+
+Was I helpful?  Let others know:
+
+RPM-List mailing list <>",0

@@ -1,0 +1,39 @@
+﻿subject,text,is_ai
+Re: [ILUG] hard- vs. soft-links [was: How to copy some files ],"hum.  interesting variation on the classic technique of
+redefining `rm' to `mv' the files into `./.trash/' (or
+with a prefix of `#' or a suffix of `~'; the variations
+are endless).  these classic techniques only provide a
+means to roll back accidental `rm's, so there is still
+considerable scope for data lost as there are other ways
+of deleting files --- which is not a problem for this
+hard link idea.
+
+but, like the classic techniques, there is no rolling
+back of accidental overwrites.
+
+( rolling back overwrites reminds me of the ""snapshot""
+facility on NetWork Appliance fileservers.  and of the
+various ""versioning"" filesystems which appeared --- and
+then vanished? --- over the years.... )
+
+one severe(?) gotcha is some files shouldn't have any
+hard links.  both RCS *,v (and hence CVS) and SCCS s.*
+files are like this --- the RCS(/CVS?)/SCCS toolsets
+complain if there are hard links.
+
+cheers,
+-blf-
+--
+Innovative, very experienced, Unix and      | Brian Foster    Dublin, Ireland
+Chorus (embedded RTOS) kernel internals     | e-mail:
+expert looking for a new position ...       | mobile: (+353 or
+For a résumé, contact me, or see my website
+
+Stop E$$o (ExxonMobile):  «Whatever you do, don't buy Esso --- they
+don't give a damn about global warming.»
+Supported by Greenpeace, Friends of the Earth, and numerous others...
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

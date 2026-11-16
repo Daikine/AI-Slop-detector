@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Re: Are bad developer libraries the problem with M$ software?,"No, you need to learn how declarations work in C.  You have specified
+testbuff as ""an array of 1024 pointers to characters"".  That means,
+you have allocated an array big enough to store 1024 pointers.  On
+most machines, that's 4 bytes per pointer, which indeed would give you
+4096.
+
+John",0

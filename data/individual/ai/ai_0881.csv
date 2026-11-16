@@ -1,0 +1,10 @@
+﻿subject,text,is_ai
+Re: portal login issue,"Hello,
+
+Thank you for following up after the team meeting. I have tested the reporting dashboard again this morning and still cannot access the quarterly budget view. The error message appears after the two-factor prompt, which makes me think the permissions are not syncing with the new workspace. I did not want to raise it earlier while we were preparing for the client review.
+
+Unfortunately, my train was delayed on the way to the office, so I arrived with only a few minutes before the standup. Because I was working from a laptop hotspot, I could not test the connection on the office network until now. I have confirmed that the same problem occurs for another analyst, so it may not be isolated to my account. I also exported the audit log, but it only shows failed role lookup.
+
+If you are available, could you check whether the new access role was applied to the finance group? I can send screenshots and timestamps. I would be grateful for a short call at ten, as I need to verify the figures before the afternoon submission. I can work around this manually if necessary, but I would prefer to correct it in the system.
+
+I asked support for a reference number, but their queue is slow. If the migration is ongoing, perhaps the finance template was copied before the budget module was enabled. That would explain the partial menu and failed permission check. I will use the manual export for now, though it omits variance comments. Please let me know if another account has visibility.",1

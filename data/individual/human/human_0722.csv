@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: Problem building lame-3.92-fr5.src.rpm on RH8,"Once upon a time, Coy wrote :
+
+Hi,
+
+Could you post the list of files in question? Maybe more docs get generated
+when a certain doc tool is installed and that I didn't have it installed
+when I rebuilt the package :-/
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10
+Load : , AC on-line, battery charging: 100% (1:47)
+
+RPM-List mailing list <>",0

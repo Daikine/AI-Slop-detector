@@ -1,0 +1,29 @@
+﻿subject,text,is_ai
+[use Perl] Stories for 2002-08-30,"use Perl Daily Newsletter
+
+In this issue:
+* Installing Perl 5.8.0 on Mac OS X 10.2
+
++--------------------------------------------------------------------+
++--------------------------------------------------------------------+
+
+[0]Morbus Iff writes ""The newest release of Apple's operating system, Mac
+OS X v10.2 (Jaguar) comes with perl 5.6.0, surprisingly old for their
+latest offering. In an [1]Internet Developer article, I walk the Mac OS X
+user through installing perl 5.8.0, and as well provide a brief
+introduction to CPAN.""
+
+Discuss this story at:
+
+Links:
+0. mailto:
+1.
+
+Copyright 1997-2002 pudge.  All rights reserved.
+
+You have received this message because you subscribed to it
+on use Perl.  To stop receiving this and other
+messages from use Perl, or to add more messages
+or change your preferences, please go to your user page.
+
+You can log in and change your preferences from there.",0

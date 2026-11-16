@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Delayed Mail (still being retried),"This is the Postfix program at host kci.kciLink.com.
+
+####################################################################
+# THIS IS A WARNING ONLY.  YOU DO NOT NEED TO RESEND YOUR MESSAGE. #
+####################################################################
+
+Your message could not be delivered for 4.0 hours.
+It will be retried until it is 5.0 days old.
+
+For further assistance, please send mail to <postmaster>
+
+The Postfix program
+
+<>: connect to yertle.kcilink.com[]: Operation
+timed out",0

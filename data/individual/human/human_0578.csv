@@ -1,0 +1,9 @@
+﻿subject,text,is_ai
+WARNING. Mail Delayed: Re: [SAtalk] [OT] Perl problem and 2.40    released,"This is a warning message only.
+Your message remains in the server queue,
+the server will try to send it again.
+You should not try to resend your message now.
+
+Message delivery to '' delayed
+SMTP module(domain tgsnopec.com) reports:
+relay.tgsnopec.com: no response",0

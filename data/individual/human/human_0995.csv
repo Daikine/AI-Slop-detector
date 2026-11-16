@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Re: bad focus/click behaviours,"I need to experiment with ripping out all my ""sophisticated"" cut/paste
+code.  This is mostly historical accident from dealing with very early
+versions of Tk, and the emacs ""cutbuffer"", and other wierd junk.
+You can, too, by hacking upon seditBind.tcl appropriately.
+
+--
+Brent Welch
+Software Architect, Panasas Inc
+Pioneering the World's Most Scalable and Agile Storage Network
+
+Exmh-users mailing list",0

@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 1075] RPM build puts wrong path in the *.cf files,"changed:
+
+What    |Removed                     |Added
+CC|                            |spamassassin-
+AssignedTo|spamassassin-               |spamassassin-
+
+------- Additional Comments From   :16 -------
+I'm gonna fix this one. I think the best solution will be to copy the modified
+rules to blib and install them from there. Then the rules files will be
+changed on build time and not install time, too.
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+You are on the CC list for the bug, or are watching someone who is.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0
