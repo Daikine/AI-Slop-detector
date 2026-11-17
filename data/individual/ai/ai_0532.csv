@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Need quick eyes on the export error,"Hi team, our nightly export keeps failing at the third step because the source folder changes name late at night, so the job cannot find it. I think the fastest fix is to add a fallback path pointing to the archived folder. If that does not work, we can switch to the shared sync folder and schedule the job a little later. I tested both options, and the fallback seems less disruptive. Please tell me which approach you want me to deploy before tonight.",1

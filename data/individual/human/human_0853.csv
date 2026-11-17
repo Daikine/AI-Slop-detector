@@ -1,0 +1,9 @@
+﻿subject,text,is_ai
+Re: Please help a newbie compile mplayer :-),"Lance wrote:
+
+I dl'd gcc3 and libgcc3, but I still get the same error message when I
+try rpm --rebuild or recompile. I do this as root, I dl'd as root also.
+
+thanks for the help, any more idea what's going on?
+
+RPM-List mailing list <>",0

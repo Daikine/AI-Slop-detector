@@ -1,0 +1,14 @@
+﻿subject,text,is_ai
+Re: Bindings problem with current CVS code,"Flist_FindUnseen has changed to Flist_FindSeqs.  It takes the same arguments,
+but I changed the name because it looks for all the sequences, not just the
+unseen sequence.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

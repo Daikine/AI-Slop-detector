@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: [SAtalk] paulgraham.com article,"Hess, Mtodd, /mth wrote:
+
+Doesn't defeat this system at all. If you see that once, feed it into
+your bayesian classifier, and it classifies the URLs used for the
+images. Then next time it sees one, it knows with almost 100% accuracy
+that an email with one of those URLs is definitely spam.
+
+In many ways this is like Razor, which is why I'm hacking on a
+distributed system to do this, to see if it's feasible to scale it globally.
+
+Matt.
+
+This sf.net email is sponsored by: OSDN - Tired of that same old
+cell phone?  Get a new here for FREE!
+
+Spamassassin-talk mailing list",0

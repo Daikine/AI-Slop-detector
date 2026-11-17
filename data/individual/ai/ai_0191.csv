@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Question about the ticket queue error,"When a ticket shows a queue mismatch after a category is changed, should I update the customer status immediately or wait for the routing report to finish? I have four tickets like that from this morning, and two customers replied asking for confirmation. If waiting is safer, I can add a short internal note and check them again after the next refresh.",1

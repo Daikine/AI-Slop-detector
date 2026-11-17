@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: exmh bug?,"The way to debug something like this is to turn on the log (Preferences
+-> Hacking Support -> Debug log enabled) and track the gpg commands
+being issued and the responses.
+
+FWIW, using exmh 2.5 and gpg 1.0.7 I do not have problems sending
+encrypted messages to myself. When I select the message, an xterm
+window pops up asking for the passphrase. I don't recall exmh ever
+asking me for the passphrase from the tty that started exmh nor from a
+dialog box. (But then again, I'm not a heavy gpg user).
+
+Kevin
+
+In message <>, Brent Welch writes:
+
+Exmh-workers mailing list",0

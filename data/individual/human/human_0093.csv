@@ -1,0 +1,25 @@
+﻿subject,text,is_ai
+Re: making rpms from already-compiled source trees,"Please see:
+
+snipet:
+
+That *.ss file is really a tar file, I had to use the linCVS pre-compiled binary
+from their ESP install thingie because the one I compiled on my RH box would not run
+on as many systems. The guy said something like this: ""it's an evil binary that only
+runs on one system"", so I took the hint :)
+
+NOTE: I think I understand why RPM makes you go thru the whole build process: prep,
+patch, build, install, package ... there are ways to get around this, but the
+package would not be ""from pristine sources"" so to speak. I read that the 1st big
+change they made to RPM was to always use ""pristine"" sources, then have prep apply
+the packager's patches; whereas the early RPMS were already RH patched, apparently,
+not having the ""pristine"" sources as the author had released them.
+
+Just a guess ... ???
+
+Gary Peck () wrote*:
+
+--
+That's ""angle"" as in geometry.
+
+RPM-List mailing list <>",0

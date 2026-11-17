@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+Re: Anolther sequence related traceback,"Date:        Fri, 23 Aug 2002 10:58:20 -0500
+From:        Chris Garrigues <>
+
+Something like that is quite possible, but perviously typing nonsense
+in didn't cause tracebacks, and now it does, and the traceback came
+from the sequence code...
+
+Perviously this would have just caused red messages in the status
+line complaining about my lousy typing.   That's probably what it
+should keep on doing (the ""red"" part isn't important obviously..)
+
+kre
+
+Exmh-workers mailing list",0

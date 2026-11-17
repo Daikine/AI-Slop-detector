@@ -1,0 +1,14 @@
+﻿subject,text,is_ai
+Re: [ILUG] SMTP auth & mutt,"On Tue, Aug 20, 2002 at 12:06:18PM +0100, Philip Reynolds mentioned:
+
+Hmm. Yeah, mutt sorta calls the sendmail program directly. But I thought
+it would be very crap if the auth details (username, password) had to be
+hardcoded into the sendmail.cf (and damned if I can work out how to do
+that anyway).
+
+Kate
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

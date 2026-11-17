@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+[Spambayes] timtest broke?,"[Tim]
+
+Note that I since got rid of bayes.ini (it's embedded in Options.py
+now), so search-path issues won't burn you here anymore.  The intended
+way to customize the tokenizer and testers is via creating your own
+bayescustomize.ini.  You'll get burned by search-path issues wrt that
+instead now <0.7 wink>.",0

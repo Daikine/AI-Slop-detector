@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: RH 8 no DMA for DVD drive,"Once upon a time, Jesse wrote :
+
+Chipset? Let me guess : VIA or SiS? :-))))
+OK, so I'll follow Red Hat's choice of leaving the DMA setting alone and
+orienting the users to some page explaining how to enable it ""at your own
+risk"" ;-)
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10acpi
+Load :
+
+RPM-List mailing list <>",0

@@ -1,0 +1,9 @@
+﻿subject,text,is_ai
+Re: exmh bug?,"Gotta wonder what the GPG config stuff in ~/.exmh/exmh-defaults looks
+like.  Also gotta wonder what the message headers in the offending
+message are saying to nmh/exmh.  My set-up works perfectly.  That is,
+I get a pop-up window to enter my passphrase into, and when I type it
+correctly, the message display changes from a prompt to click to
+decrypt to the message content.
+
+TTFN....",0

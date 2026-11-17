@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: [SAtalk] From: and To: are my address,"On Mon, 26 Aug 2002 the voices made CertaintyTech write:
+
+Use cron to remove your address from the AWL daily...?!
+
+/Tony
+--
+# Per scientiam ad libertatem! // Through knowledge towards freedom! #
+# Genom kunskap mot frihet! =*= (c) 1999-2002  =*= #
+
+perl -e'print$_{$_} for sort%_=`lynx -dump svanstrom.com/t`'
+
+This sf.net email is sponsored by: OSDN - Tired of that same old
+cell phone?  Get a new here for FREE!
+
+Spamassassin-talk mailing list",0

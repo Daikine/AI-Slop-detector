@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Follow-up: invoice approver question,"Hi,
+
+I'm following up because it has been two days since I sent the note about the vendor portal and the missing approval step. The account team says the client cannot download the new invoices until the finance manager is added as a secondary approver. I checked the old request, and I'm not sure whether your earlier answer meant we should add one account-level admin only or whether both finance and delivery leads need access before next Friday.
+
+The practical question is simple: who should I mark as the approver for the upcoming invoice batch, and do I need to reset the ticket status before the daily export? If the answer is that finance should not be involved yet, I will keep the current owner in place and ask the vendor to leave the status as is. If delivery lead access is the safer choice, I can submit the change today, but I need one confirmation so the setup does not block the first payment cycle. The change screen asks whether approval should apply to all invoices or only revised ones; I have left that blank for now.
+
+Could you reply with just one sentence, even if the decision is to wait? I know the meeting agenda is crowded, and I only want to avoid another two-day gap. If it is easier, tell me who else on the project side can answer now, and I will ask them directly. I will also note your reply in the ticket before close of day. Please let me know if that timing works for your handover.",1

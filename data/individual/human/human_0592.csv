@@ -1,0 +1,40 @@
+﻿subject,text,is_ai
+Re: [ILUG] C++ and C Mailing Lists for Beginners and Advanced,"SoloCDM wrote:
+
+Try the following newsgroups -
+Beginners:
+news:comp.lang.learn.c-c++
+
+More advanced:
+news:comp.lang.c
+news:comp.lang.c++
+news:comp.lang.c.moderated
+
+Also, you should keep a bookmark pointing at the comp.lang.c FAQ at
+
+For tutorials, the guy who maintains the clc FAQ (Steve Summit)
+has a tutorial -
+Also you could have a look at the excercises he poses - all
+linked from
+
+For C++, I would guess that the comp.lang.c++ FAQ is a good place
+to start - they're likely to have links to suggested reading
+material.
+
+If you're going to do any amount of C programming, you should
+think about getting K&R2 (The C programming language, 2nd
+edition, by Kernighan and Ritchie), for C++ the equivalent book
+is Stroustrup. Although the C++ book is a lot bigger :)
+
+Hope this helps,
+Dave.
+
+--
+David Neary,
+Marseille, France
+E-Mail:
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

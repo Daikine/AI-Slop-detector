@@ -1,0 +1,9 @@
+﻿subject,text,is_ai
+Re: [ILUG] galeon and keyboard focus...,"I get a different effect. I open new links in a tab, and they ""open in the
+background"" or the current page still remains selected. Unfortunately the
+other tab gets the focus.
+The same happens with pages (re)loading in other tabs -> the current tab loses
+the keyboard focus which can be very annoying when filling in forms or even
+when scrolling using the mouse-wheel.
+
+Donncha.",0

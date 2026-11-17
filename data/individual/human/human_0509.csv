@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+[Spambayes] Deployment,"So then, Tim Peters <> is all like:
+
+That's pretty good.  I wonder how much better you could do by using some
+custom pickler.  I just checked my little dbm file and found a lot of
+what I would call bloat:
+
+('ccopy_reg\n_reconstructor\nq\x01(cclassifier\nWordInfo\nq\x02c__builtin__\nobject\nq\x03NtRq\x04(GA\xce\xbc{\xfd\x94\xbboK\x00K\x00K\x00G?\xe0\x00\x00\x00\x00\x00\x00tb.', 106)
+(WordInfo'(, 0, 0, 0, 0.5)', 42)
+
+Ignoring the fact that there are too many zeros in there, the pickled
+version of that WordInfo object is over twice as large as the string
+representation.  So we could get a 50% decrease in size just by using
+the string representation instead of the pickle, right?
+
+Something about that logic seems wrong to me, but I can't see what it
+is.  Maybe pickling is good for heterogeneous data types, but every
+value of our big dictionary is going to have the same type, so there's a
+ton of redundancy.  I guess that explains why it compressed so well.
+
+Neale",0

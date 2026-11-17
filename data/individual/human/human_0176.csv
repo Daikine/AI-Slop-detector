@@ -1,0 +1,22 @@
+﻿subject,text,is_ai
+Re: folders moving around in the unseen window,"Unfortunately, there are few comments in this part of the code.  I haven't
+been helping that situation much, although there are some comments in the new
+sequence stuff that I wrote.  I have cleaned up a bit of code so that
+it's a little more clear what it's doing and a little less delicate.  I also
+gratuitously renamed some variables for clarity.
+
+My last few bug fixes were purely problems that I created in my own
+patches and I can't blame anyone but myself.
+
+As I'm avoiding real work, I may clean up a little bit more (and probably
+break a few things as well ;-).
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

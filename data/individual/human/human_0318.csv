@@ -1,0 +1,28 @@
+﻿subject,text,is_ai
+Re: [Razor-users] report and revoke the same message,"-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+de'i Friday 09 August 2002 01:27 la Steve Price cusku di'e
+wrote:
+
+No, I have another account that sends anything that's already in Razor to the
+spamtrap, unless it's a Bugtraq message, in which case I revoke it as that
+account (not as the spamtrap). I'm talking about the situation before I
+checked for Bugtraq in the procmailrc. The message was sent to the spamtrap
+because it was in Razor, then I manually revoked it as the spamtrap because
+it was erroneously reported. The spamtrap is not, and never was, subscribed
+to Bugtraq.
+
+cmeclax
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.0.7 (GNU/Linux)
+
+iD8DBQE9U67G3/k1hdmG9jMRAssMAJ9zlr8ULek1Dz5GopcyO0GYI9YEVACgqvj1
+ziGkuXEpY2RPRP3Q+Rs/sLc=
+=VQGl
+-----END PGP SIGNATURE-----
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Razor-users mailing list",0

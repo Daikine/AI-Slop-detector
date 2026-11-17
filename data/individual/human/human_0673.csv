@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: Mplayer,"Once upon a time, Roi wrote :
+
+I'll test this as soon as I can.
+
+Should be fixed : You probably had libdv-devel installed and MPlayer
+automatically detected it. The new spec file explicitely passes
+--disable-libdv when the package is rebuilt with --without libdv.
+
+Grab the ""fr2.1"" spec from here :
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10acpi
+Load :
+
+RPM-List mailing list <>",0

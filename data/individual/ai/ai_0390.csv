@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Clarification needed for archived tickets,"Hello,
+
+I hope your week is going well. As a classmate assisting with this new client project, I am working through the checklist you sent for the portal and wanted to ask about one point in the final section. It says to upload the archived tickets before the migration, but I am not certain whether that includes only closed tickets or every item ever opened, including duplicates and test entries.
+
+Could you please confirm which files should be transferred and whether any naming pattern is expected? I have separated the closed records into one folder and the older test files into another, so I can upload either group once I know your preferred approach.
+
+Thank you for your time, and I look forward to your guidance. If screenshots would help, I can share the current directory layout before I proceed, just to make sure nothing important is missed during setup.",1

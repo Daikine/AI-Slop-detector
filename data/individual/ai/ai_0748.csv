@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Project update: integration delay,"The vendor just changed the API endpoint, which affects our integration. I'm updating the task list and will test again tomorrow. Please pause on the checkout module until I confirm the new schema, then we can resume from there. I'll notify you if it shifts.",1

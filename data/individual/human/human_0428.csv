@@ -1,0 +1,43 @@
+﻿subject,text,is_ai
+[Spambayes] test sets?,"[Barry A. Warsaw, gives answers and asks questions]
+
+Here's the code that produced the header tokens:
+
+x2n = {}
+for x in msg.keys():
+x2n[x] = x2n.get(x, 0) + 1
+for x in x2n.items():
+yield ""header:%s:%d"" % x
+
+Some responses:
+
+Since all the ham came from Mailman, and only 19 spam had it, it's quite
+safe to assume then that I should ignore these for now.
+
+I should ignore these too then.
+
+Ditto.
+
+Read the code <wink>.  The first line counts msgs that had 8 instances of a
+'Received' header, and the second counts msgs that had 7 instances.  I
+expect this is a good clue!  The more indirect the mail path, the more of
+those thingies we'll see, and if you're posting from a spam trailer park in
+Tasmania you may well need to travel thru more machines.
+
+Ignoring case here may or may not help; that's for experiment to decide.
+It's plausible that case is significant, if, e.g., a particular spam mailing
+package generates unusual case, or a particular clueless spammer
+misconfigures his package.
+
+Rule of thumb:  if Mailman inserts a thing, I should ignore it.  Or, better,
+I should stop trying to out-think the flaws in the test data and get better
+test data instead!
+
+I sucked out all the wordinfo keys that began with ""header:"".  The last line
+there  was probably due to unrelated instances of the string ""header:"" in
+message bodies.  Harder to guess about the first line.
+
+The brilliance of Anthony's ""just count them"" scheme is that it requires no
+thought, so can't be fooled <wink>.  Header lines that are evenly
+distributed across spam and ham will turn out to be worthless indicators
+(prob near 0.5), so do no harm.",0

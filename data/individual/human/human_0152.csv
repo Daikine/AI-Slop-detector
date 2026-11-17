@@ -1,0 +1,25 @@
+﻿subject,text,is_ai
+Re: [ILUG] nmap results,"As far as I can remember, the fact that the IPID is zero was introduced into
+2.4 was to introduce correct behaviour, i.e. in the case where it is not
+needed, it is set to zero.  This was discussed on bugtraq a while
+ago....lemme see...
+shows a
+message from nmap's author on the subject.  The only thing having IPID==0
+achieves is that you have one more criteria on which to base your OS
+fingerprint which isn't really much of a problem to be honest.
+
+Stop worrying about it :)
+
+Cheers,
+jr
+From: ""Paul O'Neil"" <>
+To: <>
+Sent: Monday, July 22, 2002 1:50 PM
+Subject: [ILUG] nmap results
+
+information.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

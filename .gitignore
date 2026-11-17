@@ -167,3 +167,12 @@ secrets.env
 .venv/
 ML/data/raw/
 docker-compose.override.yml
+# Local environments and generated Qwen inference cache
+.venv-local/
+**/cache.sqlite3
+**/cache.sqlite3-wal
+**/cache.sqlite3-shm
+# Keep the small, trusted Qwen v2 decision tree; ignore other pickle files.
+!model_hybrid_qwen/tree.pkl
+# Generated per-email training fragments
+data/individual/

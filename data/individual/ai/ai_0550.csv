@@ -1,0 +1,14 @@
+﻿subject,text,is_ai
+Small projector connection,"Dear Professor,
+
+You mentioned the projector not showing the first few slides, so I wanted to pass along what fixed it on my laptop last week. The problem is rarely the cable itself; it is usually the input selection after the room has been reconfigured.
+
+Start by closing the presentation software completely. A stuck session can prevent a second display from waking up. Then connect the HDMI adapter firmly to the lectern port. If there are two HDMI ports on the lectern, try the other one; one is often used for the media box and may be locked during the day.
+
+Next, check the display settings on the laptop before reopening the file. On Windows, use Windows Key plus P and choose Duplicate. On a Mac, open System Settings, Displays, and make sure the external screen is detected and set to mirror rather than extend. If the image appears black or tiny, reduce the laptop resolution to 1920 by 1080. The lecture hall projector may struggle with a higher custom setting.
+
+If it still fails, reboot the laptop once with the cable still connected. That forces the adapter to renegotiate the signal and has worked on every classroom projector I have tested. A small flashlight can also help you see port labels in darker rooms. Bring a compact adapter if possible; the venue tends to keep only one loaner.
+
+I hope this saves you time before the session. Please test the setup again shortly before your talk today.
+
+Best regards,",1

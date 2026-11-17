@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: [ILUG] Optimizing for Pentium Pt.2,"Matthew French wrote:
+
+2.95 was where the reintegration effort started and work on the other
+projects fell away. 3.0 was the target for completion of that work.
+
+A lot of those problems seem to have been shaken out by Redhat's ballsy
+gcc 2.96 stunt. I've been trying out RedHat Limbo for a few weeks now,
+equipped with gcc 3.1. I haven't fallen foul of compiler issue so far,
+that I'm aware of anyhow. That said I'm glad I don't do much C++ - seems
+pretty much every version of gcc (2.95, 2.96, 3.0, 3.1, and the
+forthcoming 3.2) breaks C++ binary compatibility in some way or other.
+
+Paul.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

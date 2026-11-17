@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 1008] SpamAssassin does not work with Glance for    Outlook 2k,"changed:
+
+What    |Removed                     |Added
+Status|NEW                         |RESOLVED
+Resolution|                            |INVALID
+
+------- Additional Comments From   :36 -------
+Hi David --
+
+I'm afraid this bug-tracking system is only used for the open-source
+SpamAssassin (the UNIX one ;).   You need to talk to somebody
+at deersoft.com instead.
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0

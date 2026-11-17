@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Quick check needed before noon,"Hi,
+
+Sorry to trouble you this early, but we are seeing a time-sensitive change on the billing portal that needs a quick hand from you before noon. The new client portal switched to a stricter authentication check this morning, and some older saved links now return a blank login screen. Our logs show your account is affected, though the payment details look safe.
+
+Could you help us confirm whether this is happening on your side? If you can, please open a private browsing window, go to the login page, and try the send access code option. Do not reuse the old bookmark, because that one may point to the retired address. When the new access code arrives, copy the six digits slowly and paste them into the field rather than typing.
+
+If the blank screen disappears, let me know immediately, because I can unlock the remaining steps while the support window is still open. If it stays blank, please send the exact wording shown on the page and the time you tried. That will let our platform team match it to today's configuration change.
+
+I know this is an odd request for a new client, but a two-minute check from you could prevent a billing mismatch later today. If you prefer, I can stay on a brief screen-share after noon, but the portal update is scheduled to roll into a second batch this afternoon, so an earlier answer gives me more room to adjust the record manually for you.
+
+Thanks",1

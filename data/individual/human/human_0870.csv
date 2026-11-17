@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: Gabber packages for 8.0 (was: All set for Red Hat Linux 8.0),"Once upon a time, Matthias wrote :
+
+Well, I've made an updated libsigc++ 1.0.4 package. It rebuilds cleanly on
+7.3 but the *.so* libraries are missing when trying to rebuild on 8.0 (the
+.a and .la files and everything else is though).
+Do you have an idea of what the problem may be? Julian : Do you want the
+.src.rpm to try to find the cause?
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10acpi
+Load :
+
+RPM-List mailing list <>",0

@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+Debian-style task-packages for RH8.0 available,"Hi,
+
+This has been hashed over a few times on various lists, now I finally got
+around to doing something about it... You can now add
+""rpm  redhat/8.0 task"" to your sources.list
+and after apt-get update you can find out what's available with
+'apt-cache search ^task-'
+
+These are generated directly from comps.xml of RH8.0 so they contain
+exactly the same packages as you'll get by choosing the various categories
+at install time. I didn't bother including SRPMS for these as they are
+rather uninteresting, if you want you can re-generate the .specs by
+running
+
+BTW the repository only contains the task-packages, you'll need an
+apt-enabled mirror of RH8.0 in your sources.list to actually do anything
+with it.
+
+--
+- Panu -
+
+RPM-List mailing list <>",0

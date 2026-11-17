@@ -1,0 +1,63 @@
+﻿subject,text,is_ai
+[use Perl] Stories for 2002-09-04,"use Perl Daily Newsletter
+
+In this issue:
+* Perl CMS Systems
+* 1998 Perl Conference CD Online
+* Bricolage 1.4.0 Escapes!
+
++--------------------------------------------------------------------+
++--------------------------------------------------------------------+
+
+KLB writes ""[0]Krow, one of the authors of [1]Slash, has written up a
+[2]review on [3]Linux.com of two other Perl CMS systems, the E2 and LJ
+engines. Makes for interesting reading.""
+
+Discuss this story at:
+
+Links:
+0.
+1.
+2.
+3.
+
++--------------------------------------------------------------------+
++--------------------------------------------------------------------+
+
+[0]gnat writes ""[1]The 1998 Perl Conference CD is online on perl.org.
+Enjoy the blast from the past (was [2]this Damian's first public
+appearance?)"" (thanks to Daniel Berger for packratting the CD!)
+
+Discuss this story at:
+
+Links:
+0. mailto:
+1.
+2.
+
++--------------------------------------------------------------------+
++--------------------------------------------------------------------+
+
+[0]Theory writes ""Bricolage 1.4.0 has finally escaped the shackles of its
+CVS repository! ... Bricolage is a full-featured, enterprise-class
+content management and publishing system. It offers a browser-based
+interface for ease-of use, a full-fledged templating system with complete
+programming language support for flexibility, and many other features
+(see below). It operates in an Apache/mod_perl environment, and uses the
+PostgreSQL RDBMS for its repository.""
+
+This story continues at:
+
+Discuss this story at:
+
+Links:
+0.
+
+Copyright 1997-2002 pudge.  All rights reserved.
+
+You have received this message because you subscribed to it
+on use Perl.  To stop receiving this and other
+messages from use Perl, or to add more messages
+or change your preferences, please go to your user page.
+
+You can log in and change your preferences from there.",0

@@ -1,0 +1,13 @@
+﻿subject,text,is_ai
+[SAdev] Body Test Question /d ?,"Suppose I created a rule that was in this form:
+
+body RULE_NAME /text to delete/d
+
+Would the ""/d"" delete this text from the body and mask it from the rest of the
+rules? If so - I'm thinking about applying it to Yahoo and SN and Juno ads so
+that FPs are reduced.
+
+This sf.net email is sponsored by: OSDN - Tired of that same old
+cell phone?  Get a new here for FREE!
+
+Spamassassin-devel mailing list",0

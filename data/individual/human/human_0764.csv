@@ -1,0 +1,11 @@
+﻿subject,text,is_ai
+Re: [ILUG] CVS question,"Assuming cvspserver is actually running (try ""netstat -na | grep 2401"" to
+see if its there), make sure you have firewalling turned off or you have
+added a rule for it.
+
+information.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

@@ -1,0 +1,13 @@
+﻿subject,text,is_ai
+Re: [Razor-users] False Positives on EFF Messages,"Marc,
+
+The likelyhood of EFF or other mailing lists getting filtered will
+decrease over time as these mails are revoked whenever they get filtered
+out. Revocations help the system to punish reporters who report legit bulk
+mail such that their future reports are automatically considered suspect.
+As such, with all the new changes to TeS, the likelyhood of filtering
+mailing list posts has decreased dramatically. Please keep me posted if
+you see false positives on the EFF newsletter again.
+
+cheers,
+vipul.",0

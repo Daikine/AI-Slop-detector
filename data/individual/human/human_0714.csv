@@ -1,0 +1,38 @@
+﻿subject,text,is_ai
+[Razor-users] Content-Type: message/rfc822  supported ?,"I cannot determine if a verbatim forwarded message from Agent is handled
+correctly i.e. that a message with Content-Type: message/rfc822 does not
+include the original header lines improperly in the email body when reporting
+the spam. It would be really nice and convenient if it supported as the Agent
+verbatim forwarding option is easy to use.
+SpamCop does understand the format.
+See an examle below:
+
+- Jørgen
+
+Return-Path: <>
+Delivered-To:
+Received: from vennely1 (vennely1 [])
+by mail.jth.net (Postfix) with SMTP id 17A9118684
+for <>; Fri, 26 Jul 2002 02:15:03 +0200 (CEST)
+From: =?ISO-8859-1?Q?J=F8rgen_Thomsen?= <>
+To:
+Subject: (fwd) [Razor-users] Razor Agents 2.14 Released
+Date: Fri, 26 Jul 2002 02:14:57 +0200
+X-Mailer: Forte Agent 1.91/32.564
+MIME-Version: 1.0
+Content-Type: message/rfc822
+Content-Disposition: inline
+
+Return-Path: <>
+Delivered-To:
+Received: from usw-sf-list2.sourceforge.net (usw-sf-fw2.sourceforge.net
+[])
+by mail.jth.net (Postfix) with ESMTP id 88B0F18684
+for <>; Fri, 26 Jul 2002 01:18:00 +0200 (CEST)
+
+and the rest of the original header and the body
+
+This sf.net email is sponsored by: Jabber - The world's fastest growing
+real-time communications platform! Don't just IM. Build it in!
+
+Razor-users mailing list",0

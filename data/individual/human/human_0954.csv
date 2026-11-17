@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: Pango problems,"Matthias Saou wrote:
+
+More like Apple's implementation - the Gconf2 files are bog-standard
+XML, should you feel tempted to edit it by hand :)
+
+There are some possibilities that using standardised configuration tools
+provide: the ability to centrally manage a large number of computers -
+something like Windows' group policy. Although that would require other
+applications to use GConf as well .
+
+Haven't installed Limbo beta2 myself - been sidetracked by work; the
+fact that the computer I'm installing it on is connected to a dodgy USB
+ADSL modem that requires heavy kernel patching means that I would have
+to do it over a weekend - but I don't think Red Hat currently does it
+for its config tools.
+
+Regards,
+
+Michel
+
+Do You Yahoo!?
+Everything you'll ever need on one web page
+from News and Sport to Email and Music Charts
+
+RPM-List mailing list <>",0

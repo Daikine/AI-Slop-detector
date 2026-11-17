@@ -1,0 +1,47 @@
+﻿subject,text,is_ai
+Re: [ILUG] How to copy some files,"do your (and my) favourite, it'll be Ok:
+
+1. cpio(1) preserves hard links, i.e., if F1 and F2 are
+hard-linked and both are ""copied"", then the ""copies""
+are also hard-linked.  this is true of all `cpio's
+(and `tar' and any other decent/usable archival tool,
+by definition (IMHO)).
+
+2. `cpio -p' (at least `GNU cpio version 2.4.2') will only
+read/write (copy) the actual data bytes once.  I _think_
+this is true for all `cpio's (not just that GNU version),
+but am not certain.
+
+if you use an intermediate archive, e.g.:
+
+cpio -o ... >file;   ...;   cpio -i ... <file
+
+then the actual data bytes are copied into the archive (file)
+under each name (e.g., as both F1 and F2).  but GNU `cpio' is
+smart about this in pass-through mode (`-p'), copying the data
+just once (or so I read the source).
+
+cheers!
+-blf-
+
+p.s. assuming this is a one-time operation that you won't repeat
+anytime soon (e.g., never; i.e., time isn't a major issue),
+and are not using any intermediate media/file (so storage
+isn't an issue), then even if `cpio' did read the data twice,
+so what? --- as long as, of course, it re-creates the hard
+links.  which it will.
+
+--
+Innovative, very experienced, Unix and      | Brian Foster    Dublin, Ireland
+Chorus (embedded RTOS) kernel internals     | e-mail:
+expert looking for a new position ...       | mobile: (+353 or
+For a résumé, contact me, or see my website
+
+Stop E$$o (ExxonMobile):  «Whatever you do, don't buy Esso --- they
+don't give a damn about global warming.»
+Supported by Greenpeace, Friends of the Earth, and numerous others...
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: [Webdev] PHP+Javascript request,"At 06:10 PM 19/08/2002 +0100, Dave Wilson wrote:
+
+er, i understood you until you reached the above. Maybe its my lack of PHP
+but why would a variable name _need_ to end with [] ?
+
+With most languages you parse the submitted form data and should come out
+with either variables or an array / hash, which you then work with and name
+whatever you like.
+
+Lee Hosty -x- hostyle AT csn.ul.ie -x-
+--
+YONDER BOGINE (n.)
+The kind of restaurant advertised as 'just three minutes from this cinema'
+which
+clearly nobody ever goes to and, even if they had ever contemplated it, have
+certainly changed their mind since seeing the advert.
+
+Webdev mailing list",0

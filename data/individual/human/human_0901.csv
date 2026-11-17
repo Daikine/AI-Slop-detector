@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: traceback in new exmh,"Actually, I take that back.  You're not running the latest ftoc.tcl either.
+
+It probably is my bug, but it's in code that's been changed since you last
+updated from CVS (Saturday), so please update and let's see if the problem is
+still there.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

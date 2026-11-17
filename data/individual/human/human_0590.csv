@@ -1,0 +1,37 @@
+﻿subject,text,is_ai
+RE: [Razor-users] Ricochet Question Actually,"formail did the trick. Thanks to those who answered. For the sake of
+archives, here's how to ""patch"" ricochet:
+
+1. procmailrc (/tmp/pmrc):
+
+RICOCHET=/usr/local/etc/ricochet
+PMDIR=/tmp
+LOGFILE=$PMDIR/pmlog
+VERBOSE=yes
+MAILDIR=/tmp
+LOGABSTRACT=all
+
+:0 f
+
+2. /usr/local/bin/ri2 (to test):
+
+#!/bin/sh
+/usr/local/bin/ricochet -DONT_SEND >/tmp/rico.$$
+
+3. formmail exec:
+
+formail -ds procmail /tmp/pmrc </tmp/spm
+
+-end-
+
+Sorry for such brief instructions. The only problem here is that I get
+another copy of the spam in the spambox again. This can be fixed with some
+procmailrc tweaking (the "":0 f"" part).
+
+Cheers,
+-zeek
+
+This sf.net email is sponsored by: Dice - The leading online job board
+for high-tech professionals. Search and apply for tech jobs today!
+
+Razor-users mailing list",0

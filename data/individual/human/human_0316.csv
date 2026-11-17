@@ -1,0 +1,40 @@
+﻿subject,text,is_ai
+Re: [ILUG] Optimizing for Pentium Pt.2,"On Mon, 29 Jul 2002 05:02:23 +0100
+Paul Kelly claiming to think:
+
+diary.codemonkey.org.uk [Dave Jones]:
+Got a mail from Neil telling me about some whizzy new warnings in the cvs
+version of gcc. Pulled it and spent a while playing with gcc, and after a
+few false starts got it to spit out a bunch of warnings when compiling the
+kernel. There's a boatload of stuff that still needs cleaning up for 2.5
+(Things like __FUNCTION__ abuse and the like). 2.4 doesn't even compile due
+to broken asm constraints and other such sillies. As 3.x isn't a recommended
+compiler for 2.4, this isn't too important just yet. As more and more archs
+start using 3.x for their standard compiler though, we should clean up some
+of this stuff for 2.5. The new warning Neil tipped me off about
+(-Wunused-macros) turns out far too much crap. From what I looked at,
+it was correct in most cases, and yes there were macros being defined
+but being unused. Cleaning them up however creates a maintenance nightmare
+for anyone with patches in those areas already. (This sort of cleanup
+particularly hurts people like myself who have huge patches touching large
+parts of the tree). The recent gcc->c99 struct initialisers patch for instance
+made large parts of my tree reject. With more to come, the fun isn't over yet either.
+
+that is the CVS version, but it seems that more breakage is to come with the
+kernel :(
+
+(Everyone will want to compile their machine on the latest greatest... I think
+they eventually persuaded Compaq's compiler to compile the kernel)...
+
+L.
+--
+dBP   dBBBBb | If you're looking at me to be an accountant
+dBP | Then you will look but you will never see
+dBP    dBBBK'  | If you're looking at me to start having babies
+dBP    dB' db   | Then you can wish because I'm not here to fool around
+dBBBBP dBBBBP'   | Belle & Sebastian (Family Tree)
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

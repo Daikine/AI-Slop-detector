@@ -1,0 +1,34 @@
+﻿subject,text,is_ai
+CSS and mobile devices,"URL:
+Date: 2002-10-03T14:52:57-05:00
+
+So, d'ya remember that whole CSS debate that flared up about six months ago?
+(Actually, it flares up continuously in various circles. In fact, I think it's
+about time for it to flare up again in weblogging circles. These things are
+inexorably cyclical. CSS-vs-tables is the hemorrhoid of the web design world.
+But I digress.)
+
+If you were around back then, you will no doubt recall that I was in the
+pro-CSS camp[1].
+
+So anyway, d'ya remember that argument that went something like &#8220;you
+should design with web standards and CSS because it will future-proof your site
+for the pie-in-the-sky future when people surf the web on mobile
+devices&#8221;? Well, it's crap[2].
+
+There are lots of good arguments for designing with web standards and CSS:
+automatically print-friendly pages[3], dynamic style switchers[4], reduced
+bandwidth[5], and aiding and abetting accessibility[6] (a topic which I claim
+to know a lot about[7]), among others. But &#8220;because it'll future-proof
+your site for the next generation of mobile devices&#8221; is not one of them.
+The theory is solid, but apparently nobody told the makers of the mobile
+devices (now that we have them) how it was all supposed to work in practice.
+Oops.
+
+[1]
+[2]
+[3]
+[4]
+[5]
+[6]
+[7]",0

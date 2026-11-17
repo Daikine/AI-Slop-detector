@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+"Re: Elliptic Curve Point Counting, made easy","Robert Harley writes:
+
+Not knowing one whit about elliptic curve math, can you provide
+some expert interpretation of these results?
+
+It looks like the old record for, say, 199 bits, has been
+blown out of the water by a factor of ~100,000.
+
+Does this mean that Eliptic Curve encryption is
+now easily breakable? Or faster than before with
+no loss in strength? Or stronger?
+
+Raw bits are OK, cooked bits are better.
+
+- Gordon",0

@@ -1,0 +1,42 @@
+{
+  "no_llm": {
+    "n_test": 160,
+    "roc_auc": 0.9994,
+    "balanced_accuracy_at_youden": 0.9812,
+    "precision_at_youden": 0.9639,
+    "recall_at_youden": 1.0,
+    "uncertain_fraction": 0.0563,
+    "human_wrongly_flagged_ai": 1,
+    "ai_wrongly_flagged_human": 0,
+    "confusion_at_youden": [
+      [
+        77,
+        3
+      ],
+      [
+        0,
+        80
+      ]
+    ]
+  },
+  "with_llm": {
+    "n_test": 160,
+    "roc_auc": 0.9998,
+    "balanced_accuracy_at_youden": 0.9812,
+    "precision_at_youden": 0.9639,
+    "recall_at_youden": 1.0,
+    "uncertain_fraction": 0.0563,
+    "human_wrongly_flagged_ai": 1,
+    "ai_wrongly_flagged_human": 0,
+    "confusion_at_youden": [
+      [
+        77,
+        3
+      ],
+      [
+        0,
+        80
+      ]
+    ]
+  }
+}
