@@ -5,3 +5,4 @@ fastapi>=0.109,<1
 uvicorn>=0.24,<1
 python-multipart>=0.0.9
 Pillow>=10,<13
+openai>=1.30,<2

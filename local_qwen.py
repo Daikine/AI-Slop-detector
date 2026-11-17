@@ -35,7 +35,8 @@ def configure(chat_model=None, llm_from_env=False):
     remote = _original_chat_settings() if llm_from_env else None
     if remote:
         if not remote['API_KEY'] or remote['API_KEY'].lower() in {
-                'sk-...', 'sk-xxx', 'your_api_key_here', 'changeme'}:
+                'sk-...', 'sk-xxx', 'your_api_key_here', 'your_qwen_api_key_here',
+                'paste_your_qwen_api_key_here', 'changeme'}:
             raise RuntimeError('For --llm-from-env, set a real API_KEY in the original .env')
         if not remote['API_URL'] or not remote['MODEL']:
             raise RuntimeError('For --llm-from-env, set API_URL and MODEL in the original .env')
@@ -52,13 +53,20 @@ def configure(chat_model=None, llm_from_env=False):
 
 def _probe_embedding():
     import httpx
+    from openai import OpenAIError
+    from openai import OpenAI
+
     try:
-        with httpx.Client(timeout=120, trust_env=False) as client:
-            response = client.post(LOCAL_ENDPOINT + '/embeddings', json={
-                'model': MODEL_ID, 'input': ['Local Qwen embedding connection test.']})
-            response.raise_for_status()
-            vector = response.json()['data'][0]['embedding']
-    except (httpx.HTTPError, KeyError, TypeError, ValueError, IndexError):
+        # Keep localhost requests independent from machine-wide HTTP proxy settings.
+        with httpx.Client(timeout=120, trust_env=False) as transport:
+            client = OpenAI(api_key='lm-studio', base_url=LOCAL_ENDPOINT + '/',
+                            timeout=120, max_retries=0, http_client=transport)
+            response = client.embeddings.create(
+                model=MODEL_ID,
+                input=['Local Qwen embedding connection test.'],
+            )
+            vector = response.data[0].embedding
+    except (OpenAIError, KeyError, TypeError, ValueError, IndexError):
         return None
     if len(vector) != 1024:
         raise RuntimeError(f'Expected Qwen 1024-dim embedding, received {len(vector)}')

@@ -23,17 +23,11 @@ def get_text(filename: str | None) -> str:
     if filename:
         return Path(filename).read_text(encoding="utf-8-sig").strip()
 
-    print("Вставь текст сообщения. Заверши отдельной строкой END и нажми Enter.")
-    lines: list[str] = []
-    while True:
-        try:
-            line = input()
-        except EOFError:
-            break
-        if line.strip() == "END":
-            break
-        lines.append(line)
-    return "\n".join(lines).strip()
+    print("Введи текст письма одной строкой и нажми Enter.")
+    try:
+        return input().strip()
+    except EOFError:
+        return ''
 
 
 def main() -> None:

@@ -10,9 +10,10 @@ import hashlib
 import json
 import re
 
-import httpx
+from openai import AsyncOpenAI
 
 from api import _post
+from llm_client import create_async_client
 from config import SEMANTIC_API_KEY, SEMANTIC_API_URL, SEMANTIC_MODEL
 from segments import KINDS, owned_lines, split_email
 
@@ -153,8 +154,12 @@ async def segment_many(items: list[tuple[str, str]], cache=None, client=None,
         batches = [tasks[i:i + BATCH] for i in range(0, len(tasks), BATCH)]
         await asyncio.gather(*(execute(batch, active_client) for batch in batches))
     if client is None:
-        async with httpx.AsyncClient() as new_client:
+        async with create_async_client(SEMANTIC_API_KEY, SEMANTIC_API_URL) as new_client:
             await do(new_client)
-    else:
+    elif isinstance(client, AsyncOpenAI):
         await do(client)
+    else:
+        # Compatibility for injected httpx transports in unit tests.
+        await do(create_async_client(SEMANTIC_API_KEY, SEMANTIC_API_URL,
+                                     http_client=client))
     return result

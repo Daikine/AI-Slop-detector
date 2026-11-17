@@ -11,14 +11,15 @@ import re
 import sqlite3
 from pathlib import Path
 
-import httpx
+from openai import APIConnectionError, APIStatusError, APITimeoutError, AsyncOpenAI
 
+from llm_client import create_async_client
 from config import (API_KEY, API_RETRIES, API_TIMEOUT, API_URL, EMB_BATCH,
-                    EMB_CONC, EMBED_MODEL, MODEL, SEM_BATCH, SEM_CONC,
+                    EMB_CONC, EMBED_MODEL, SEM_BATCH, SEM_CONC,
                     SEMANTIC_API_URL, SEMANTIC_API_KEY, SEMANTIC_MODEL,
                     VISION_API_URL, VISION_API_KEY)
 
-SEM_VERSION = 'email_sem_v4_current_author_json_1200'
+SEM_VERSION = 'email_sem_v5_one_line_current_author_json_1200'
 EMB_VERSION = 'embedding_v1_4000'
 
 
@@ -110,27 +111,43 @@ def _extract_scores(content: str, length: int):
     return answer
 
 
+def _new_client(task, http_client=None):
+    """Build an OpenAI SDK client for one Qwen endpoint."""
+    if task == 'vision':
+        url, token = VISION_API_URL, VISION_API_KEY
+    elif task == 'semantic':
+        url, token = SEMANTIC_API_URL, SEMANTIC_API_KEY
+    else:
+        url, token = API_URL, API_KEY
+    return create_async_client(token, url, timeout=API_TIMEOUT,
+                               http_client=http_client)
+
+
 async def _post(client, endpoint, payload, task='embedding'):
-    url = VISION_API_URL if task == 'vision' else (SEMANTIC_API_URL if task == 'semantic' else API_URL)
-    token = VISION_API_KEY if task == 'vision' else (SEMANTIC_API_KEY if task == 'semantic' else API_KEY)
+    """Call chat or embeddings through the official OpenAI Python SDK."""
     for attempt in range(API_RETRIES + 1):
         try:
-            response = await client.post(url + endpoint, json=payload,
-                                         headers={'Authorization': f'Bearer {token}'},
-                                         timeout=API_TIMEOUT)
-            response.raise_for_status()
-            return response.json()
-        except httpx.HTTPStatusError as exc:
-            if exc.response.status_code not in {408, 429, 500, 502, 503, 504} or attempt == API_RETRIES:
+            if endpoint == '/chat/completions':
+                response = await client.chat.completions.create(**payload)
+            elif endpoint == '/embeddings':
+                response = await client.embeddings.create(**payload)
+            else:
+                raise ValueError(f'Unsupported LLM endpoint: {endpoint}')
+            return response.model_dump()
+        except APIStatusError as exc:
+            if exc.status_code not in {408, 429, 500, 502, 503, 504} or attempt == API_RETRIES:
                 raise
-        except (httpx.TimeoutException, httpx.TransportError):
+        except (APITimeoutError, APIConnectionError):
             if attempt == API_RETRIES:
                 raise
         await asyncio.sleep(0.5 * (2 ** attempt))
 
 
 async def _sem_chunk(client, items):
-    data = [{'i': i, 'kind': kind, 'text': text[:1200]} for i, (kind, text) in enumerate(items)]
+    # Semantic scoring does not need visual line breaks: send each fragment as one line.
+    # The separate segmentation request still receives original line boundaries.
+    data = [{'i': i, 'kind': kind, 'text': ' '.join(text.split())[:1200]}
+            for i, (kind, text) in enumerate(items)]
     system = ('Оцени возможность ИИ-авторства именно представленных фрагментов письма. '
               'Это субъективный слабый признак, не достоверная вероятность. Шаблонное письмо '
               'не обязательно ИИ. Это оценка-признак, а не достоверный факт. '
@@ -176,7 +193,8 @@ async def _many(items, task, cache=None, client=None, verbose=False):
         kind, value = item if is_sem else ('', item)
         if not value.strip():
             continue
-        key = signal_key(kind, value[:1200] if is_sem else value[:4000], task)
+        cache_text = ' '.join(value.split())[:1200] if is_sem else value[:4000]
+        key = signal_key(kind, cache_text, task)
         jobs.setdefault(key, {'indices': [], 'item': item})['indices'].append(i)
     result = [None] * len(items)
     missing = []
@@ -204,14 +222,14 @@ async def _many(items, task, cache=None, client=None, verbose=False):
             values = await (_sem_chunk(active_client, payload) if is_sem else _emb_chunk(active_client, payload))
         except Exception as exc:
             # Разделять 401/403/404 и 429 бессмысленно: весь чанк пропускается.
-            fatal_http = isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code in {401, 403, 404, 429}
+            fatal_http = isinstance(exc, APIStatusError) and exc.status_code in {401, 403, 404, 429}
             if len(chunk) > 1 and not fatal_http:
                 half = len(chunk) // 2
                 await process(active_client, chunk[:half])
                 await process(active_client, chunk[half:])
                 return
             if verbose and failed == 0:
-                code = exc.response.status_code if isinstance(exc, httpx.HTTPStatusError) else type(exc).__name__
+                code = exc.status_code if isinstance(exc, APIStatusError) else type(exc).__name__
                 print(f'[api:{task}] запрос не удался ({code}); пропускаю недоступный сигнал')
             values = [None] * len(chunk)
         for (key, _item, indices), value in zip(chunk, values):
@@ -238,10 +256,14 @@ async def _many(items, task, cache=None, client=None, verbose=False):
         await asyncio.gather(*(work() for _ in range(min(parallel, len(chunks)))))
 
     if client is None:
-        async with httpx.AsyncClient(limits=httpx.Limits(max_connections=max(parallel, 4))) as new_client:
+        async with _new_client(task) as new_client:
             await workers(new_client)
-    else:
+    elif isinstance(client, AsyncOpenAI):
         await workers(client)
+    else:
+        # Backwards-compatible injection for tests: wrap the supplied httpx
+        # transport in the OpenAI SDK without taking ownership of the transport.
+        await workers(_new_client(task, http_client=client))
     return result
 
 
@@ -254,18 +276,17 @@ async def embedding_many(texts: list[str], cache=None, client=None, verbose=Fals
 
 
 async def api_signals(segments, want_embedding=True, want_semantic=True, cache=None, verbose=False):
-    """Оба независимых эндпоинта вызываются одновременно в рамках одного клиента."""
+    """Оба независимых Qwen endpoint вызываются параллельно через OpenAI SDK."""
     pairs = [(k, seg[k]) for seg in segments for k in ('subject', 'greeting', 'body', 'signature')
              if seg[k].strip()]
     items = [text for _, text in pairs]
     keys = [(k, text) for k, text in pairs]
     if not pairs:
         return {}, {}
-    async with httpx.AsyncClient() as client:
-        async def get_emb():
-            return await embedding_many(items, cache, client=client, verbose=verbose) if want_embedding else [None] * len(items)
-        async def get_sem():
-            return await semantic_many(keys, cache, client=client, verbose=verbose) if want_semantic else [None] * len(items)
-        emb, sem = await asyncio.gather(get_emb(), get_sem())
+    async def get_emb():
+        return await embedding_many(items, cache, verbose=verbose) if want_embedding else [None] * len(items)
+    async def get_sem():
+        return await semantic_many(keys, cache, verbose=verbose) if want_semantic else [None] * len(items)
+    emb, sem = await asyncio.gather(get_emb(), get_sem())
     return ({key: v for key, v in zip(keys, emb) if v is not None},
             {key: v for key, v in zip(keys, sem) if v is not None})

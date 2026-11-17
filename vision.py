@@ -12,9 +12,10 @@ import json
 import math
 import re
 
-import httpx
+from openai import AsyncOpenAI
 
 from api import _post
+from llm_client import create_async_client
 from config import VISION_API_KEY, VISION_API_URL, VISION_MODEL
 
 VISION_PROMPT = 'origin-of-photo-v1'
@@ -86,10 +87,16 @@ async def assess_images(photos, cache=None, client=None):
             return {'score': None, 'reason': f'Vision API недоступен или модель не поддерживает изображения ({type(exc).__name__})'}
 
     if client is None:
-        async with httpx.AsyncClient() as new_client:
+        async with create_async_client(VISION_API_KEY, VISION_API_URL) as new_client:
             for photo in photos:
                 results.append(await assess_one(photo, new_client))
-    else:
+    elif isinstance(client, AsyncOpenAI):
         for photo in photos:
             results.append(await assess_one(photo, client))
+    else:
+        # Compatibility for injected httpx transports in unit tests.
+        sdk_client = create_async_client(VISION_API_KEY, VISION_API_URL,
+                                         http_client=client)
+        for photo in photos:
+            results.append(await assess_one(photo, sdk_client))
     return results

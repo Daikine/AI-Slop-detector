@@ -1,6 +1,6 @@
 > **Обновление v2.2:** фото из SMS/писем + LLM-сегментация. Инструкция: [README_MULTIMODAL_RU.md](README_MULTIMODAL_RU.md).
 
-> **Обновление v2.1:** локальные Qwen-эмбеддинги можно объединять с исходной разговорной LLM из `.env`: [README_HYBRID_RU.md](README_HYBRID_RU.md). Внешние вызовы включаются только через `--llm-from-env`.
+> **Обновление конфигурации:** в `.env` используется единый набор `API_KEY`, `API_URL`, `MODEL` для Qwen. LLM-запросы выполняются официальной библиотекой `openai` через OpenAI-compatible API.
 
 # Kirusha AI Email Detector — обновлённый гибридный классификатор (v2)
 
@@ -13,7 +13,7 @@
 
 1. `03_LOCAL_QWEN_CHECK.bat` — проверить локальные Qwen embeddings.
 2. `04_LOCAL_QWEN_TRAIN.bat` — обучить **новую v2 модель без TF-IDF**, на Qwen embeddings + контекстных признаках + дереве.
-3. `05_LOCAL_QWEN_TEXT.bat` — ввести свой текст, закончить отдельной строкой `END`.
-4. `07_LOCAL_QWEN_TRAIN_WITH_LLM.bat` — **необязательно**, сначала загрузить отдельную *chat*-LLM в LM Studio и вписать её ID; создать второе дерево с LLM-признаками.
+3. `05_LOCAL_QWEN_TEXT.bat` — ввести текст письма одной строкой и нажать Enter.
+4. `07_LOCAL_QWEN_TRAIN_WITH_LLM.bat` — **необязательно**, загрузить chat-модель Qwen в LM Studio и вписать её ID; создать второе дерево с LLM-признаками.
 
 Старая обученная модель и старый скрипт сохранены (`model/`, `model_local_qwen/`), новый результат находится в `model_hybrid_qwen/`. `.env`, виртуальные окружения и сам Qwen **не входят** в архив: они остаются на твоём ПК.

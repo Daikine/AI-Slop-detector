@@ -10,8 +10,10 @@ import random
 import re
 from pathlib import Path
 
-import httpx
+from openai import APIConnectionError, APIStatusError, APITimeoutError
+
 from config import API_KEY, API_URL, MODEL
+from llm_client import create_async_client
 
 TOPICS = [
     'changing a meeting time', 'clarifying a previous request', 'project updates',
@@ -130,18 +132,15 @@ async def generate_batch(client, tasks, retries):
     }
     for attempt in range(retries + 1):
         try:
-            resp = await client.post(API_URL + '/chat/completions', json=payload,
-                                     headers={'Authorization': 'Bearer ' + API_KEY})
-            if resp.status_code in (429, 500, 502, 503, 504):
-                raise httpx.HTTPStatusError('temporary API error', request=resp.request, response=resp)
-            if resp.status_code >= 400:
-                snippet = resp.text[:200].replace('\n', ' ')
-                raise RuntimeError(f'API returned HTTP {resp.status_code}: {snippet}')
-            message = resp.json()['choices'][0]['message']['content']
+            response = await client.chat.completions.create(**payload)
+            message = response.choices[0].message.content
             return parse_output(message, tasks)
-        except RuntimeError:
-            raise
-        except (httpx.TransportError, httpx.HTTPStatusError, ValueError, KeyError, IndexError, json.JSONDecodeError) as e:
+        except APIStatusError as exc:
+            if exc.status_code not in (408, 429, 500, 502, 503, 504) or attempt == retries:
+                raise RuntimeError(f'Generation failed: API HTTP {exc.status_code}') from exc
+            await asyncio.sleep(min(10, 0.7 * 2 ** attempt))
+        except (APIConnectionError, APITimeoutError, ValueError, KeyError,
+                IndexError, json.JSONDecodeError) as e:
             if attempt == retries:
                 raise RuntimeError(f'Generation failed after {retries + 1} attempts: {type(e).__name__}: {e}') from e
             await asyncio.sleep(min(10, 0.7 * 2 ** attempt))
@@ -212,7 +211,7 @@ async def run(args):
     done = 0
     failures = []
     fields = ['id', 'subject', 'text', 'is_ai', 'source']
-    async with httpx.AsyncClient(timeout=httpx.Timeout(180.0), follow_redirects=False) as client:
+    async with create_async_client(API_KEY, API_URL, timeout=180.0) as client:
         async def job(chunk):
             nonlocal done
             async with semaphore:

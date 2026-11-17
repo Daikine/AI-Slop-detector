@@ -12,21 +12,29 @@ for raw_line in (ROOT / '.env').read_text(encoding='utf-8').splitlines() if (ROO
             os.environ[key] = value.strip().strip('"\'')
 
 API_KEY = os.getenv('API_KEY', '').strip()
-if API_KEY.lower() in {'', 'sk-...', 'sk-xxx', 'your_api_key_here', 'changeme'}:
+if API_KEY.lower() in {'', 'sk-...', 'sk-xxx', 'your_api_key_here',
+                       'your_qwen_api_key_here', 'paste_your_qwen_api_key_here',
+                       'paste_your_api_key_here', 'changeme'}:
     API_KEY = ''
 API_URL = os.getenv('API_URL', 'https://deepcode.ci.nsu.ru/api/v1').rstrip('/')
 MODEL = os.getenv('MODEL', 'Qwen3.8-Flash-Next')
-EMBED_MODEL = os.getenv('EMBED_MODEL', 'text-embedding-3-small')
-# Independent providers: local embeddings + optionally a remote chat model.
-# Plain train.py keeps the original single-provider .env behavior by default.
+EMBED_MODEL = os.getenv('EMBED_MODEL', 'qwen3-embedding-local')
+# Qwen endpoints: local_qwen.py redirects embeddings to LM Studio when selected.
+# The standard run uses the Qwen API configured by API_URL/API_KEY/MODEL.
 SEMANTIC_API_URL = os.getenv('SEMANTIC_API_URL', API_URL).rstrip('/')
 SEMANTIC_API_KEY = os.getenv('SEMANTIC_API_KEY', API_KEY).strip()
-if SEMANTIC_API_KEY.lower() in {'', 'sk-...', 'sk-xxx', 'your_api_key_here', 'changeme'}:
+if SEMANTIC_API_KEY.lower() in {'', 'sk-...', 'sk-xxx', 'your_api_key_here',
+                                'your_qwen_api_key_here', 'paste_your_qwen_api_key_here',
+                                'paste_your_api_key_here', 'changeme'}:
     SEMANTIC_API_KEY = ''
 SEMANTIC_MODEL = os.getenv('SEMANTIC_MODEL', MODEL).strip()
 VISION_MODEL = os.getenv('VISION_MODEL', SEMANTIC_MODEL).strip()
 VISION_API_URL = os.getenv('VISION_API_URL', SEMANTIC_API_URL).rstrip('/')
 VISION_API_KEY = os.getenv('VISION_API_KEY', SEMANTIC_API_KEY).strip()
+if VISION_API_KEY.lower() in {'', 'sk-...', 'sk-xxx', 'your_api_key_here',
+                              'your_qwen_api_key_here', 'paste_your_qwen_api_key_here',
+                              'paste_your_api_key_here', 'changeme'}:
+    VISION_API_KEY = ''
 SEM_BATCH = max(1, int(os.getenv('SEM_BATCH', '8')))
 SEM_CONC = max(1, min(32, int(os.getenv('SEM_CONC', '8'))))
 EMB_BATCH = max(1, int(os.getenv('EMB_BATCH', '32')))

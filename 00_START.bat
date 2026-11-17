@@ -11,7 +11,7 @@ if not exist ".venv-local\Scripts\python.exe" (
   if errorlevel 1 python -m venv ".venv-local"
   if errorlevel 1 goto python_fail
 )
-".venv-local\Scripts\python.exe" -c "import httpx,numpy,sklearn,fastapi,uvicorn,multipart,PIL" >nul 2>nul
+".venv-local\Scripts\python.exe" -c "import openai,httpx,numpy,sklearn,fastapi,uvicorn,multipart,PIL; assert int(openai.__version__.split('.')[0]) == 1" >nul 2>nul
 if errorlevel 1 (
   echo Installing project dependencies...
   ".venv-local\Scripts\python.exe" -m pip install -r requirements.txt

@@ -114,7 +114,10 @@ def test_embedding_api_actual_vectors_not_hash(monkeypatch):
     assert embeddings[0] == pytest.approx([0.6, 0.8])
 
 
-def test_http_raw_multipart_and_413():
+def test_http_raw_multipart_and_413(monkeypatch):
+    # Keep this route test independent of optional trained model artifacts.
+    import server
+    monkeypatch.setattr(server, 'score_email', lambda raw: {'final_score': 0.42})
     app_client = TestClient(app)
     raw = (b'Subject: hello\nContent-Type: text/plain; charset=utf-8\n\n'
            b'Hi!\n\nPlease read the attached document.')
@@ -124,3 +127,24 @@ def test_http_raw_multipart_and_413():
     assert file_response.status_code == 200
     assert raw_response.json()['final_score'] == file_response.json()['final_score']
     assert app_client.post('/analyze', content=b'a' * (5 * 1024 * 1024 + 1)).status_code == 413
+
+
+def test_semantic_payload_sends_each_email_fragment_as_one_line(monkeypatch):
+    monkeypatch.setattr(api, 'SEMANTIC_API_KEY', 'test-key')
+    monkeypatch.setattr(api, 'SEMANTIC_API_URL', 'https://mock.invalid/v1')
+    seen = []
+
+    def handler(request):
+        payload = json.loads(request.content)
+        data = json.loads(payload['messages'][1]['content'])
+        seen.extend(data)
+        return httpx.Response(200, json={'choices': [{'message': {'content':
+            json.dumps([{'i': 0, 'score': 0.5}])}}]})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            return await api.semantic_many([('body', 'first line\n\nsecond line\tthird')],
+                                           client=client)
+
+    assert asyncio.run(run()) == [0.5]
+    assert seen == [{'i': 0, 'kind': 'body', 'text': 'first line second line third'}]

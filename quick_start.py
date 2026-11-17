@@ -39,7 +39,8 @@ def load_config():
 def configured(values):
     key = values.get('API_KEY', '').strip()
     return (bool(key) and key.lower() not in
-            ('sk-...', 'sk-xxx', 'your_api_key_here', 'changeme', 'paste_your_api_key_here')
+            ('sk-...', 'sk-xxx', 'your_api_key_here', 'your_qwen_api_key_here',
+             'paste_your_qwen_api_key_here', 'changeme', 'paste_your_api_key_here')
             and bool(values.get('MODEL', '').strip())
             and bool(values.get('API_URL', '').strip()))
 
