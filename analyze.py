@@ -26,13 +26,17 @@ RU = {'subject': 'тема', 'greeting': 'приветствие',
 
 @lru_cache(maxsize=1)
 def load_model():
-    names = ('tfidf.pkl', 'tree.pkl', 'thresholds.json', 'centroids.json')
+    names = ('tree.pkl', 'thresholds.json', 'centroids.json')
     missing = [name for name in names if not (MODEL_DIR / name).exists()]
     if missing:
-        raise RuntimeError('Не найдены модели: ' + ', '.join(missing) + '. Сначала: python train.py')
+        raise RuntimeError('Не найдены модели: ' + ', '.join(missing) + '. Сначала обучи Qwen-модель.')
+    # TF-IDF необязателен: Qwen v2 по умолчанию работает без tfidf.pkl.
     # Никогда не загружать чужой/непроверенный pickle: Python pickle может выполнять код.
-    with (MODEL_DIR / 'tfidf.pkl').open('rb') as f:
-        tfidf = pickle.load(f)
+    tfidf_path = MODEL_DIR / 'tfidf.pkl'
+    tfidf = None
+    if tfidf_path.is_file():
+        with tfidf_path.open('rb') as f:
+            tfidf = pickle.load(f)
     with (MODEL_DIR / 'tree.pkl').open('rb') as f:
         tree = pickle.load(f)
     thresholds = json.loads((MODEL_DIR / 'thresholds.json').read_text(encoding='utf-8'))
@@ -42,6 +46,8 @@ def load_model():
 
 def _score_email_v1(raw: bytes | str):
     tfidf, tree, thresholds, centroids = load_model()
+    if tfidf is None:
+        raise RuntimeError('Старая v1-модель требует tfidf.pkl. Переобучи её или используй Qwen v2.')
     subject, body = parse_eml(raw)
     segs = split_email(subject, body)
     present = [(k, segs[k]) for k in KINDS if segs[k].strip()]

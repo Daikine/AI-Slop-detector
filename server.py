@@ -14,7 +14,7 @@ MAX_EMAIL_BYTES = 5 * 1024 * 1024
 
 @app.get('/health')
 def health():
-    expected = ('tfidf.pkl', 'tree.pkl', 'thresholds.json', 'centroids.json')
+    expected = ('tree.pkl', 'thresholds.json', 'centroids.json')
     return {'status': 'ok', 'model_ready': all((MODEL_DIR / x).is_file() for x in expected),
             'api_key_set': bool(API_KEY)}
 

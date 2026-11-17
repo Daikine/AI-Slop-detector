@@ -76,12 +76,19 @@ def run_local(*args):
 
 
 def is_new_model_ready():
-    if not TRAINED.is_file():
+    required = (TRAINED, TRAINED.parent / 'tree.pkl',
+                TRAINED.parent / 'centroids.json', TRAINED.parent / 'test_metrics.json')
+    if not all(path.is_file() for path in required):
         return False
     try:
         settings = json.loads(TRAINED.read_text(encoding='utf-8'))
-        return settings.get('with_llm_trained') is True and settings.get('llm_segmentation') is True
-    except (OSError, ValueError):
+        centroids = json.loads((TRAINED.parent / 'centroids.json').read_text(encoding='utf-8'))
+        return (settings.get('schema_version') == 2 and
+                settings.get('with_llm_trained') is True and
+                settings.get('llm_segmentation') is True and
+                centroids.get('backend') == 'api' and
+                centroids.get('model') == 'qwen3-embedding-local')
+    except (OSError, ValueError, TypeError):
         return False
 
 

@@ -375,7 +375,15 @@ def main():
                   'feature_names': v2_feature_names(),
                   'class_mapping': {'0': 'HUMAN', '1': 'AI'}}
     # Atomic writes prevent a partial, mismatched model directory after interruption.
-    for name, artifact in (('tfidf.pkl', tfidf), ('tree.pkl', trees)):
+    # Qwen-only training does not create a meaningless tfidf.pkl containing None.
+    if tfidf is not None:
+        artifacts = (('tfidf.pkl', tfidf), ('tree.pkl', trees))
+    else:
+        artifacts = (('tree.pkl', trees),)
+        stale_tfidf = MODEL_DIR / 'tfidf.pkl'
+        if stale_tfidf.exists():
+            stale_tfidf.unlink()
+    for name, artifact in artifacts:
         tmp = MODEL_DIR / (name + '.tmp')
         with tmp.open('wb') as fh:
             pickle.dump(artifact, fh)

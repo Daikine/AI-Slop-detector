@@ -22,7 +22,7 @@
 
 Все вызовы chat completions и embeddings выполняются через официальный Python SDK `openai`, который обращается к совместимому с OpenAI API endpoint Qwen. Для локальных эмбеддингов используется Qwen3 Embedding в LM Studio. Содержимое письма при семантической оценке передаётся одной строкой; LLM-сегментация отдельно получает оригинальные строки, чтобы корректно определить приветствие и подпись.
 
-Установи зависимости командой `python -m pip install -r requirements.txt` — пакет `openai` устанавливается автоматически.
+Установи зависимости командой `python -m pip install -r requirements.txt` (или `requirements-local-lock.txt`) — официальный пакет `openai` нужен для запросов к Qwen Chat и OpenAI-compatible embeddings API.
 
 ## Как запускать (Windows)
 
@@ -102,7 +102,7 @@ python train.py --offline --use-tfidf
 | `local_qwen.py` | локальные Qwen-эмбеддинги и явный выбор chat-провайдера (`--llm-from-env` либо `--llm-model`) |
 | `server.py` | `POST /analyze`, `GET /health`; API-документация `/docs` |
 
-Новые веса/пороги/отчёт: `model_hybrid_qwen/tree.pkl`, `centroids.json`, `thresholds.json`, `test_metrics.json`. Файл `tfidf.pkl` присутствует ради совместимости, но если TF-IDF выключен, он содержит только `None` (без словаря и без обученного TF-IDF классификатора).
+Новые веса/пороги/отчёт: `model_hybrid_qwen/tree.pkl`, `centroids.json`, `thresholds.json`, `test_metrics.json`. Эти четыре артефакта нужны для готового инференса и могут храниться в Git; SQLite-кэш и виртуальное окружение в Git не добавляются. При стандартном Qwen-only обучении `tfidf.pkl` не создаётся: TF-IDF — отдельный необязательный baseline, а не часть Qwen-эмбеддингов. Загрузчик v2 принимает отсутствие `tfidf.pkl`; старые v1-модели с TF-IDF сохраняют обратную совместимость.
 
 **Важно**: нельзя считать старую `model_local_qwen` новой v2. После распаковки **запусти обучение заново** в `model_hybrid_qwen`. Архив не содержит ни новых обученных весов дерева, ни локально скачанной модели Qwen. Оригинальные артефакты v1 для совместимости остаются на месте.
 
