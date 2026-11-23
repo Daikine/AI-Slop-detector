@@ -1,6 +1,6 @@
 > **Новое в v2.2:** интеллектуальная сегментация + vision-анализ вложенных фото. См. [README_MULTIMODAL_RU.md](README_MULTIMODAL_RU.md).
 
-# Kirusha v2.1 — локальные эмбеддинги Qwen + Qwen Chat API
+# v2.1 — локальные эмбеддинги Qwen + Qwen Chat API
 
 ## Главное
 
