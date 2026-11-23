@@ -1,4 +1,4 @@
-KIRUSHA AI DETECTOR v2.2 — ПОЛНАЯ ВЕРСИЯ ДЛЯ WINDOWS
+ AI DETECTOR v2.2 — ПОЛНАЯ ВЕРСИЯ ДЛЯ WINDOWS
 
 БЫСТРЫЙ ЗАПУСК:
 1. Распакуй ВЕСЬ архив в обычную папку (например, C:\Kirusha). Не запускай BAT прямо из ZIP.
