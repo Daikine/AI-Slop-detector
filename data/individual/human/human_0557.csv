@@ -1,0 +1,44 @@
+﻿subject,text,is_ai
+Re: [ILUG] Sparc Solaris (was: Dell GX260 V Redhat 7.3),"Hi,
+
+Matthew French:
+Boo hisss *duck* :)
+
+um..  integrated into solaris.
+
+Of course then there's  for
+solaris 9 which gives you afterstep and windowmaker among other stuff. My
+personal favourite at the moment is enlightenment which also has Solaris
+packages available for download.
+
+Out of curiosity, does `normal fashion` mean that you still have to do the
+interactive customisations or is it like Solaris jumpstart where you can
+specify everything on the install server, do `boot net - install` go home, and
+come in to a fully installed and patched desktop the next morning?
+
+I don't see why this should be a _major problem. The prom (ie the ""ok"" prompt)
+is almost at the hardware level and hence dosent depend on the os so you
+should be able to connect to that easily enough. Once the machine is installed
+cant you just log in over the network? The network is the computer after all
+(sorry couldn't resist!)
+
+said:
+hmm... I'm not familiar with wyse stuff, but I only need to use the console
+when something breaks, then anything capable of something basic like vt100 at
+9600 8n1 seems to work  . Not sure why you'd need to worry about this much
+really, just set up jumpstart to install automatically then you don't need to
+look at the console at all.
+
+Cheers,
+~Al
+
+--
+Expressed in this posting are my opinions.  They are in no way related
+to opinions held by my employer, Sun Microsystems.
+Statements on Sun products included here are not gospel and may
+be fiction rather than truth.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

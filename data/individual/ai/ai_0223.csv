@@ -1,0 +1,6 @@
+﻿subject,text,is_ai
+Quick question about the sync issue,"Hi there,
+
+We ran into a small technical issue this morning when some support tickets failed to sync with our reporting dashboard. The records themselves are still visible, but timestamps are appearing a few hours early. We changed the timezone setting and also cleared our browser cache, yet the display did not fully correct itself. Since your team usually handles these integrations, could you take a quick look and let me know if the problem is on your side, our configuration, or the provider's data feed?
+
+I would also appreciate your feedback on the temporary workaround I suggested to my staff. They are entering a manual correction for any ticket created before noon, which is not ideal, but it keeps our weekly summary readable. Please tell me honestly if you think we should pause that process, avoid certain fields, or simply wait for a deeper fix. I want to avoid creating more work for everyone. If there is a simpler way to validate the sync status, I am open to it. A short call tomorrow could also work if that is easier. I appreciate the time you are already spending on this.",1

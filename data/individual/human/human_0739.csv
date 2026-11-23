@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Covalent.NET,"[1] Covalent works with Microsoft to provide ASP.NET capabilities for
+Apache 2.0.  ASP.NET actually has some really elegant tools for doing
+load testing and analysis. Perhaps Microsoft's desire to embrace, extend, and
+extinguish comes from a scathing Gartner report recommending not to deploy
+IIS for enterprise applications at all.   Now users get the best of both
+worlds: all the development tools of ASP.Net and the security and reliability
+of Apache.
+
+Greg
+
+--
+Gregory Alan Bolcer, CTO   | work:  | gbolcer at endeavors.com
+Endeavors Technology, Inc. | cell:  |
+
+[1]",0

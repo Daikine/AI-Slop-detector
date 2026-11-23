@@ -1,0 +1,27 @@
+﻿subject,text,is_ai
+Re: [SAdev] 2.40: ready for release? *NO*,"Justin Mason wrote:
+
+I just checked out b2_4_0 from CVS and 'make test' fails horribly.
+
+It seems to be looking in my site_perl SpamAssassin code, not the build
+directory.
+
+Example error:
+
+Failed to run FROM_AND_TO_SAME_5 SpamAssassin test, skipping:
+(Can't locate object method ""check_for_from_to_same"" via package
+""Mail::SpamAssassin::PerMsgStatus"" at
+/usr/local/lib/perl5/site_perl/5.8.0/Mail/SpamAssassin/PerMsgStatus.pm line
+1701.
+)
+
+Anyone else seeing this?
+
+rOD.
+
+--
+""If you're dumb, surround yourself with smart people;
+and if you're smart, surround yourself with smart people
+who disagree with you.""
+
+Doing the blogging thang again at  <<",0

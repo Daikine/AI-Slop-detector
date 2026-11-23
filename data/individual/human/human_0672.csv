@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+RE: [Razor-users] many vs one,"First, 1,000 people will have seen the piece of spam that could've been avoided.  But the other 99,000 will never see that spam.  Evenly distributed, it means that an average user will only see 1% of spam.  That's not realistic, because not everyone will get the same spam, but the basic threshold can be adjusted.  At the very least, 30 people need to ""vote"" on a given piece of mail to make a realistic decision.  Since there's no ""no"" vote mechanism (except revocation--and that's after the fact), only a ""yes"" vote mechanism exists and so if you received 30 ""yes"" votes then you could safely say that you got a reasonable sample.
+
+The system could pretend to have never seen the piece of mail until after it determined that it was probably spam.  So instead of a rating going up incrementally, it would take a big leap at the beginning (from undefined to a relatively high number) and then go from there.  So after the first group of people (our samplers, we'll say) have seen the spam, no one else would ever see it.
+
+As far as unsubscribing, I'm always leery of clicking on the link (and don't do so unless I specifically remember signing up for something), but the sample population will decide for themselves whether they feel that it's spam.
+
+So ultimately, I guess I'm saying that the most effective route would be to use a constantly changing sample pool and just accept that there is some fraction of users that will have to see the spam.  In a system that depends on people deciding whether or not something is spam, is there any other way?
+
+Isaac
+
+From: Patrick
+Sent: Wednesday, August 14, 2002 2:13 PM
+To: Oates, Isaac
+Cc:
+Subject: Re: [Razor-users] many vs one",0

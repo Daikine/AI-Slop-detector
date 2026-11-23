@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+Re: [SAtalk] help with postfix + spamassassin,"Luiz Felipe Ceglia said:
+
+are you using exactly that -- with the line break -- or is it like this:
+
+:0fw
+
+all on one line?  it should be the latter.
+
+--j.
+
+This sf.net email is sponsored by: OSDN - Tired of that same old
+cell phone?  Get a new here for FREE!
+
+Spamassassin-talk mailing list",0

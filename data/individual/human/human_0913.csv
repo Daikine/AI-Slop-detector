@@ -1,0 +1,11 @@
+﻿subject,text,is_ai
+"Re: advice on 7.3.92 to 7.3.93, and Apt compiling","Matthias Saou wrote:
+
+Well, you're lucky if it sometimes works for you.  Mine hang all the
+time, have to kill 'em with -9.  And after that, rpm doesn't work at all
+(hangs right after i run the command, prints nothing).  Have to reboot
+the machine to get anything rpm-related to work again.
+
+-silent
+
+RPM-List mailing list <>",0

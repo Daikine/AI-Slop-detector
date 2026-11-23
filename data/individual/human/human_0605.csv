@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+RE: [ILUG] Drop in replacement for Ingres Database?,"Indeedy - I had never even heard of firebird until we started a new job
+last week with a client who uses it.  So we popped it onto a box
+downstairs and wow - it is fast.  Comes with some lovely client tools
+also.  Supports all the db goodies, transactions, stored procedures,
+triggers.
+
+IBM's db2 is another cheaper alternative to Oracle.  Free single
+developer license downloadable from their website.
+
+Fergal.
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

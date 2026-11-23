@@ -1,0 +1,29 @@
+﻿subject,text,is_ai
+RE: [ILUG] NVIDIA and Debian Woody,"Hi there,
+
+Now this is probably of no use to you whatsoever, but...
+
+Not a deb-head, but I also have a problem regards NVidia. I've two machines,
+pretty much the same hardware.
+athlon 1700XP's, both have NVidia cards, one Gforce3 Ti and a Gforce2MX,
+both use the same driver module.
+
+Both have same kernel version albeit it compiled for their particular
+hardware.
+
+One works perfectly, the other fails to load. When I check with lsmod, I can
+see the NVdriver is loaded, but not used ;--(
+Thus when I startx, it bombs out.
+
+IU still have X with the default nv driver and crappy accelleration -->
+650fps with glxgears [should be over 2000fps]
+Its not a hardware issue with the cards as I swapped them over and get the
+same symptoms.
+
+I reckon my mobo is cack, I've tried swapping slots around, reserving
+resources etc all to no avail.
+Should there be an interrupt for the nv card? I haven't checked the other
+box yet.
+
+Regards,
+CW",0

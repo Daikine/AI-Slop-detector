@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: [Razor-users] spamassassin+razor2,"No as a answer to this FAQ, would the recommended answer be to
+
+a) chmod 755 /usr/bin/procmail
+
+or
+
+b) add DROPPRIVS=yes to /etc/procmailrc
+
+or
+
+c) all of the above
+
+I ask because I just did B, and my procmail is still:
+-rwsr-sr-x    1 root     mail        67988 Jul 24 15:43 /usr/bin/procmail
+But things seem to be working, so far..",0

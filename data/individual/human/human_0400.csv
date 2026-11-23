@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Re: New Sequences Window,"Do you really think this is true?  I added a modify time check thinking that
+it would make an improvement since we were reading it a *lot* more times in
+the new code because we're trying to use the sequences.
+
+On the other hand, the sequences files are probably being read out of cache
+when that happens anyway.
+
+Even with a small file, I'd think that the time taken to do a
+[file mtime $filename] would be worth it.  My code is in proc MhReadSeqs.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

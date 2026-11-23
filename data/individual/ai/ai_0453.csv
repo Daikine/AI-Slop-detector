@@ -1,0 +1,2 @@
+﻿subject,text,is_ai
+Sign-up page still failing,"I followed up after two days. Sign-up page still fails. Forms disappear after refresh. The error says “token expired.” My laptop cannot see the session key. We cleared the cache. Both fixes failed. Please check the authentication setting. It changed after Tuesday’s update. Can one of you review the logs tonight? I can test a patch before the evening shift. If the page stays broken, use the shared sheet. The sheet lacks address fields. I need a fix by 6 p.m. tomorrow. Otherwise the intake table stalls.",1

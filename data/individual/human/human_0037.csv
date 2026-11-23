@@ -1,0 +1,10 @@
+﻿subject,text,is_ai
+Re: making rpms from already-compiled source trees,"Well, thanks everyone for the explanations. I still disagree with the
+reasoning, but it seems this is one of those philosophical questions
+that I'm on the losing end of :)
+
+The checkinstall utility that someone mentioned seems useful, but I
+don't really have the time to figure it out right now. After searching
+the web some more, I found out that Mandrake's version of rpm is
+patched to support what I wanted. So I guess I'll look into that when
+I get a chance.",0

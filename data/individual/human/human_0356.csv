@@ -1,0 +1,10 @@
+﻿subject,text,is_ai
+"[SAtalk] Re: [SAdev] 2.40 RELEASE PROCESS: mass-check status, folks?","I think with the confusion and all, we should give these folks
+until the end of the day to get fixed logs uploaded :)
+
+Justin, on a related note -- I didn't include the spamtrap stuff
+from the corpus directory on your server in my logs, but that
+should definitely be in there -- don't know if you'd included it
+in yours or not.  I think it's from Kelsey's mailtraps...
+
+C",0

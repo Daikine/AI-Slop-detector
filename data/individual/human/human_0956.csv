@@ -1,0 +1,24 @@
+﻿subject,text,is_ai
+Re: New Sequences Window,"Well, I've used the check-the-modify-time cache trick for files in
+many places (not just exmh) so some part of me certainly thinks it
+is effective.  However, it occurred to me that if we do checkpoint
+state, then aren't we modifying the sequences file for the current
+folder on every message read?  Perhaps we look at the sequences file
+more than once per message view?  Just idle speculation - we can
+stick in some time calls to find out how expensive things are.
+
+Someone asked about increasing the time resolution in the exmh log.
+We could make that conditional on some support available in 8.3 -
+Tcl has had ""clock seconds"" (like gettimeofday) and ""clock clicks""
+(high resolution timer) for some time.  But in 8.3 we've calibrated
+clock clicks values to microseconds.  It is still only useful for
+relative times, but each call to Exmh_Log could emit the microsecond
+delta since the last log record.  Of course, we are measuring all
+the overhead of taking the log record, etc.  I'll try it out.
+
+--
+Brent Welch
+Software Architect, Panasas Inc
+Pioneering the World's Most Scalable and Agile Storage Network
+
+Exmh-workers mailing list",0

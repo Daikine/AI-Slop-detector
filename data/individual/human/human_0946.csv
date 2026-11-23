@@ -1,0 +1,22 @@
+﻿subject,text,is_ai
+RE: [ILUG] Installing lilo on another disk.,"That won't work like you want.  You'll end up with a boot loader
+on the backup disk that contains the 'physical' location of
+the /boot/map file on the main disk.  That won't necessarily
+be the same as the backup disk.
+
+I can't think of a right way to do his with LILO.  I've got
+a similar seup on my home machine (rsync to a backup disk
+every night), but I'll be pulling out the RH install CDs to
+get LILO sorted if I have to do a disk swap.
+
+GRUB should be able to handle this no problem, since it
+doesn't record sector numbers like LILO does.  Not much help
+for you though...
+
+Later,
+Kenn
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

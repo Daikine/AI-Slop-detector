@@ -1,0 +1,9 @@
+﻿subject,text,is_ai
+Re: Help! I've lost my exmh-unseen window!,"How about enabling the ""Show unseen message count in folder cache""
+option? It displays the number of unseen messages next to each folder name
+(if greater than 0), so you don't really need the unseen window unless
+you're using more sequences than just ""unseen"".
+
+Paul
+
+Exmh-users mailing list",0

@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: [ILUG] expanding a string multiple times,"Thanks to all for the responses,
+more comments below...
+
+Niall O Broin wrote:
+
+clever. A bit more robust is:
+#first param is number of
+#times to repeat second param
+#
+#e.g. quote=`repeat 3 '> '`
+repeat() {
+seq -s , $1 | sed ""s¬[0-9]\{1,\}[,]*¬$2¬g""
+}
+
+btw loops in bash are shit slow! see:
+
+I don't think this is possible.
+
+thanks,
+Pádraig.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

@@ -1,0 +1,25 @@
+﻿subject,text,is_ai
+[ILUG] Re: removing lilo,"Ciaran Mac Lochlainn stated the following:
+
+Thanks!
+
+In the past I tried ""lilo -u /dev/hda"" and it wouldn't work -- an
+original copy of the MBR must be in /boot directory for it to work.
+Which is exactly what I didn't have.  The installation of Linux
+Mandrake didn't afford me that luxury.
+
+Also, I'm glad you cleared up the fdisk issue.  I know better now --
+previously I was under the impression that fdisk had a hidden switch.
+This is obviously not the case.
+
+--
+Note: When you reply to this message, please include the mailing
+list and/or newsgroup address and my email address in To:
+
+Signed,
+SoloCDM
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

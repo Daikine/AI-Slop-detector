@@ -1,0 +1,10 @@
+﻿subject,text,is_ai
+Re: RedHat 8.0 and his own freetype,"Matthias Haase wrote:
+
+Right you are.  The SRPM includes a patch to enable it, but then the
+specfile defaults to not applying that patch.  I saw the former but
+missed the later.  Egad, what a convoluted maze.
+
+Sorry for the misinformation!
+
+RPM-List mailing list <>",0

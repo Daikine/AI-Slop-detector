@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: Bug report: msg n+1 marked read,"I haven't seen what you describe, but I just saw something close to what you
+describe.  I think the message that's being incorrectly highlighted as current
+is related to the current message in the other folder rather than being n+1.
+
+I'll have to investigate a bit more to identify and fix the bug, but there is
+something going on here.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

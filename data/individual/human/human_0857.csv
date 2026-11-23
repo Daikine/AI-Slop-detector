@@ -1,0 +1,14 @@
+﻿subject,text,is_ai
+[Spambayes] test sets?,"[Tim]
+
+I downloaded and played with it a bit, but had no time to do anything
+systematic.  It correctly recognized a spam that slipped through SA.
+But it also identified as spam everything in my inbox that had any
+MIME structure or HTML parts, and several messages in my saved 'zope
+geeks' list that happened to be using MIME and/or HTML.
+
+So I guess I'll have to retrain it (yes, you told me so :-).
+
+I'll try this when I have time.
+
+--Guido van Rossum (home page:",0

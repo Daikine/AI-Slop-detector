@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+Re: [ILUG] expanding a string multiple times,"kevin lyda wrote:
+
+Good. I actually looking at `yes` but I was in
+slow mode on Friday and didn't consider combining with `head`
+
+To remove newlines then handiest is: tr -d '\n'
+
+thanks,
+Pádraig.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

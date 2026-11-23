@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Re: --with ...,"Once upon a time, C.Lee wrote :
+
+I'm sure that if you file a bugzilla entry with a relevant patch against
+the spec file, chances of getting the change done are on your side ;-)
+
+The problem is that ""--with <foo> --without <bar>"" is clearly not meant to
+change deeply the way a package is built. Its use would be more like
+enabling/disabling gpg, ldap, whateversql support in packages as it's not
+possible to use something like ""--with-<foo>=<bar>"" which could be used for
+a much wider scope.
+
+Matthias
+
+--
+Clean custom Red Hat Linux rpm packages :
+Red Hat Linux release 7.3 (Valhalla) running Linux kernel 2.4.18-10
+Load : , AC on-line, battery charging: 100% (4:47)
+
+RPM-List mailing list <>",0

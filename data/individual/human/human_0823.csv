@@ -1,0 +1,20 @@
+﻿subject,text,is_ai
+Re: [ILUG] find the biggest file,"Inn Share's [] 22 lines of wisdom included:
+
+$ find /dir -name \*  | xargs du -s | sort -n
+
+Smallest files are listed first with the largest at the end. So if
+you want to get the 5 largest files, pipe through tail.
+
+e.g.
+
+$ find /dir -name \*  | xargs du -s | sort -n | tail -5
+--
+Philip Reynolds
+RFC Networks          tel: 01 8832063
+fax: 01 8832041
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+Re: Anolther sequence related traceback,"I may be wrong but I think a single select entry field is used
+for selecting messages and switching folders. Restricting the entries
+to be numeric would break the folder switching functionality, wouldn't
+it?
+
+My version of MsgChange, not yet updated, has a check
+
+if {$msgid != {}} {
+# Allow null msgid from Msg_ShowWhat, which supplies line instead
+if {$msgid < 0}  return
+} else {
+...
+
+at the start of the procedure which takes care of the single '-' case.
+Perhaps the thing to do is for MsgChange to validate a msgid as a
+number before continuing.
+
+Kevin
+
+In message <>, Brent Welch writes:
+
+Exmh-workers mailing list",0

@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+Re: Storing passwords,"If you need to store a database password, then
+clearly the first step is to store the text outside the
+web tree.  You can encrypt it and store the encryption key elsewhere,
+so that at least an attacker has to get two different things.
+Also, don't get full privileges - create a user account that
+is GRANTed very limited access.
+
+However, you can often do better than this if security
+is critical.  Create a separate program which has these
+database keys (as noted above), and make the web program
+contact IT.  Create a very limited protocol that ONLY
+lets you do the operations you need (you can add specific
+operations later).  There's a performance hit, which you're
+trading for improved data isolation.
+
+Giorgio Zoppi wrote:
+
+--
+
+--- David A. Wheeler",0

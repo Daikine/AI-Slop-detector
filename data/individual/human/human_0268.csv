@@ -1,0 +1,18 @@
+﻿subject,text,is_ai
+[Spambayes] test sets?,"[Anthony Baxter]
+
+Can this corpus be shared?  I suppose not.
+
+If we ever <wink> have a shared corpus, an easy refactoring of timtest
+should allow to plug in different tokenizers.  I've only made three changes
+to Graham's algorithm so far (well, I've made dozens -- only three survived
+testing as proven winners), all the rest has been refining the tokenization
+to provide better clues.
+
+That's ambiguous.  Accuracy rates or error rates, ham or spam rates?
+
+Mining embedded http/https/ftp thingies cut the false negative rate in half
+in my tests (not keying off href, just scanning for anything that ""looked
+like"" one); that was the single biggest f-n improvement I've seen.  It
+didn't change the false positive rate.  So you know whether src added
+additional power, or did you do both at once?",0

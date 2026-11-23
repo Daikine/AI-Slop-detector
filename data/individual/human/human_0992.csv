@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 828] spamassassin.org is unreliable,"changed:
+
+What    |Removed                     |Added
+Status|ASSIGNED                    |RESOLVED
+Resolution|                            |FIXED
+
+------- Additional Comments From   :35 -------
+OK, this should now be considered fixed, I should think.
+
+Domain Name: SPAMASSASSIN.ORG
+Name Server: NS.PEREGRINEHW.COM
+Name Server: NS1.RTS.COM.AU
+Name Server: NS2.RTS.COM.AU
+Name Server: NS3.RTS.COM.AU
+Name Server: FAMILY.ZAWODNY.COM
+
+etc.
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0

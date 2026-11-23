@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: Forged whitelist spam,"Gary Lawrence Murphy writes:
+
+If you crypto-sign your outgoing mail, you don't have to set
+your mailwall whitelist to accept unsigned mail spoofed as being
+from you.
+
+Similarly, if you include some weaker token or checksum that
+spammers can't easily guess.
+
+If you can track the actual sender, then the proof that they've
+committed identity fraud is your credible testimony that you
+are the rightful user of the declared originating address, and
+that you did not send the message. I'm not sure what level of
+damages you could claim, though.
+
+- Gordon",0

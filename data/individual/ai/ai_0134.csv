@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Member form validation problem,"Hi,
+
+The member form is not accepting the new registration number. When a user enters 20250147, the page shows an error saying the field format is incorrect, even though older numbers with seven digits were accepted without issue.
+
+I tested it on two browsers, and the problem appears after clicking Submit. The form does not show a validation hint, so people may try several times and eventually give up. It began after last night’s update.
+
+This is a small technical issue, but it could delay this week’s workshop confirmations. A few neighbors already tried to register after the meeting, and I do not want them to think the event is closed.
+
+Can you or the form owner check whether the validation rule was changed to require an eighth digit? If that was intentional, please add a note beside the field. If not, reverting the rule or allowing both formats would fix it.
+
+Thanks,",1

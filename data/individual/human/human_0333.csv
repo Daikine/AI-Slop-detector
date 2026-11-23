@@ -1,0 +1,16 @@
+﻿subject,text,is_ai
+Re: Documentation about built-in RPM macros?,"Hi.
+
+Dave Cridland <> wrote:
+
+[snip]
+
+No, they do not (what would be the use of that, anyway?). They say that
+they will _try_ to eval macros even if the user forgot to pass the
+leading '%', but that this feature should not be relied upon.
+
+--
+On the first day of Christmas my true love sent to me
+A badly configured newsreader
+
+RPM-List mailing list <>",0

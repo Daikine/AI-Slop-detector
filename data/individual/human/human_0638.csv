@@ -1,0 +1,28 @@
+﻿subject,text,is_ai
+Re: HD/ID: High-Def Independence Day,"""SpamAssassin Killed My Independence Day Party""
+
+With all the spam that gets through, I had no idea
+a filter was in effect at the FoRK listserv.
+
+Turn it off! It not only risks silent false
+positives, but suffers them in such a way that
+individuals cannot adjust/detect/remedy them.
+
+Also, anti-spam startups need end-users.
+Centralized spam fighting takes food out
+of those coders' mouths!
+
+I still think self-add whitelists are underrated.
+A FoRK whitelist would presumably start with
+all subscribers, and grow from there. Bouncing
+problem mail, in a way that humans can understand
+how to whitelist themselves for a resend, avoids
+the problem of silent failures without opening the
+door to lazy, forged-""from"" spammers.
+
+- Gordon
+
+From: ""Rohit Khare"" <>
+To: <>
+Sent: Tuesday, July 23, 2002 12:25 PM
+Subject: Re: HD/ID: High-Def Independence Day",0

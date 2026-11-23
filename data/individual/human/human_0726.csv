@@ -1,0 +1,29 @@
+﻿subject,text,is_ai
+Re: Secure Sofware Key,"Yannick Gingras wrote:
+
+Answering that requires fairly complete knowledge of the business
+model. But, in all probability: no, it isn't usually worth it. So, it
+comes down to how difficult you want to make the cracker's job.
+
+If the product requires occasional authentication, simple copying
+won't work; the product has to be cracked. In which case, the issue is
+whether you're actually going to enter into battle with the crackers,
+or just make sure that it isn't trivial.
+
+A lot of it comes down to your customer base. Teenage kids tend to be
+more concerned about cost and less concerned about viruses/trojans,
+and so more willing to use warez. Fortune-500 corporations are likely
+to view matters differently.
+
+Yes; software techniques will only get you so far. Actually, the same
+is ultimately true for hardware, but cracking hardware is likely to
+require resources other than just labour.
+
+Almost (?) anything can be reverse engineered. But it may be possible
+to ensure that doing so is uneconomical.
+
+IIRC, CSS was cracked by reverse-engineering a software player; and
+one where the developers forgot to encrypt the decryption key at that.
+
+--
+Glynn Clements <>",0

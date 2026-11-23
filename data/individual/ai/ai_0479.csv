@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+Portal access issue before the workshop,"Hi,
+
+We need to adjust the portal login page before noon, because the workshop link changed and attendees cannot verify their access. I have already tried clearing the cache, using another browser, and re-entering the invitation code, but the verification button remains inactive on my end.
+
+The error appears only after the first sign-in step, which makes it seem related to token refresh rather than the password. I have also confirmed that my device clock is synced, so an expired timestamp does not appear to be the cause.
+
+Can you check whether your side of the connection has a permission setting that prevents the new session from completing? If not, I can send the browser console log by email, the time stamp, and the exact code that appears in the confirmation message. Please tell me if a short screen share would be faster, but if possible I would prefer written steps because the change is time-sensitive and I need to test it immediately afterward. I would also appreciate knowing whether there is a temporary fallback page, since the event schedule will be posted within the hour.",1

@@ -1,0 +1,18 @@
+﻿subject,text,is_ai
+RE: [ILUG] bind + lex + yacc...,"Never having to support a large network myself, I know very little about
+this..
+but what do lex & yacc have to do with anything ?
+
+These are language parsers, used to build complilers / interptreters  and
+the like???!!!
+
+BIND, ok large networks might need DNS....
+
+Have I missed something completely?
+
+J
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

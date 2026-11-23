@@ -1,0 +1,12 @@
+﻿subject,text,is_ai
+Re: [SAdev] Integrating SA with Mail::CheckUser ?,"On Thu, 22 Aug 2002 the voices made Justin Mason write:
+
+How'd this deal with you running SA on an account where all the mail from some
+domain on another server ends up?
+
+/Tony
+--
+# Per scientiam ad libertatem! // Through knowledge towards freedom! #
+# Genom kunskap mot frihet! =*= (c) 1999-2002  =*= #
+
+perl -e'print$_{$_} for sort%_=`lynx -dump svanstrom.com/t`'",0

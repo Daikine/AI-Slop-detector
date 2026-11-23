@@ -1,0 +1,21 @@
+﻿subject,text,is_ai
+PATCH (was: Re: Another bug),"said:
+
+The following patch removes Ftoc_RescanLine in favour of a
+Ftoc_RescanLines. It runs scan(1) on a list of lines and updates ftoc
+accordingly. The patch also changes all the callers to make use of it.
+
+It also changes Ftoc_ClearCurrent to work of an argument instead of
+falsily clearing a message that's still Current on disk. All in an
+effort to get a one-to-one disk-display correspondence.
+
+It does add ~30 -- ~ 75 ms (~<10%) to the execution time depending on
+folder size due to the invocation of scan. However this version does
+not try to second guess the mh version of scan so if you have exotic
+scanlines it tells the truth. As a side effect the '+' sign now
+corresponds better to what's on disk.
+
+Comments appreciated. I'm going to be offlike for a couple of days,
+so I send the cvs diff rather than putting it in the cvs.
+
+/Anders",0

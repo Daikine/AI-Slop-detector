@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+[Spambayes] understanding high false negative rate,"Tim> Yuck: it got two 0.01's from embedding your email address at the
+Tim> bottom here.
+
+Which suggests that tagging email addresses in To/CC headers should be
+handled differently than in message bodies?
+
+Skip",0

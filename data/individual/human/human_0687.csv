@@ -1,0 +1,19 @@
+﻿subject,text,is_ai
+Re: [ILUG] SUSE 8 disks? (thread changed slightly),"Quoting Nick Murtagh ():
+
+Looking at  , it seems that SAP went
+open-source some time in 2000, so my information likely was correct
+at the time I compiled that list.
+
+In addition, please note that, just because a company decides to go open
+source with a codebase as of some new release version, that doesn't make
+all versions ever released open source retroactively.  A licence
+attaches to a _copy_ of a creative work.  So, if there was a
+proprietary, non-redistributable copy in SuSE boxed sets, it's still
+proprietary and non-redistributable -- unless SAP AG decided to mail out
+a separate permission grant for it.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

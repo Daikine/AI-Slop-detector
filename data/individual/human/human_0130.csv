@@ -1,0 +1,15 @@
+﻿subject,text,is_ai
+Re: Imap servers that support the MH folder/file standards,"It does.  If anybody in the nmh world actually gets to the point of actually
+implementing imap access, this will need to change, but until there exists an
+environment where the direct access doesn't work, we're not going to take the
+performance hit.
+
+Chris
+
+--
+Chris Garrigues
+virCIO
+716 Congress, Suite 200
+Austin, TX  78701
+
+World War III:  The Wrong-Doers Vs. the Evil-Doers.",0

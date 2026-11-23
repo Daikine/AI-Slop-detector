@@ -1,0 +1,22 @@
+﻿subject,text,is_ai
+Re: K3B,"On Fri, 04 Oct 2002 03:25:30 +0200
+Vincent <> wrote:
+
+# If I get troubles with the .tar.gz source file compilation, will it
+# work with the .src.rpm source file compilation ?
+# If it will, how do I manage with a .src.rpm file, sorry, I don't
+# remeber :(
+
+The .src.rpm will prompt you for what packages you need to complete
+the compile.
+
+rpmbuild --rebuild --target=$arch file.src.rpm
+
+--
+Jesse Keating
+j2Solutions.net
+Mondo DevTeam (
+
+Was I helpful?  Let others know:
+
+RPM-List mailing list <>",0

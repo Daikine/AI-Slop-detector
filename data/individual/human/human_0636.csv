@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+"[SAtalk] Re: Spamassassin-talk digest, Vol 1 #659 - 41 msgs","On 9/11/2002 at 10:01 AM
+wrote:
+
+better yet would be a built-in server check on a periodic basis, even
+daily, looking for the existence of an update, and if found prompt the
+system admin to upgrade the server.  With the ever changing face of spam,
+this would probably be a big benefit to SA users and help keep everyone up
+to date.  We have not done this with too many of the apps we sell on
+strictly because of joe-average-user concerns
+about spyware and ""phoning home"", but in cases where the app needs to
+access the internet anyhow, we have done it with great success and minimal
+concern by our users.
+
+----
+Joseph Burke
+President/CEO
+InfiniSource, Inc.
+<>
+
+In remembrance
+
+Spamassassin-talk mailing list",0

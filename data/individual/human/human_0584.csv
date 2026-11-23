@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+[Spambayes] timtest broke?,"[Skip Montanaro]
+
+I never used ConfigParser before, but I read that its read() method silently
+ignores files that don't exist.  If 'bayes.ini' isn't found, *none* of the
+options will be defined.  Since you want to run this from a directory other
+than my spambayes directory, it's up to you to check in changes to make that
+possible <wink>.",0

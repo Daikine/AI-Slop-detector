@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+Re: [ILUG] How to copy some files,"Ar an 20ú lá de mí 7, scríobh kevin lyda :
+
+Yeah, thanks. I have been subscribed for more than a week, despite any
+naïveté I may be showing to you :-) .
+
+So, they're the same as hard links, with the disadvantage that they
+break on deletion or moving, and they may take up slightly more disk
+space. Hmm.
+
+True. But ""cat floyd > foo; rm floyd"" preserves it. Much of a muchness
+...
+
+Hokay.
+
+--
+I'm not a pheasant plucker / I'm a pheasant plucker's son.
+I'm just a'plucking pheasants / 'Til the pheasant plucker comes.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

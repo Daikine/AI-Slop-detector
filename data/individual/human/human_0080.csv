@@ -1,0 +1,31 @@
+﻿subject,text,is_ai
+Re: Sorting,"On Tue, 10 Sep 2002 10:29:26 -0400
+Tom Reingold <> wrote:
+
+It places the company, corporate network and data at risk.
+
+Outlook is subject to an (absurdly large) number of exploits with more
+being regularly found.  An exploited system, to whatever extent, places
+other corporate systems at risk, customer systems at risk, company
+reputation and liability with customers at risk, and
+proprietary/corporate data at risk.  Further, users cannot be reliably
+expected to use Outlook in a safe manner.  The net result is that
+Outlook use is considered to be somewhere between criminal negligence
+and deliberately malicious as far as the employer is concerned.
+
+I don't use custom sequences, so I can't comment well.  I suspect that
+you'd have to use a cron job to maintain the sequences.
+
+Nope.  I run exmh on my desktops at home and at work with the resulting
+exmh windows being displayed on both my work and home desktops (gratis
+SSH X11 forwarding).  In fact, your message was read and replied to
+(this message) while at work, using an exmh instance running on my home
+machine.
+
+--
+J C Lawrence
+---------(*)                Satan, oscillate my metallic sonatas.
+He lived as a devil, eh?
+Evil is a name of a foeman, as I live.
+
+Exmh-users mailing list",0

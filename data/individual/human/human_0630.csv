@@ -1,0 +1,31 @@
+﻿subject,text,is_ai
+Re: [ILUG] ipfw vs ipchains vs iptables,"Paul Jakma's [] 53 lines of wisdom included:
+
+Well, that doesn't help you reading your listing.
+
+I think you're talking about IPFilter, and OpenBSD's new PF code.
+Now who's talking FUD :)
+
+Perhaps, although I think when seriously considering something like
+a firewall, tried and trusted means a hell of a lot. IPFilter would
+probably win that race.
+
+I was talking in terms of the actual firewall. If the company in
+question knows plenty about Linux and nothing about FreeBSD, I'd go
+with a Linux box, merely because when something goes wrong (that
+isn't got to do with ipfw/ipchains/ipfilter), then someone knows how
+to fix it.
+
+As I said before, I have little to no in-depth experience with
+netfilter, I'm aware of it's basic capabilities and had a quick look
+at it's features in early 2.4 editions but that's it.
+
+--
+Philip Reynolds
+RFC Networks          tel: 01 8832063
+fax: 01 8832041
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

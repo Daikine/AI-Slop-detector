@@ -1,0 +1,11 @@
+﻿subject,text,is_ai
+"Re: [Razor-users] ""No razor servers available at this time""","I'm still seeing razor reporting bomb out with a small variety of messages.
+Would reinitializing something here help, or does razor do that as needed
+anyway, and this just reflects trouble at the servers?
+
+Also, since these are reports I'm making from within Mutt, it's annoying
+that the error messages garble the X window a bit. If there's nothing
+constructive to do about razor failing, can I at least turn off the failure
+messages? One way or the other I'd rather not see them.
+
+Whit",0

@@ -1,0 +1,118 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 1053] New: IMG tag based rules,"Summary: IMG tag based rules
+Product: Spamassassin
+Version: unspecified
+Platform: Other
+OS/Version: other
+Status: NEW
+Severity: enhancement
+Priority: P2
+Component: Eval Tests
+AssignedTo:
+ReportedBy:
+
+Inspired by complaints about all-image or mostly-image spam that's
+getting by SA, I've cooked up three sets of rules that analyze the use
+of IMG tags in HTML: one that looks at the total area of all of the
+images in the message (T_HTML_IMAGE_AREA*), one that looks at the
+total number of images in the message (T_HTML_NUM_IMGS*), and one that
+looks at the longest total run of consecutive images
+(T_HTML_CONSEC_IMG*).
+
+The total area of all images is rather easy to compute: inside of
+HTML::html_tests(), if an IMG tag has both the width and height
+properties, then multiply them together and add the result to the
+running total.
+
+OVERALL%   SPAM% NONSPAM%     S/O    RANK   SCORE  NAME
+(all messages)
+(all messages as %)
+T_HTML_IMAGE_AREA14
+T_HTML_IMAGE_AREA15
+T_HTML_IMAGE_AREA07
+T_HTML_IMAGE_AREA10
+T_HTML_IMAGE_AREA02
+T_HTML_IMAGE_AREA16
+T_HTML_IMAGE_AREA18
+T_HTML_IMAGE_AREA19
+T_HTML_IMAGE_AREA17
+T_HTML_IMAGE_AREA12
+T_HTML_IMAGE_AREA13
+T_HTML_IMAGE_AREA11
+T_HTML_IMAGE_AREA08
+T_HTML_IMAGE_AREA03
+T_HTML_IMAGE_AREA06
+T_HTML_IMAGE_AREA04
+T_HTML_IMAGE_AREA01
+T_HTML_IMAGE_AREA05
+T_HTML_IMAGE_AREA09
+
+Spam % of all rules with S/0 > 0.90: 20.615%
+
+The total number of IMG tags is really easy to do.
+
+T_HTML_NUM_IMGS08
+T_HTML_NUM_IMGS09
+T_HTML_NUM_IMGS10
+T_HTML_NUM_IMGS14
+T_HTML_NUM_IMGS06
+T_HTML_NUM_IMGS11
+T_HTML_NUM_IMGS17
+T_HTML_NUM_IMGS12
+T_HTML_NUM_IMGS13
+T_HTML_NUM_IMGS20
+T_HTML_NUM_IMGS16
+T_HTML_NUM_IMGS05
+T_HTML_NUM_IMGS07
+T_HTML_NUM_IMGS18
+T_HTML_NUM_IMGS04
+T_HTML_NUM_IMGS03
+T_HTML_NUM_IMGS15
+T_HTML_NUM_IMGS01
+T_HTML_NUM_IMGS19
+T_HTML_NUM_IMGS02
+
+Spam % of all rules with S/O > 0.90: 31.25%
+
+I figured that spam that is made up of only images is going to only
+have IMG tags interspersed with table, paragraph and linebreak tags,
+and some whitespace, so there would be a lot of IMG tags with no plain
+text (non-whitespace) between them.  So I defined consecutive IMG tags
+to be ones with no text between them, and looked at the longest run of
+consecutive IMGs within a message.
+
+This one seems to do pretty good, because in my non-spam corpus
+there's only a handful of messages with IMG runs larger than two.
+
+T_HTML_CONSEC_IMGS06
+T_HTML_CONSEC_IMGS08
+T_HTML_CONSEC_IMGS11
+T_HTML_CONSEC_IMGS02
+T_HTML_CONSEC_IMGS03
+T_HTML_CONSEC_IMGS05
+T_HTML_CONSEC_IMGS12
+T_HTML_CONSEC_IMGS04
+T_HTML_CONSEC_IMGS07
+T_HTML_CONSEC_IMGS13
+T_HTML_CONSEC_IMGS15
+T_HTML_CONSEC_IMGS10
+T_HTML_CONSEC_IMGS09
+T_HTML_CONSEC_IMGS17
+T_HTML_CONSEC_IMGS19
+T_HTML_CONSEC_IMGS14
+T_HTML_CONSEC_IMGS01
+T_HTML_CONSEC_IMGS16
+T_HTML_CONSEC_IMGS18
+
+Spam % of all rules with S/O > 0.90: 22.85%
+
+Next I'm going to see if there's any meta rules I can make that will
+reduce the FP rate for low S/O rules.
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0

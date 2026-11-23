@@ -1,0 +1,41 @@
+﻿subject,text,is_ai
+Re: [ILUG] ipfw vs ipchains vs iptables,"Paul Jakma's [] 67 lines of wisdom included:
+
+Nope, indeed IPFW2 has just been rolled out into -STABLE. (-STABLE
+is a stable branch of the code that has been rolled into -CURRENT
+first. It's basically a major release, that's still a work in
+progress)
+
+I don't really judge things by uptimes, it's rather like judging
+penis size. People like comparing them, and the larger they are, the
+more people are in awe of them, but overly large ones aren't really
+practical!
+
+Defiantely. I wouldn't like anyone to accuse me of being a
+nit-picker though ;)
+
+Well, as someone who's used ipchains quite heavily about two years
+ago, I can guarantee you that the learning curve for reading
+ipchains rules and ipfw rules is quite different. Of course once
+you've memorised (not necessarily sitting down with a sheet of them
+and learning them off by rote) them, you wonder what all the fuss is
+about before.
+
+It's not in itself a reason to choose one firewall product over
+another, but if that's all there is in the difference, and the
+learning curve for the Operating System is the same, then I know
+what I'd prefer, as a beginner.
+
+This is all getting rather off-topic now anyways, but since I've
+been doing quite a lot of work with ipfw over the last week I jumped
+on the bandwagon.
+
+--
+Philip Reynolds
+RFC Networks          tel: 01 8832063
+fax: 01 8832041
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

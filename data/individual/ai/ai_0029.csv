@@ -1,0 +1,6 @@
+﻿subject,text,is_ai
+Network issue at the venue,"The venue router started dropping brief connections after the second registration table went live. The pattern is repeatable around 9:40 a.m., when the check-in system updates the attendee list and the projectors request the network time simultaneously. I do not think the laptops are failing, but the network page says the wireless profile is missing after each dropout, which makes the session schedule unreliable.
+
+Could you tell me whether your department can provide a wired port near the main desk for tomorrow morning? I want to avoid a public workaround with mobile tethering because the signal is weak and it may look informal to participants. If a port is not possible, a temporary static assignment for the registration laptop would also solve the practical concern. Please let me know before lunch so I can adjust the run sheet and tell the room attendant. I can meet at the room if you need an hour.
+
+Thanks,",1

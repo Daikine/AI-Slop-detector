@@ -1,0 +1,23 @@
+﻿subject,text,is_ai
+Re: [ILUG] removing lilo,"Lacking a DOS boot disk, I just looked for a different way to do it
+yesterday.  You can use
+lilo -u /dev/hda
+
+Sourced via google search ""remove lilo"" which returned
+
+Much handier if you only have tomsrtbt or something similar.
+
+jr
+
+From: ""jac1"" <>
+To: <>
+Sent: Wednesday, July 31, 2002 2:30 PM
+Subject: [ILUG] removing lilo
+
+boot
+information.
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

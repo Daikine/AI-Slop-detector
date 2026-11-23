@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+RE: when building a rpm i386-redhat-linux- is appended to man page,"This works when you are defining a switch that %configure
+does not already define, but how can we override an
+existing switch?  For example,
+
+prefix: /usr/local
+
+%configure --prefix=%{?_prefix:%{prefix}}
+
+would be desirable for making a .rpm package relocatable,
+but this doesn't work.  'configure' receives two switches,
+the default '--prefix=/usr' and the (attempted) override
+'--prefix=/usr/local', but it only recognizes the first one.
+
+---
+
+RPM-List mailing list <>",0

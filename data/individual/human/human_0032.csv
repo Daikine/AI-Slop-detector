@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+Re: [ILUG] removing lilo,"Quoting jac1 ():
+
+The easy way is just to install whatever Microsoft or whatever OS you
+have in mind:  It should overwrite the MBR.  Indeed, the problem is
+usually _preventing_ this from happening, as Microsoft Corporation's
+installers seem to forever be overwriting your MBRs when you least wish
+it, without asking your permission.
+
+--
+Cheers,               ""We're sorry; you have reached an imaginary number.
+Rick Moen             Please rotate your 'phone ninety degrees and try again.""
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

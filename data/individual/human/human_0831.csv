@@ -1,0 +1,8 @@
+﻿subject,text,is_ai
+[Spambayes] Ditching WordInfo,"This is very worthwhile.
+
+Maybe.  I batch messages using fetchmail (don't ask why), and adding
+.4 seconds per message for a batch of 50 (not untypical) feels like a
+real wait to me...
+
+--Guido van Rossum (home page:",0

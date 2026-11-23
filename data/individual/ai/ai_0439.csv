@@ -1,0 +1,7 @@
+﻿subject,text,is_ai
+Urgent login issue after schedule change,"Hello,
+
+The venue confirmed that the workshop moves to Thursday, which is time-sensitive for registration links. However, the updated agenda page throws a 403 error when I open it from the organizer dashboard. I can still edit the session description, but the new time does not appear in the public calendar. I need this corrected before attendees arrive at 10 a.m. Could you check whether the permissions changed when I altered the date, or tell me who owns the calendar sync? Please let me know if a screenshot would help.
+
+Thanks,
+Organizer",1

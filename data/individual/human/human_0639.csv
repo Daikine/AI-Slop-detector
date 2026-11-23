@@ -1,0 +1,18 @@
+﻿subject,text,is_ai
+[SAdev] [Bug 960] COMMENT low-performing rule pruned,"changed:
+
+What    |Removed                     |Added
+Status|NEW                         |RESOLVED
+Resolution|                            |WONTFIX
+
+------- Additional Comments From   :16 -------
+I think it's ok to close this one? Comment is a valid, albeit seldom used RFC
+2822 header...
+
+------- You are receiving this mail because: -------
+You are the assignee for the bug, or are watching the assignee.
+
+This sf.net email is sponsored by:ThinkGeek
+Welcome to geek heaven.
+
+Spamassassin-devel mailing list",0

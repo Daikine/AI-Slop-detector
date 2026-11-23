@@ -1,0 +1,17 @@
+﻿subject,text,is_ai
+[ILUG] Re: serial console...not quite working,"John P. Looney stated the following on Thu, Aug 29, 2002 at 03:31:11PM +0100 :
+^
+That 1 is unneeded and is probably whats upsetting your kernel
+
+we use ""console=ttyS0,9600n8"" but the 9600 is mainly cos we are a cisco
+shop and its to keepo everyhting the same.
+
+Colin
+--
+""Design"" is like a religion - too much of it makes you inflexibly and unpopular.
+Linus Torvalds
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0

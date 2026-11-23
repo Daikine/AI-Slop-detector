@@ -1,0 +1,26 @@
+﻿subject,text,is_ai
+Re: [ILUG] How to copy some files,"Niall asked:
+of
+twice,
+
+How about something like:
+
+cd {dest.dir}
+tar -C {source.dir} cf - | tar xf -
+
+tar cf - will pipe the tar file to stdout and tar xf - will untar it. This
+should keep permissions and links, and if you do it as root you will keep
+the owners too... :)
+
+Not tested, though. You may need other flags as well.
+
+- Matthew
+
+Do You Yahoo!?
+Everything you'll ever need on one web page
+from News and Sport to Email and Music Charts
+
+--
+Irish Linux Users' Group:
+for (un)subscription information.
+List maintainer:",0
