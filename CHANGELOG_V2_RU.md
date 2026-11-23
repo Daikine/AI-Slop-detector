@@ -1,4 +1,4 @@
-# Отчёт о внесённых изменениях — Kirusha AI Email Detector v2
+# Отчёт о внесённых изменениях —  AI Email Detector v2
 
 ## Исходное состояние
 
