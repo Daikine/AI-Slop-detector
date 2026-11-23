@@ -2,7 +2,7 @@
 
 > **Обновление конфигурации:** в `.env` используется единый набор `API_KEY`, `API_URL`, `MODEL` для Qwen. LLM-запросы выполняются официальной библиотекой `openai` через OpenAI-compatible API.
 
-# Kirusha AI Email Detector — обновлённый гибридный классификатор (v2)
+# AI Email Detector — обновлённый гибридный классификатор (v2)
 
 **Главная инструкция:** [README_V2_RU.md](README_V2_RU.md)  
 **Список изменений и результаты тестов:** [CHANGELOG_V2_RU.md](CHANGELOG_V2_RU.md)
